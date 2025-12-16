@@ -1,14 +1,14 @@
 import { useState } from "react";
 import TourCard from "@/components/TourCard";
 import { tours } from "@/data/tours";
-import { Search, SlidersHorizontal } from "lucide-react";
+import { Search } from "lucide-react";
 
 const Tours = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
   const categories = [
-    { id: "all", label: "All Tours" },
+    { id: "all", label: "All" },
     { id: "multi-day", label: "Multi-Day" },
     { id: "desert", label: "Desert" },
     { id: "mountain", label: "Mountain" },
@@ -24,104 +24,107 @@ const Tours = () => {
   });
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Header */}
-      <section className="relative py-20 bg-primary overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/5 rounded-full translate-y-1/2 -translate-x-1/2" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 font-serif">
-              Explore Morocco
-            </h1>
-            <p className="text-lg text-white/80">
-              Discover our curated collection of tours, from desert adventures to mountain treks and cultural immersions.
-            </p>
+    <div className="min-h-screen bg-[#faf9f7]">
+      {/* Hero Header */}
+      <section className="relative pt-32 pb-20">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="h-px w-12 bg-primary" />
+                <span className="text-primary font-medium tracking-widest text-sm uppercase">Our Journeys</span>
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 font-serif mb-6">
+                Curated Moroccan 
+                <span className="block text-primary">Experiences</span>
+              </h1>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                From imperial cities to desert camps, discover our collection of 
+                handcrafted journeys through Morocco's most captivating destinations.
+              </p>
+            </div>
+            
+            <div className="relative hidden lg:block">
+              <div className="absolute -top-8 -right-8 w-64 h-64 bg-primary/10" />
+              <img 
+                src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=600"
+                alt="Morocco"
+                className="relative z-10 w-full aspect-[4/3] object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Search and Filters */}
-      <section className="sticky top-20 z-30 bg-background/95 backdrop-blur-md border-b border-border/50">
-        <div className="container mx-auto px-4 lg:px-8 py-5">
+      {/* Filters Bar */}
+      <section className="sticky top-20 z-30 bg-white border-y border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16 py-4">
           <div className="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between">
-            {/* Search */}
-            <div className="relative w-full lg:max-w-sm">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <input
-                type="text"
-                placeholder="Search tours..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full h-11 pl-11 pr-4 rounded-full bg-muted/50 border border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
-              />
-            </div>
-            
             {/* Category Tabs */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-hide">
-              <SlidersHorizontal className="h-4 w-4 text-muted-foreground mr-2 flex-shrink-0" />
+            <div className="flex items-center gap-1 overflow-x-auto pb-2 lg:pb-0">
               {categories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setActiveTab(cat.id)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 ${
+                  className={`px-5 py-2.5 text-sm font-medium whitespace-nowrap transition-all duration-300 ${
                     activeTab === cat.id
-                      ? "bg-primary text-white shadow-md"
-                      : "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground"
+                      ? "bg-gray-900 text-white"
+                      : "text-gray-600 hover:bg-gray-100"
                   }`}
                 >
                   {cat.label}
                 </button>
               ))}
             </div>
+            
+            {/* Search */}
+            <div className="relative w-full lg:max-w-xs">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Search tours..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full h-11 pl-11 pr-4 bg-gray-50 border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-sm"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Results count */}
-      <section className="bg-background">
-        <div className="container mx-auto px-4 lg:px-8 py-6">
-          <p className="text-muted-foreground text-sm">
-            Showing <span className="font-semibold text-foreground">{filteredTours.length}</span> tours
+      {/* Results Info */}
+      <section className="max-w-7xl mx-auto px-8 lg:px-16 pt-8">
+        <div className="flex items-center justify-between">
+          <p className="text-gray-500 text-sm">
+            <span className="font-semibold text-gray-900">{filteredTours.length}</span> journeys found
             {activeTab !== "all" && ` in ${categories.find(c => c.id === activeTab)?.label}`}
-            {searchQuery && ` for "${searchQuery}"`}
           </p>
         </div>
       </section>
 
       {/* Tours Grid */}
-      <section className="pb-20 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          {filteredTours.length === 0 ? (
-            <div className="text-center py-20">
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-xl font-semibold mb-2 font-serif">No tours found</h3>
-              <p className="text-muted-foreground mb-6">
-                Try adjusting your search or filter to find what you're looking for.
-              </p>
-              <button
-                onClick={() => { setActiveTab("all"); setSearchQuery(""); }}
-                className="text-primary font-medium hover:underline"
-              >
-                Clear all filters
-              </button>
-            </div>
-          ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredTours.map((tour, index) => (
-                <div 
-                  key={tour.id} 
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${index * 0.05}s` }}
-                >
-                  <TourCard {...tour} />
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+      <section className="max-w-7xl mx-auto px-8 lg:px-16 py-12 pb-24">
+        {filteredTours.length === 0 ? (
+          <div className="text-center py-20 bg-white border border-gray-100">
+            <div className="text-6xl mb-4">🔍</div>
+            <h3 className="text-xl font-semibold mb-2 font-serif">No journeys found</h3>
+            <p className="text-gray-500 mb-6">
+              Try adjusting your search or filter criteria.
+            </p>
+            <button
+              onClick={() => { setActiveTab("all"); setSearchQuery(""); }}
+              className="text-primary font-medium hover:underline"
+            >
+              Clear all filters
+            </button>
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredTours.map((tour) => (
+              <TourCard key={tour.id} {...tour} />
+            ))}
+          </div>
+        )}
       </section>
     </div>
   );

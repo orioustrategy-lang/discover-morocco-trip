@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Phone, Star, Users, Shield, Clock, Award, ArrowRight, MapPin, Compass, Mountain, Sun, Waves } from "lucide-react";
+import { Phone, Star, Users, Shield, Clock, Award, ArrowRight, Quote } from "lucide-react";
 import TourCard from "@/components/TourCard";
 import { tours } from "@/data/tours";
 
@@ -9,7 +9,6 @@ const Index = () => {
     window.open("https://wa.me/212600000000?text=Hello, I'm interested in your Morocco tours!", "_blank");
   };
 
-  // Get featured tours
   const featuredTours = [
     tours.find(t => t.id === "4-day-imperial-cities"),
     tours.find(t => t.id === "5-day-desert-atlantic"),
@@ -19,197 +18,165 @@ const Index = () => {
     tours.find(t => t.id === "essaouira-coastal-day"),
   ].filter(Boolean).slice(0, 6);
 
-  const reviews = [
+  const destinations = [
+    { name: "Fes", image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600", tours: 8 },
+    { name: "Sahara Desert", image: "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=600", tours: 12 },
+    { name: "Chefchaouen", image: "https://images.unsplash.com/photo-1553522991-71439aa49cc4?w=600", tours: 5 },
+    { name: "Atlas Mountains", image: "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=600", tours: 7 },
+    { name: "Essaouira", image: "https://images.unsplash.com/photo-1507501336603-6e31db2be093?w=600", tours: 4 },
+    { name: "Rabat", image: "https://images.unsplash.com/photo-1570303278224-4c4e7a5b1d3f?w=600", tours: 3 },
+  ];
+
+  const testimonials = [
     {
       name: "James Wilson",
-      country: "United Kingdom",
+      location: "London, UK",
+      text: "The Imperial Cities tour completely changed how I see travel. Every detail was perfect, from the riads to the guides. An absolute masterpiece of a journey.",
       rating: 5,
-      text: "The Imperial Cities tour was incredible! Fes blew my mind - the medina, the tanneries, everything was perfectly organized.",
-      tour: "Imperial Cities Tour",
-      avatar: "J",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150",
     },
     {
       name: "Anna Bergström",
-      country: "Sweden",
+      location: "Stockholm, Sweden", 
+      text: "Five days from desert to coast - I've never experienced anything like it. Waking up to sunrise over the dunes was worth the entire trip.",
       rating: 5,
-      text: "From the Sahara desert to the Atlantic coast in 5 days - what an adventure! The luxury desert camp was beyond expectations.",
-      tour: "Desert to Atlantic",
-      avatar: "A",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150",
     },
     {
       name: "Marco Rossi",
-      country: "Italy",
+      location: "Milan, Italy",
+      text: "Summiting Toubkal was a dream come true. The team's expertise and care made what could be challenging into pure adventure.",
       rating: 5,
-      text: "Climbing Mount Toubkal was a life-changing experience. The guide was professional and the views were breathtaking!",
-      tour: "Toubkal Summit",
-      avatar: "M",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150",
     },
-  ];
-
-  const features = [
-    {
-      icon: Users,
-      title: "Expert Local Guides",
-      description: "Born and raised in Morocco, our guides share authentic stories and hidden gems.",
-    },
-    {
-      icon: Shield,
-      title: "Best Price Guarantee",
-      description: "Competitive rates with no hidden costs. Full transparency in all our pricing.",
-    },
-    {
-      icon: Clock,
-      title: "24/7 Support",
-      description: "Always available on WhatsApp for your questions and assistance.",
-    },
-    {
-      icon: Award,
-      title: "Top Rated Tours",
-      description: "Excellent reviews on TripAdvisor and Google from happy travelers worldwide.",
-    },
-  ];
-
-  const stats = [
-    { value: "10+", label: "Years Experience" },
-    { value: "20K+", label: "Happy Travelers" },
-    { value: "50+", label: "Unique Tours" },
-    { value: "4.9", label: "Average Rating" },
-  ];
-
-  const categories = [
-    { icon: Compass, title: "Multi-Day Tours", description: "Epic Morocco adventures", link: "/tours?category=multi-day" },
-    { icon: Mountain, title: "Mountain Treks", description: "Atlas peaks & valleys", link: "/tours?category=mountain" },
-    { icon: Sun, title: "Desert Experiences", description: "Sahara camps & camel treks", link: "/tours?category=desert" },
-    { icon: Waves, title: "Coastal Escapes", description: "Atlantic beaches & ports", link: "/tours?category=coastal" },
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with overlay */}
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=1920"
-            alt="Morocco Desert"
-            className="w-full h-full object-cover scale-110 animate-[scale_20s_ease-in-out_infinite_alternate]"
-            style={{ animation: 'scale 20s ease-in-out infinite alternate' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/20" />
-        </div>
-        
-        {/* Animated Decorative Elements */}
-        <div className="absolute top-1/4 left-10 w-72 h-72 bg-primary/30 rounded-full blur-[100px] animate-float-slow" />
-        <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-accent/25 rounded-full blur-[120px] animate-float-slow delay-300" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/5 rounded-full animate-rotate-slow" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/5 rounded-full animate-rotate-slow" style={{ animationDirection: 'reverse', animationDuration: '30s' }} />
-        
-        {/* Moroccan Pattern Overlay */}
-        <div className="absolute inset-0 moroccan-pattern opacity-20" />
-        
-        <div className="relative z-10 w-full px-4 py-32 animate-fade-in">
-          <div className="container mx-auto max-w-5xl text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass-dark text-white/90 text-sm mb-8 animate-slide-down">
-              <Compass className="h-4 w-4 text-accent animate-pulse" />
-              <span className="tracking-wider">Authentic Moroccan Adventures</span>
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+    <div className="min-h-screen bg-[#faf9f7]">
+      {/* Hero - Split Design */}
+      <section className="min-h-screen grid lg:grid-cols-2">
+        {/* Left Content */}
+        <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 py-32 lg:py-20 order-2 lg:order-1">
+          <div className="max-w-xl">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-px w-12 bg-primary" />
+              <span className="text-primary font-medium tracking-widest text-sm uppercase">Welcome to Morocco</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-[1.1] font-serif text-shadow-hero">
-              Discover the <br />
-              <span className="text-gradient-gold">Soul of Morocco</span>
+            <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 leading-[1.1] font-serif">
+              Where Ancient
+              <span className="block text-primary">Meets Adventure</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-white/85 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
-              Unforgettable journeys through ancient cities, endless deserts, and majestic mountains. 
-              Your Moroccan adventure starts here.
+            <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+              Curated journeys through imperial cities, golden deserts, and mountain peaks. 
+              Experience Morocco beyond the ordinary.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link to="/tours">
-                <Button size="lg" className="gap-2 h-14 px-10 text-base rounded-full shadow-2xl hover:shadow-primary/25 transition-all duration-500 hover:scale-105 btn-shine bg-gradient-to-r from-primary to-primary/90">
-                  Explore Tours
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <Button size="lg" className="h-14 px-8 text-base rounded-none bg-primary hover:bg-primary/90">
+                  View All Journeys
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Button 
                 size="lg" 
                 variant="outline" 
-                onClick={handleWhatsApp} 
-                className="gap-2 h-14 px-10 text-base rounded-full glass-dark border-white/20 text-white hover:bg-white hover:text-foreground hover:border-white transition-all duration-500"
+                onClick={handleWhatsApp}
+                className="h-14 px-8 text-base rounded-none border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
               >
-                <Phone className="h-5 w-5" />
-                Book via WhatsApp
+                <Phone className="mr-2 h-5 w-5" />
+                Get in Touch
               </Button>
             </div>
             
-            {/* Stats Row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20 max-w-4xl mx-auto">
-              {stats.map((stat, index) => (
-                <div 
-                  key={index} 
-                  className="text-center p-6 rounded-2xl glass-dark hover:bg-white/10 transition-all duration-500 group cursor-default"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="text-4xl md:text-5xl font-bold text-white mb-2 group-hover:text-accent transition-colors">{stat.value}</div>
-                  <div className="text-white/60 text-sm uppercase tracking-wider">{stat.label}</div>
-                </div>
+            {/* Mini Stats */}
+            <div className="flex items-center gap-8 pt-8 border-t border-gray-200">
+              <div>
+                <div className="text-3xl font-bold text-gray-900">10+</div>
+                <div className="text-sm text-gray-500">Years</div>
+              </div>
+              <div className="h-12 w-px bg-gray-200" />
+              <div>
+                <div className="text-3xl font-bold text-gray-900">20K+</div>
+                <div className="text-sm text-gray-500">Travelers</div>
+              </div>
+              <div className="h-12 w-px bg-gray-200" />
+              <div>
+                <div className="text-3xl font-bold text-gray-900">4.9</div>
+                <div className="text-sm text-gray-500">Rating</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Right Image */}
+        <div className="relative order-1 lg:order-2 min-h-[50vh] lg:min-h-screen">
+          <img
+            src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=1200"
+            alt="Morocco Architecture"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent lg:bg-gradient-to-r lg:from-[#faf9f7] lg:via-transparent lg:to-transparent" />
+          
+          {/* Floating Card */}
+          <div className="absolute bottom-8 left-8 right-8 lg:bottom-12 lg:left-12 lg:right-auto lg:max-w-xs bg-white p-6 shadow-2xl">
+            <div className="flex items-center gap-4 mb-3">
+              <div className="flex -space-x-2">
+                {[1,2,3].map(i => (
+                  <div key={i} className="w-10 h-10 rounded-full bg-primary/20 border-2 border-white" />
+                ))}
+              </div>
+              <div className="text-sm">
+                <span className="font-semibold">500+</span> travelers this month
+              </div>
+            </div>
+            <div className="flex gap-1">
+              {[1,2,3,4,5].map(i => (
+                <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
               ))}
             </div>
           </div>
         </div>
-        
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
-          <div className="w-7 h-12 rounded-full border-2 border-white/40 flex items-start justify-center p-2 backdrop-blur-sm">
-            <div className="w-1.5 h-3 bg-gradient-to-b from-accent to-primary rounded-full animate-bounce" />
-          </div>
-        </div>
       </section>
 
-      {/* Categories Section */}
-      <section className="py-24 bg-background relative overflow-hidden">
-        {/* Decorative background */}
-        <div className="absolute inset-0 bg-gradient-radial" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <span className="inline-flex items-center gap-2 text-primary font-medium mb-4 tracking-widest uppercase text-sm">
-              <span className="w-8 h-px bg-primary/50" />
-              Explore
-              <span className="w-8 h-px bg-primary/50" />
-            </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-serif">
-              Choose Your <span className="text-gradient">Adventure</span>
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              From desert camping to mountain trekking, we offer experiences for every type of traveler.
-            </p>
+      {/* Destinations Grid */}
+      <section className="py-24 px-8 lg:px-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+            <div>
+              <span className="text-primary font-medium tracking-widest text-sm uppercase mb-4 block">Destinations</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif">
+                Explore Morocco's Treasures
+              </h2>
+            </div>
+            <Link to="/tours" className="text-primary font-medium flex items-center gap-2 hover:gap-4 transition-all">
+              View all destinations <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.map((cat, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {destinations.map((dest, index) => (
               <Link 
-                key={index} 
-                to={cat.link}
-                className="group p-8 bg-card rounded-3xl border border-border/50 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl card-glow relative overflow-hidden"
+                key={dest.name}
+                to={`/tours?search=${dest.name}`}
+                className={`group relative overflow-hidden ${
+                  index === 0 ? 'col-span-2 row-span-2' : ''
+                }`}
+                style={{ aspectRatio: index === 0 ? '1' : '4/3' }}
               >
-                {/* Hover gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="relative z-10">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-6 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 group-hover:text-white transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
-                    <cat.icon className="h-8 w-8" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 font-serif group-hover:text-primary transition-colors">{cat.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{cat.description}</p>
-                  
-                  <div className="mt-4 flex items-center text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-10px] group-hover:translate-x-0">
-                    <span className="text-sm font-medium">Explore</span>
-                    <ArrowRight className="h-4 w-4 ml-1" />
-                  </div>
+                <img 
+                  src={dest.image} 
+                  alt={dest.name}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className={`font-serif font-bold text-white mb-1 ${index === 0 ? 'text-3xl' : 'text-xl'}`}>
+                    {dest.name}
+                  </h3>
+                  <p className="text-white/70 text-sm">{dest.tours} experiences</p>
                 </div>
               </Link>
             ))}
@@ -217,212 +184,108 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-28 bg-gradient-sand relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 rounded-l-[150px] -z-10" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
-        
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-slide-up">
-              <span className="inline-flex items-center gap-2 text-primary font-medium mb-4 tracking-widest uppercase text-sm">
-                <span className="w-8 h-px bg-primary/50" />
-                About Us
-                <span className="w-8 h-px bg-primary/50" />
-              </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-serif">
-                Your Gateway to <br />
-                <span className="text-gradient">Authentic Morocco</span>
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                <strong className="text-foreground">Discover Morocco Trip</strong> offers transformative travel experiences across the entire Kingdom. With a decade of expertise, we craft bespoke journeys from the imperial cities of Fes and Rabat to the endless Sahara dunes.
-              </p>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Unlike typical tour operators, we go beyond the surface. Our Morocco-born guides connect you with real communities, secret viewpoints, and experiences you won't find in any guidebook. From northern mountains to southern deserts, we reveal Morocco's soul.
-              </p>
-              
-              {/* Trust badges */}
-              <div className="flex flex-wrap gap-4 mb-8">
-                <div className="flex items-center gap-2 px-5 py-3 bg-background rounded-full border border-border/50 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300 cursor-default">
-                  <Shield className="h-5 w-5 text-primary" />
-                  <span className="text-sm font-medium">Licensed Operator</span>
-                </div>
-                <div className="flex items-center gap-2 px-5 py-3 bg-background rounded-full border border-border/50 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300 cursor-default">
-                  <Star className="h-5 w-5 text-accent fill-accent" />
-                  <span className="text-sm font-medium">Top Rated</span>
-                </div>
-                <div className="flex items-center gap-2 px-5 py-3 bg-background rounded-full border border-border/50 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300 cursor-default">
-                  <MapPin className="h-5 w-5 text-primary" />
-                  <span className="text-sm font-medium">Nationwide Coverage</span>
-                </div>
-              </div>
-              
-              <Button onClick={handleWhatsApp} size="lg" className="gap-2 rounded-full h-14 px-8 btn-shine bg-gradient-to-r from-primary to-primary/90 shadow-lg hover:shadow-xl transition-all duration-300">
-                <Phone className="h-5 w-5" />
-                Start Planning Your Trip
-              </Button>
-            </div>
-            
-            <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl group img-zoom">
-                <img 
-                  src="https://images.unsplash.com/photo-1549924231-f129b911e442?w=800" 
-                  alt="Morocco Adventure" 
-                  className="w-full h-[500px] object-cover transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-              
-              {/* Decorative border */}
-              <div className="absolute -inset-4 border-2 border-primary/20 rounded-[2rem] -z-10" />
-              <div className="absolute -inset-8 border border-accent/10 rounded-[2.5rem] -z-10" />
-              
-              {/* Floating Card */}
-              <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-2xl shadow-2xl border border-border/50 max-w-[280px] backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="flex -space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary/80 text-white flex items-center justify-center text-sm font-semibold shadow-md">E</div>
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-accent/80 text-foreground flex items-center justify-center text-sm font-semibold shadow-md">T</div>
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-secondary to-secondary/80 text-foreground flex items-center justify-center text-sm font-semibold shadow-md">S</div>
-                  </div>
-                  <div className="text-sm">
-                    <span className="font-semibold text-foreground">15,000+</span>
-                    <span className="text-muted-foreground"> happy travelers</span>
-                  </div>
-                </div>
-                <div className="flex gap-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="h-5 w-5 fill-accent text-accent drop-shadow-sm" />
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground mt-2">Average rating from our guests</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Featured Tours */}
-      <section className="py-28 bg-background relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-        
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-14">
-            <div>
-              <span className="inline-flex items-center gap-2 text-primary font-medium mb-4 tracking-widest uppercase text-sm">
-                <span className="w-8 h-px bg-primary/50" />
-                Featured Tours
-                <span className="w-8 h-px bg-primary/50" />
-              </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif">
-                Most Popular <span className="text-gradient">Experiences</span>
-              </h2>
-            </div>
-            <Link to="/tours">
-              <Button variant="outline" className="gap-2 rounded-full h-12 px-6 border-2 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 group">
-                View All Tours
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+          <div className="text-center mb-16">
+            <span className="text-primary font-medium tracking-widest text-sm uppercase mb-4 block">Curated Experiences</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif mb-4">
+              Popular Journeys
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Hand-picked adventures designed to immerse you in Morocco's rich culture and breathtaking landscapes.
+            </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredTours.map((tour, index) => (
-              tour && (
-                <div 
-                  key={tour.id} 
-                  className="animate-scale-in"
-                  style={{ animationDelay: `${index * 150}ms` }}
-                >
-                  <TourCard {...tour} />
-                </div>
-              )
+            {featuredTours.map((tour) => (
+              tour && <TourCard key={tour.id} {...tour} />
             ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Link to="/tours">
+              <Button size="lg" variant="outline" className="h-14 px-10 rounded-none border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white">
+                Explore All Tours
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-28 bg-gradient-to-br from-primary via-primary to-primary/90 text-white relative overflow-hidden">
-        {/* Decorative patterns */}
-        <div className="absolute inset-0 moroccan-pattern opacity-10" />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-3xl" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-20">
-            <span className="inline-flex items-center gap-2 text-white/80 font-medium mb-4 tracking-widest uppercase text-sm">
-              <span className="w-8 h-px bg-white/30" />
-              Why Choose Us
-              <span className="w-8 h-px bg-white/30" />
-            </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-serif">
-              Excellence in Every Journey
-            </h2>
-            <p className="text-white/80 max-w-2xl mx-auto text-lg">
-              We're committed to providing exceptional experiences that create lasting memories.
-            </p>
-          </div>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div 
-                key={index} 
-                className="text-center p-8 rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500 group hover:-translate-y-2"
-              >
-                <div className="w-20 h-20 rounded-2xl bg-white/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-accent group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                  <feature.icon className="h-10 w-10" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3 font-serif">{feature.title}</h3>
-                <p className="text-white/70 text-sm leading-relaxed">{feature.description}</p>
+      <section className="py-24 px-8 lg:px-16 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="text-primary font-medium tracking-widest text-sm uppercase mb-4 block">Why Choose Us</span>
+              <h2 className="text-4xl md:text-5xl font-bold font-serif mb-6">
+                Travel with the Experts
+              </h2>
+              <p className="text-gray-400 text-lg mb-8">
+                We're not just tour operators – we're storytellers, culture enthusiasts, and adventure seekers who call Morocco home.
+              </p>
+              
+              <div className="space-y-6">
+                {[
+                  { icon: Users, title: "Local Expertise", desc: "Guides born and raised in Morocco" },
+                  { icon: Shield, title: "Trusted & Safe", desc: "Licensed operator with 24/7 support" },
+                  { icon: Award, title: "Award Winning", desc: "Top-rated on TripAdvisor & Google" },
+                  { icon: Clock, title: "Flexible Booking", desc: "Free cancellation up to 48 hours" },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="w-12 h-12 bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1">{item.title}</h3>
+                      <p className="text-gray-400 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1549924231-f129b911e442?w=800"
+                alt="Morocco Guide"
+                className="w-full aspect-[4/5] object-cover"
+              />
+              <div className="absolute -bottom-8 -left-8 bg-primary p-8 text-white max-w-xs hidden lg:block">
+                <div className="text-4xl font-bold mb-2">10+</div>
+                <div className="text-sm opacity-80">Years of creating unforgettable memories across Morocco</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Reviews */}
-      <section className="py-28 bg-background relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-20 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-20">
-            <span className="inline-flex items-center gap-2 text-primary font-medium mb-4 tracking-widest uppercase text-sm">
-              <span className="w-8 h-px bg-primary/50" />
-              Testimonials
-              <span className="w-8 h-px bg-primary/50" />
-            </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif">
-              What Our <span className="text-gradient">Travelers Say</span>
+      {/* Testimonials */}
+      <section className="py-24 px-8 lg:px-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-primary font-medium tracking-widest text-sm uppercase mb-4 block">Testimonials</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif">
+              Stories from Our Travelers
             </h2>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {reviews.map((review, index) => (
-              <div 
-                key={index} 
-                className="bg-card p-8 rounded-3xl border border-border/50 hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl group relative overflow-hidden"
-              >
-                {/* Quote decoration */}
-                <div className="absolute top-4 right-4 text-8xl font-serif text-primary/5 group-hover:text-primary/10 transition-colors duration-500">"</div>
-                
-                <div className="flex gap-1 mb-6">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-accent text-accent drop-shadow-sm" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-8 leading-relaxed text-lg relative z-10">"{review.text}"</p>
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                <Quote className="h-10 w-10 text-primary/20 mb-6" />
+                <p className="text-gray-600 mb-6 leading-relaxed">"{testimonial.text}"</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary/80 text-white flex items-center justify-center text-xl font-semibold shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    {review.avatar}
-                  </div>
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name}
+                    className="w-14 h-14 rounded-full object-cover"
+                  />
                   <div>
-                    <p className="font-semibold text-lg">{review.name}</p>
-                    <p className="text-sm text-muted-foreground">{review.country}</p>
+                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                    <div className="text-sm text-gray-500">{testimonial.location}</div>
                   </div>
                 </div>
               </div>
@@ -431,50 +294,43 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-28 bg-muted/30 relative overflow-hidden">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="bg-gradient-to-br from-primary via-primary to-primary/80 rounded-[2.5rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
-            {/* Decorative elements */}
-            <div className="absolute inset-0 moroccan-pattern opacity-10" />
-            <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/5 rounded-full" />
-            
-            <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-sm mb-8">
-                <Compass className="h-4 w-4 animate-pulse" />
-                <span className="tracking-wider">Start Your Journey Today</span>
-              </div>
-              
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-serif text-shadow-hero">
-                Ready for Your Moroccan Adventure?
-              </h2>
-              <p className="text-white/90 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
-                Contact us today and let's plan your perfect trip to Morocco. 
-                Custom itineraries available for any budget.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  onClick={handleWhatsApp}
-                  size="lg" 
-                  className="gap-2 bg-white text-primary hover:bg-white/95 rounded-full h-16 px-10 text-base font-semibold shadow-2xl hover:shadow-white/25 hover:scale-105 transition-all duration-300"
-                >
-                  <Phone className="h-5 w-5" />
-                  Chat on WhatsApp
-                </Button>
-                <Link to="/contact">
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="gap-2 border-2 border-white text-white hover:bg-white hover:text-primary rounded-full h-16 px-10 text-base font-semibold transition-all duration-300 group"
-                  >
-                    Contact Us
-                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
+      {/* CTA */}
+      <section className="relative py-32 px-8">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=1920"
+            alt="Morocco Desert"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gray-900/80" />
+        </div>
+        
+        <div className="relative z-10 max-w-3xl mx-auto text-center text-white">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-6">
+            Ready to Discover Morocco?
+          </h2>
+          <p className="text-xl text-white/80 mb-10">
+            Let us craft your perfect Moroccan adventure. Contact us today for a personalized itinerary.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              size="lg" 
+              onClick={handleWhatsApp}
+              className="h-14 px-10 text-base rounded-none bg-primary hover:bg-primary/90"
+            >
+              <Phone className="mr-2 h-5 w-5" />
+              WhatsApp Us
+            </Button>
+            <Link to="/contact">
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="h-14 px-10 text-base rounded-none border-2 border-white text-white hover:bg-white hover:text-gray-900"
+              >
+                Contact Form
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

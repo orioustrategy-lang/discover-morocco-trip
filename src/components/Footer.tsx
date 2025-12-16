@@ -1,106 +1,106 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Instagram, Star, Facebook } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook, ArrowRight } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-foreground text-background relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
-      <div className="absolute inset-0 moroccan-pattern opacity-[0.02]" />
-      
+    <footer className="bg-[#1a1a1a] text-white">
       {/* Main Footer */}
-      <div className="container mx-auto px-4 lg:px-8 py-20 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <Link to="/" className="inline-flex items-center mb-6 group">
-              <span className="text-3xl font-serif font-bold text-white group-hover:text-primary transition-colors duration-300">
-                Discover<span className="text-accent">Morocco</span>
-              </span>
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+          {/* Brand - Takes more space */}
+          <div className="lg:col-span-5">
+            <Link to="/" className="inline-flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-primary flex items-center justify-center">
+                <span className="font-serif font-bold text-xl text-white">D</span>
+              </div>
+              <div>
+                <span className="font-serif font-bold text-xl text-white">Discover</span>
+                <span className="font-light text-xl ml-1 text-white/80">Morocco</span>
+              </div>
             </Link>
-            <p className="text-background/70 mb-8 max-w-md leading-relaxed text-base">
+            <p className="text-white/60 max-w-sm leading-relaxed mb-8">
               Your trusted local partner for authentic Moroccan adventures. 
-              From the Sahara Desert to the Atlas Mountains, discover Morocco's magic with our expert guides.
+              From the Sahara Desert to the Atlas Mountains, we craft journeys that inspire.
             </p>
-            <div className="flex gap-4">
+            
+            {/* Social Links */}
+            <div className="flex gap-3">
               <a 
                 href="https://www.instagram.com/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-12 h-12 rounded-2xl bg-background/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110 hover:-rotate-3"
+                className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300"
               >
-                <Instagram className="h-5 w-5" />
+                <Instagram className="h-4 w-4" />
               </a>
               <a 
                 href="https://www.facebook.com/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-12 h-12 rounded-2xl bg-background/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-3"
+                className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300"
               >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a 
-                href="https://www.tripadvisor.com/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-12 h-12 rounded-2xl bg-background/10 flex items-center justify-center hover:bg-accent hover:text-foreground transition-all duration-300 hover:scale-110 hover:-rotate-3"
-              >
-                <Star className="h-5 w-5" />
+                <Facebook className="h-4 w-4" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold text-lg mb-6 font-serif text-white">Quick Links</h3>
+          <div className="lg:col-span-2">
+            <h3 className="font-semibold text-sm uppercase tracking-widest mb-6 text-white/40">Navigation</h3>
             <ul className="space-y-4">
-              <li>
-                <Link to="/" className="text-background/70 hover:text-primary transition-colors duration-300 flex items-center gap-2 group">
-                  <span className="w-0 group-hover:w-4 h-0.5 bg-primary transition-all duration-300" />
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/tours" className="text-background/70 hover:text-primary transition-colors duration-300 flex items-center gap-2 group">
-                  <span className="w-0 group-hover:w-4 h-0.5 bg-primary transition-all duration-300" />
-                  Tours
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-background/70 hover:text-primary transition-colors duration-300 flex items-center gap-2 group">
-                  <span className="w-0 group-hover:w-4 h-0.5 bg-primary transition-all duration-300" />
-                  Contact Us
-                </Link>
-              </li>
+              {[
+                { name: "Home", path: "/" },
+                { name: "Journeys", path: "/tours" },
+                { name: "Contact", path: "/contact" },
+              ].map((link) => (
+                <li key={link.path}>
+                  <Link 
+                    to={link.path} 
+                    className="text-white/60 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"
+                  >
+                    <ArrowRight className="h-3 w-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Tours */}
+          <div className="lg:col-span-2">
+            <h3 className="font-semibold text-sm uppercase tracking-widest mb-6 text-white/40">Experiences</h3>
+            <ul className="space-y-4">
+              {["Desert Tours", "Mountain Treks", "Cultural Visits", "Coastal Escapes"].map((item) => (
+                <li key={item}>
+                  <Link 
+                    to="/tours" 
+                    className="text-white/60 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"
+                  >
+                    <ArrowRight className="h-3 w-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact */}
-          <div>
-            <h3 className="font-semibold text-lg mb-6 font-serif text-white">Contact Us</h3>
-            <ul className="space-y-5">
-              <li className="flex items-start gap-4 group">
-                <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                  <Phone className="h-4 w-4 text-primary group-hover:text-white transition-colors" />
-                </div>
-                <div className="text-background/70 group-hover:text-background transition-colors pt-2">
-                  <p>+212 600 000 000</p>
-                </div>
+          <div className="lg:col-span-3">
+            <h3 className="font-semibold text-sm uppercase tracking-widest mb-6 text-white/40">Contact</h3>
+            <ul className="space-y-4">
+              <li className="flex items-center gap-4">
+                <Phone className="h-4 w-4 text-primary flex-shrink-0" />
+                <span className="text-white/60">+212 600 000 000</span>
               </li>
-              <li className="flex items-start gap-4 group">
-                <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                  <Mail className="h-4 w-4 text-primary group-hover:text-white transition-colors" />
-                </div>
-                <span className="text-background/70 group-hover:text-background transition-colors break-all pt-2">contact@discovermoroccotrip.com</span>
+              <li className="flex items-center gap-4">
+                <Mail className="h-4 w-4 text-primary flex-shrink-0" />
+                <span className="text-white/60 text-sm">contact@discovermoroccotrip.com</span>
               </li>
-              <li className="flex items-start gap-4 group">
-                <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                  <MapPin className="h-4 w-4 text-primary group-hover:text-white transition-colors" />
-                </div>
-                <span className="text-background/70 group-hover:text-background transition-colors pt-2">Morocco</span>
+              <li className="flex items-center gap-4">
+                <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
+                <span className="text-white/60">Morocco</span>
               </li>
             </ul>
           </div>
@@ -108,13 +108,13 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-background/10 relative z-10">
-        <div className="container mx-auto px-4 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-background/50">
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
             <p>&copy; {currentYear} Discover Morocco Trip. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-primary transition-colors duration-300">Privacy Policy</a>
-              <a href="#" className="hover:text-primary transition-colors duration-300">Terms of Service</a>
+              <a href="#" className="hover:text-primary transition-colors duration-300">Privacy</a>
+              <a href="#" className="hover:text-primary transition-colors duration-300">Terms</a>
             </div>
           </div>
         </div>

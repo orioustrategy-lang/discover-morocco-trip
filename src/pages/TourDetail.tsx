@@ -1,7 +1,7 @@
 import { useParams, Navigate, Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Phone, Clock, Users, MapPin, Star, Check, X, Plus, Minus, ChevronLeft, ChevronRight, ArrowLeft, Calendar, Shield, Heart, Share2 } from "lucide-react";
+import { Phone, Clock, Users, MapPin, Star, Check, X, Plus, Minus, ChevronLeft, ChevronRight, ArrowLeft, Shield, ArrowRight } from "lucide-react";
 import { getTourById, tours } from "@/data/tours";
 import TourCard from "@/components/TourCard";
 
@@ -9,8 +9,6 @@ const TourDetail = () => {
   const { id } = useParams();
   const [numberOfPeople, setNumberOfPeople] = useState(2);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [showAllImages, setShowAllImages] = useState(false);
-  const [isLiked, setIsLiked] = useState(false);
   
   const touchStartX = useRef<number>(0);
   const touchEndX = useRef<number>(0);
@@ -28,16 +26,6 @@ const TourDetail = () => {
 
   const displayImages = tour.images && tour.images.length > 0 ? tour.images : (tour.image ? [tour.image] : []);
   const hasImages = displayImages.length > 0;
-
-  useEffect(() => {
-    if (displayImages.length <= 1 || showAllImages) return;
-    
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % displayImages.length);
-    }, 4000);
-    
-    return () => clearInterval(interval);
-  }, [displayImages.length, showAllImages]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -99,9 +87,9 @@ const TourDetail = () => {
       return tour.priceTiers.map(tier => {
         let label = '';
         if (tier.max !== undefined) {
-          label = tier.min === tier.max ? `${tier.min} person` : `${tier.min}-${tier.max} people`;
+          label = tier.min === tier.max ? `${tier.min}` : `${tier.min}-${tier.max}`;
         } else {
-          label = `${tier.min}+ people`;
+          label = `${tier.min}+`;
         }
         return { label, price: tier.price };
       });
@@ -109,11 +97,11 @@ const TourDetail = () => {
       const match = tour.price.match(/(\d+)/);
       const basePrice = match ? parseInt(match[1]) : 50;
       return [
-        { label: '1 person', price: Math.round(basePrice * 1.5) },
-        { label: '2 people', price: basePrice },
-        { label: '3-4 people', price: Math.round(basePrice * 0.9) },
-        { label: '5-7 people', price: Math.round(basePrice * 0.8) },
-        { label: '8+ people', price: Math.round(basePrice * 0.7) },
+        { label: '1', price: Math.round(basePrice * 1.5) },
+        { label: '2', price: basePrice },
+        { label: '3-4', price: Math.round(basePrice * 0.9) },
+        { label: '5-7', price: Math.round(basePrice * 0.8) },
+        { label: '8+', price: Math.round(basePrice * 0.7) },
       ];
     }
   };
@@ -127,49 +115,15 @@ const TourDetail = () => {
     );
   };
 
-  const handleShare = async () => {
-    if (navigator.share) {
-      await navigator.share({
-        title: tour.title,
-        text: tour.description,
-        url: window.location.href,
-      });
-    } else {
-      navigator.clipboard.writeText(window.location.href);
-    }
-  };
-
   const incrementPeople = () => setNumberOfPeople(prev => Math.min(prev + 1, 20));
   const decrementPeople = () => setNumberOfPeople(prev => Math.max(prev - 1, 1));
 
   return (
-    <div className="min-h-screen pt-20 bg-background">
-      {/* Breadcrumb */}
-      <div className="container mx-auto px-4 lg:px-8 py-4">
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Link to="/" className="hover:text-primary transition-colors">Home</Link>
-          <span>/</span>
-          <Link to="/tours" className="hover:text-primary transition-colors">Tours</Link>
-          <span>/</span>
-          <span className="text-foreground line-clamp-1">{tour.title}</span>
-        </div>
-      </div>
-
-      {/* Back Button */}
-      <div className="container mx-auto px-4 lg:px-8 mb-6">
-        <Link 
-          to="/tours"
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          <span>Back to Tours</span>
-        </Link>
-      </div>
-
-      {/* Image Gallery */}
-      <section className="container mx-auto px-4 lg:px-8 mb-8">
+    <div className="min-h-screen bg-[#faf9f7]">
+      {/* Hero Image */}
+      <section className="relative h-[60vh] lg:h-[70vh]">
         <div 
-          className="relative aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden bg-muted"
+          className="absolute inset-0"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -186,140 +140,156 @@ const TourDetail = () => {
                   }`}
                 />
               ))}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </>
           ) : (
-            <div className="w-full h-full flex items-center justify-center">
-              <span className="text-6xl">🏔</span>
+            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+              <span className="text-8xl">🏔</span>
             </div>
           )}
-          
-          {/* Navigation arrows */}
-          {displayImages.length > 1 && (
-            <>
-              <button
-                onClick={() => setCurrentImageIndex((prev) => (prev - 1 + displayImages.length) % displayImages.length)}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-foreground rounded-full p-3 shadow-lg transition-all z-10"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              <button
-                onClick={() => setCurrentImageIndex((prev) => (prev + 1) % displayImages.length)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-foreground rounded-full p-3 shadow-lg transition-all z-10"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </button>
-              
-              {/* Image indicators */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                {displayImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`h-2 rounded-full transition-all ${
-                      index === currentImageIndex ? "w-8 bg-white" : "w-2 bg-white/60"
-                    }`}
-                  />
-                ))}
-              </div>
-            </>
-          )}
-          
-          {/* Action buttons */}
-          <div className="absolute top-4 right-4 flex gap-2 z-10">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+        </div>
+        
+        {/* Back Button */}
+        <Link 
+          to="/tours"
+          className="absolute top-28 left-8 lg:left-16 z-10 flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+        >
+          <ArrowLeft className="h-5 w-5" />
+          <span className="text-sm font-medium">Back to Tours</span>
+        </Link>
+        
+        {/* Image Navigation */}
+        {displayImages.length > 1 && (
+          <>
             <button
-              onClick={() => setIsLiked(!isLiked)}
-              className={`p-3 rounded-full shadow-lg transition-all ${
-                isLiked ? "bg-red-500 text-white" : "bg-white/90 text-foreground hover:bg-white"
-              }`}
+              onClick={() => setCurrentImageIndex((prev) => (prev - 1 + displayImages.length) % displayImages.length)}
+              className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 backdrop-blur-sm transition-all z-10"
             >
-              <Heart className={`h-5 w-5 ${isLiked ? "fill-current" : ""}`} />
+              <ChevronLeft className="h-6 w-6" />
             </button>
             <button
-              onClick={handleShare}
-              className="p-3 rounded-full bg-white/90 text-foreground hover:bg-white shadow-lg transition-all"
+              onClick={() => setCurrentImageIndex((prev) => (prev + 1) % displayImages.length)}
+              className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 backdrop-blur-sm transition-all z-10"
             >
-              <Share2 className="h-5 w-5" />
+              <ChevronRight className="h-6 w-6" />
             </button>
+            
+            {/* Dots */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              {displayImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImageIndex(index)}
+                  className={`h-2 transition-all ${
+                    index === currentImageIndex ? "w-8 bg-white" : "w-2 bg-white/50"
+                  }`}
+                />
+              ))}
+            </div>
+          </>
+        )}
+        
+        {/* Title Overlay */}
+        <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-16">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center gap-4 mb-4">
+              <span className="px-3 py-1 bg-primary text-white text-sm font-medium uppercase tracking-wider">
+                {tour.category}
+              </span>
+              {tour.rating && (
+                <div className="flex items-center gap-1 text-white">
+                  <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
+                  <span className="font-semibold">{tour.rating}</span>
+                  <span className="text-white/70">({tour.reviews} reviews)</span>
+                </div>
+              )}
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-serif">
+              {tour.title}
+            </h1>
           </div>
         </div>
       </section>
 
       {/* Content */}
-      <section className="container mx-auto px-4 lg:px-8 pb-20">
+      <section className="max-w-7xl mx-auto px-8 lg:px-16 py-16">
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Main Content */}
-          <div className="lg:col-span-2 space-y-10">
-            {/* Title and Meta */}
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-4 font-serif">{tour.title}</h1>
-              
-              <div className="flex flex-wrap items-center gap-4 text-sm">
-                {tour.rating && tour.reviews && (
-                  <div className="flex items-center gap-1.5 text-foreground">
-                    <Star className="h-5 w-5 fill-accent text-accent" />
-                    <span className="font-semibold">{tour.rating}</span>
-                    <span className="text-muted-foreground">({tour.reviews} reviews)</span>
-                  </div>
-                )}
-                <div className="flex items-center gap-1.5 text-muted-foreground">
-                  <Clock className="h-4 w-4" />
-                  <span>{tour.duration}</span>
+          <div className="lg:col-span-2 space-y-12">
+            {/* Quick Info */}
+            <div className="flex flex-wrap gap-6 pb-8 border-b border-gray-200">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
+                  <Clock className="h-5 w-5 text-primary" />
                 </div>
-                <div className="flex items-center gap-1.5 text-muted-foreground">
-                  <Users className="h-4 w-4" />
-                  <span>{tour.groupSize}</span>
+                <div>
+                  <div className="text-sm text-gray-500">Duration</div>
+                  <div className="font-semibold text-gray-900">{tour.duration}</div>
                 </div>
-                <div className="flex items-center gap-1.5 text-muted-foreground">
-                  <MapPin className="h-4 w-4" />
-                  <span>Morocco</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
+                  <Users className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <div className="text-sm text-gray-500">Group Size</div>
+                  <div className="font-semibold text-gray-900">{tour.groupSize}</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
+                  <MapPin className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <div className="text-sm text-gray-500">Location</div>
+                  <div className="font-semibold text-gray-900">Morocco</div>
                 </div>
               </div>
             </div>
 
             {/* Description */}
             <div>
-              <h2 className="text-xl font-semibold mb-4 font-serif">About This Tour</h2>
-              <p className="text-muted-foreground leading-relaxed">{tour.description}</p>
+              <h2 className="text-2xl font-bold text-gray-900 font-serif mb-4">About This Journey</h2>
+              <p className="text-gray-600 leading-relaxed text-lg">{tour.description}</p>
             </div>
 
             {/* Highlights */}
             <div>
-              <h2 className="text-xl font-semibold mb-4 font-serif">Highlights</h2>
-              <ul className="grid gap-3">
+              <h2 className="text-2xl font-bold text-gray-900 font-serif mb-6">Highlights</h2>
+              <div className="grid md:grid-cols-2 gap-4">
                 {tour.highlights.map((highlight, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="h-3.5 w-3.5 text-primary" />
+                  <div key={index} className="flex items-start gap-3 p-4 bg-white border border-gray-100">
+                    <div className="w-6 h-6 bg-primary flex items-center justify-center flex-shrink-0">
+                      <Check className="h-4 w-4 text-white" />
                     </div>
-                    <span className="text-muted-foreground">{highlight}</span>
-                  </li>
+                    <span className="text-gray-700">{highlight}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
 
-            {/* What's Included */}
+            {/* Included / Not Included */}
             <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-xl font-semibold mb-4 font-serif">What's Included</h2>
-                <ul className="space-y-3">
+              <div className="bg-white border border-gray-100 p-6">
+                <h3 className="text-xl font-bold text-gray-900 font-serif mb-6">What's Included</h3>
+                <ul className="space-y-4">
                   {tour.included.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground text-sm">{item}</span>
+                      <span className="text-gray-600">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               
               {tour.notIncluded && tour.notIncluded.length > 0 && (
-                <div>
-                  <h2 className="text-xl font-semibold mb-4 font-serif">Not Included</h2>
-                  <ul className="space-y-3">
+                <div className="bg-white border border-gray-100 p-6">
+                  <h3 className="text-xl font-bold text-gray-900 font-serif mb-6">Not Included</h3>
+                  <ul className="space-y-4">
                     {tour.notIncluded.map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <X className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                        <span className="text-muted-foreground text-sm">{item}</span>
+                        <X className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -327,16 +297,15 @@ const TourDetail = () => {
               )}
             </div>
 
-            {/* Pricing Tiers */}
+            {/* Pricing Table */}
             <div>
-              <h2 className="text-xl font-semibold mb-4 font-serif">Group Pricing</h2>
-              <div className="bg-muted/50 rounded-2xl p-6">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+              <h2 className="text-2xl font-bold text-gray-900 font-serif mb-6">Group Pricing</h2>
+              <div className="bg-white border border-gray-100 p-6">
+                <div className="grid grid-cols-5 gap-4">
                   {pricingTiers.map((tier, index) => (
-                    <div key={index} className="text-center p-3 rounded-xl bg-background">
-                      <p className="text-sm text-muted-foreground mb-1">{tier.label}</p>
-                      <p className="text-lg font-bold text-primary">€{tier.price}</p>
-                      <p className="text-xs text-muted-foreground">per person</p>
+                    <div key={index} className="text-center">
+                      <div className="text-sm text-gray-500 mb-2">{tier.label} pax</div>
+                      <div className="text-xl font-bold text-primary">€{tier.price}</div>
                     </div>
                   ))}
                 </div>
@@ -344,88 +313,87 @@ const TourDetail = () => {
             </div>
           </div>
 
-          {/* Booking Card */}
+          {/* Booking Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24 bg-card rounded-2xl border border-border/50 p-6 shadow-lg">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <span className="text-3xl font-bold text-primary">€{pricePerPerson}</span>
-                  <span className="text-muted-foreground"> / person</span>
-                </div>
-                <div className="flex items-center gap-1 px-3 py-1 bg-primary/10 rounded-full">
-                  <Star className="h-4 w-4 fill-accent text-accent" />
-                  <span className="font-semibold text-sm">{tour.rating}</span>
+            <div className="sticky top-28 bg-white border border-gray-200 p-8">
+              <div className="mb-6">
+                <div className="text-sm text-gray-500 mb-1">From</div>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-bold text-primary">€{pricePerPerson}</span>
+                  <span className="text-gray-500">/ person</span>
                 </div>
               </div>
               
-              {/* People selector */}
+              {/* People Selector */}
               <div className="mb-6">
-                <label className="block text-sm font-medium mb-3">Number of Travelers</label>
-                <div className="flex items-center justify-between bg-muted/50 rounded-xl p-2">
+                <label className="block text-sm font-medium text-gray-700 mb-3">Travelers</label>
+                <div className="flex items-center justify-between border border-gray-200 p-3">
                   <button
                     onClick={decrementPeople}
                     disabled={numberOfPeople <= 1}
-                    className="w-10 h-10 rounded-lg bg-background flex items-center justify-center hover:bg-muted transition-colors disabled:opacity-50"
+                    className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition-colors disabled:opacity-30"
                   >
-                    <Minus className="h-4 w-4" />
+                    <Minus className="h-5 w-5" />
                   </button>
-                  <div className="text-center">
-                    <span className="text-2xl font-bold">{numberOfPeople}</span>
-                    <span className="text-muted-foreground text-sm ml-1">people</span>
-                  </div>
+                  <span className="text-2xl font-bold">{numberOfPeople}</span>
                   <button
                     onClick={incrementPeople}
                     disabled={numberOfPeople >= 20}
-                    className="w-10 h-10 rounded-lg bg-background flex items-center justify-center hover:bg-muted transition-colors disabled:opacity-50"
+                    className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition-colors disabled:opacity-30"
                   >
-                    <Plus className="h-4 w-4" />
+                    <Plus className="h-5 w-5" />
                   </button>
                 </div>
               </div>
               
               {/* Total */}
-              <div className="flex items-center justify-between py-4 border-t border-b border-border mb-6">
-                <span className="font-medium">Total Price</span>
-                <span className="text-2xl font-bold text-primary">€{totalPrice}</span>
+              <div className="flex items-center justify-between py-4 border-t border-b border-gray-200 mb-6">
+                <span className="font-medium text-gray-700">Total</span>
+                <span className="text-2xl font-bold text-gray-900">€{totalPrice}</span>
               </div>
               
               {/* Book Button */}
               <Button 
                 onClick={handleWhatsApp}
-                className="w-full h-12 rounded-xl gap-2 text-base"
+                className="w-full h-14 rounded-none bg-primary hover:bg-primary/90 text-base"
                 size="lg"
               >
-                <Phone className="h-5 w-5" />
-                Book via WhatsApp
+                <Phone className="h-5 w-5 mr-2" />
+                Book Now
               </Button>
               
-              {/* Trust badges */}
-              <div className="mt-6 pt-6 border-t border-border">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+              {/* Trust */}
+              <div className="mt-6 pt-6 border-t border-gray-200 space-y-3">
+                <div className="flex items-center gap-3 text-sm text-gray-600">
                   <Shield className="h-4 w-4 text-primary" />
-                  <span>Free cancellation up to 24 hours</span>
+                  <span>Free cancellation up to 48h</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Calendar className="h-4 w-4 text-primary" />
-                  <span>Flexible booking dates</span>
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <Check className="h-4 w-4 text-primary" />
+                  <span>Instant confirmation</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Related Tours */}
-        {relatedTours.length > 0 && (
-          <div className="mt-20">
-            <h2 className="text-2xl font-bold mb-8 font-serif">You Might Also Like</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {relatedTours.map((relatedTour) => (
-                <TourCard key={relatedTour.id} {...relatedTour} />
-              ))}
-            </div>
-          </div>
-        )}
       </section>
+
+      {/* Related Tours */}
+      {relatedTours.length > 0 && (
+        <section className="max-w-7xl mx-auto px-8 lg:px-16 py-16 border-t border-gray-200">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 font-serif">Similar Journeys</h2>
+            <Link to="/tours" className="flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all">
+              View All <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {relatedTours.map((relatedTour) => (
+              <TourCard key={relatedTour.id} {...relatedTour} />
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 };
