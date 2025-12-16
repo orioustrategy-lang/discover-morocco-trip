@@ -92,38 +92,39 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-full bg-white border-t shadow-xl">
-            <div className="py-6 px-8 space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`block py-3 text-lg font-medium ${
-                    location.pathname === link.path
-                      ? "text-primary"
-                      : "text-gray-600"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <Button 
-                onClick={() => {
-                  handleWhatsApp();
-                  setIsOpen(false);
-                }}
-                className="w-full h-14 mt-4 rounded-none bg-primary hover:bg-primary/90"
-              >
-                <Phone className="mr-2 h-5 w-5" />
-                Book Now
-              </Button>
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Mobile Menu - Outside the container for proper positioning */}
+      {isOpen && (
+        <div className="lg:hidden absolute left-0 right-0 top-full bg-white border-t shadow-xl z-50">
+          <div className="py-6 px-8 space-y-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={`block py-3 text-lg font-medium ${
+                  location.pathname === link.path
+                    ? "text-primary"
+                    : "text-gray-600"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <Button 
+              onClick={() => {
+                handleWhatsApp();
+                setIsOpen(false);
+              }}
+              className="w-full h-14 mt-4 rounded-none bg-primary hover:bg-primary/90"
+            >
+              <Phone className="mr-2 h-5 w-5" />
+              Book Now
+            </Button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
