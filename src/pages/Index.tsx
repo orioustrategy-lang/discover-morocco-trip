@@ -19,12 +19,12 @@ const Index = () => {
   ].filter(Boolean).slice(0, 6);
 
   const destinations = [
-    { name: "Fes", image: "https://images.unsplash.com/photo-1548017871-6bc6dd93ea9a?w=600&q=80", tours: 8 },
-    { name: "Sahara Desert", image: "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?w=600&q=80", tours: 12 },
-    { name: "Chefchaouen", image: "https://images.unsplash.com/photo-1560095633-6803d6f4de2c?w=600&q=80", tours: 5 },
-    { name: "Atlas Mountains", image: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=600&q=80", tours: 7 },
-    { name: "Essaouira", image: "https://images.unsplash.com/photo-1528657249085-893fe000cbe5?w=600&q=80", tours: 4 },
-    { name: "Marrakech", image: "https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=600&q=80", tours: 10 },
+    { name: "Fes", image: "https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=600&q=80", tours: 8 },
+    { name: "Sahara Desert", image: "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=600&q=80", tours: 12 },
+    { name: "Chefchaouen", image: "https://images.unsplash.com/photo-1553244438-2e818a1dd4fb?w=600&q=80", tours: 5 },
+    { name: "Atlas Mountains", image: "https://images.unsplash.com/photo-1548017871-6bc6dd93ea9a?w=600&q=80", tours: 7 },
+    { name: "Essaouira", image: "https://images.unsplash.com/photo-1565689534933-99e87d0948a5?w=600&q=80", tours: 4 },
+    { name: "Marrakech", image: "https://images.unsplash.com/photo-1518544866330-4e716499f800?w=600&q=80", tours: 10 },
   ];
 
   const testimonials = [
@@ -114,7 +114,7 @@ const Index = () => {
         {/* Right Image */}
         <div className="relative order-1 lg:order-2 min-h-[40vh] sm:min-h-[50vh] lg:min-h-screen">
           <img
-            src="https://images.unsplash.com/photo-1548017871-6bc6dd93ea9a?w=1200&q=80"
+            src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=1200&q=80"
             alt="Morocco Architecture"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -249,7 +249,7 @@ const Index = () => {
             
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=800&q=80"
+                src="https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=800&q=80"
                 alt="Morocco Guide"
                 className="w-full aspect-[4/5] object-cover"
               />
@@ -298,7 +298,7 @@ const Index = () => {
       <section className="relative py-20 sm:py-32 px-5 sm:px-8">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?w=1920&q=80"
+            src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=1920&q=80"
             alt="Morocco Desert"
             className="w-full h-full object-cover"
           />

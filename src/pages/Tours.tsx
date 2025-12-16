@@ -47,7 +47,7 @@ const Tours = () => {
             <div className="relative hidden lg:block">
               <div className="absolute -top-8 -right-8 w-64 h-64 bg-primary/10" />
               <img 
-                src="https://images.unsplash.com/photo-1548017871-6bc6dd93ea9a?w=600&q=80"
+                src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=600&q=80"
                 alt="Morocco"
                 className="relative z-10 w-full aspect-[4/3] object-cover"
               />

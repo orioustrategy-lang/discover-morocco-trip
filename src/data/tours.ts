@@ -31,11 +31,11 @@ export const tours: Tour[] = [
     id: "4-day-imperial-cities",
     title: "4-Day Imperial Cities Grand Tour",
     category: "multi-day",
-    image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800",
+    image: "https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800",
-      "https://images.unsplash.com/photo-1545347980-79e5c840c62c?w=800",
-      "https://images.unsplash.com/photo-1570303278224-4c4e7a5b1d3f?w=800"
+      "https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=800&q=80",
+      "https://images.unsplash.com/photo-1553244438-2e818a1dd4fb?w=800&q=80",
+      "https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=800&q=80"
     ],
     duration: "4 days",
     groupSize: "2-12 people",
@@ -79,11 +79,11 @@ export const tours: Tour[] = [
     id: "5-day-desert-atlantic",
     title: "5-Day Desert to Atlantic Adventure",
     category: "multi-day",
-    image: "https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=800",
+    image: "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=800",
-      "https://images.unsplash.com/photo-1507501336603-6e31db2be093?w=800",
-      "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800"
+      "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=800&q=80",
+      "https://images.unsplash.com/photo-1542401886-65d6c61db217?w=800&q=80",
+      "https://images.unsplash.com/photo-1565689534933-99e87d0948a5?w=800&q=80"
     ],
     duration: "5 days",
     groupSize: "2-10 people",
@@ -122,10 +122,10 @@ export const tours: Tour[] = [
     id: "northern-morocco-escape",
     title: "3-Day Northern Morocco Escape",
     category: "multi-day",
-    image: "https://images.unsplash.com/photo-1553522991-71439aa49cc4?w=800",
+    image: "https://images.unsplash.com/photo-1553244438-2e818a1dd4fb?w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1553522991-71439aa49cc4?w=800",
-      "https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=800"
+      "https://images.unsplash.com/photo-1553244438-2e818a1dd4fb?w=800&q=80",
+      "https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=800&q=80"
     ],
     duration: "3 days",
     groupSize: "2-8 people",
@@ -163,10 +163,10 @@ export const tours: Tour[] = [
     id: "essaouira-coastal-day",
     title: "Essaouira Coastal Discovery",
     category: "coastal",
-    image: "https://images.unsplash.com/photo-1507501336603-6e31db2be093?w=800",
+    image: "https://images.unsplash.com/photo-1565689534933-99e87d0948a5?w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1507501336603-6e31db2be093?w=800",
-      "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800"
+      "https://images.unsplash.com/photo-1565689534933-99e87d0948a5?w=800&q=80",
+      "https://images.unsplash.com/photo-1542401886-65d6c61db217?w=800&q=80"
     ],
     duration: "Full day",
     groupSize: "2-15 people",
@@ -202,9 +202,9 @@ export const tours: Tour[] = [
     id: "agadir-beach-tour",
     title: "Agadir Beach & Souk Experience",
     category: "coastal",
-    image: "https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=800",
+    image: "https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=800"
+      "https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?w=800&q=80"
     ],
     duration: "Full day",
     groupSize: "2-12 people",
@@ -241,10 +241,10 @@ export const tours: Tour[] = [
     id: "atlas-mountains-trek",
     title: "2-Day Atlas Mountains Trek",
     category: "mountain",
-    image: "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=800",
+    image: "https://images.unsplash.com/photo-1548017871-6bc6dd93ea9a?w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=800",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800"
+      "https://images.unsplash.com/photo-1548017871-6bc6dd93ea9a?w=800&q=80",
+      "https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=800&q=80"
     ],
     duration: "2 days",
     groupSize: "2-10 people",
@@ -281,9 +281,9 @@ export const tours: Tour[] = [
     id: "toubkal-summit-challenge",
     title: "Mount Toubkal Summit Challenge",
     category: "mountain",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+    image: "https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800"
+      "https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=800&q=80"
     ],
     duration: "3 days",
     groupSize: "2-8 people",
@@ -322,10 +322,10 @@ export const tours: Tour[] = [
     id: "fes-cultural-immersion",
     title: "Fes Medina Cultural Immersion",
     category: "cultural",
-    image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800",
+    image: "https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800",
-      "https://images.unsplash.com/photo-1545347980-79e5c840c62c?w=800"
+      "https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=800&q=80",
+      "https://images.unsplash.com/photo-1558370781-d6196949e317?w=800&q=80"
     ],
     duration: "Full day",
     groupSize: "2-10 people",
@@ -362,9 +362,9 @@ export const tours: Tour[] = [
     id: "moroccan-cooking-class",
     title: "Authentic Moroccan Cooking Experience",
     category: "cultural",
-    image: "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=800",
+    image: "https://images.unsplash.com/photo-1547637589-f54c34f5d7a4?w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=800"
+      "https://images.unsplash.com/photo-1547637589-f54c34f5d7a4?w=800&q=80"
     ],
     duration: "5 hours",
     groupSize: "2-8 people",
@@ -400,9 +400,9 @@ export const tours: Tour[] = [
     id: "berber-village-experience",
     title: "Authentic Berber Village Day",
     category: "cultural",
-    image: "https://images.unsplash.com/photo-1549924231-f129b911e442?w=800",
+    image: "https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1549924231-f129b911e442?w=800"
+      "https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=800&q=80"
     ],
     duration: "Full day",
     groupSize: "2-10 people",
@@ -439,10 +439,10 @@ export const tours: Tour[] = [
     id: "merzouga-luxury-camp",
     title: "2-Day Merzouga Luxury Desert Camp",
     category: "desert",
-    image: "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=800",
+    image: "https://images.unsplash.com/photo-1542401886-65d6c61db217?w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=800",
-      "https://images.unsplash.com/photo-1455091834027-b4ddc96c0a9a?w=800"
+      "https://images.unsplash.com/photo-1542401886-65d6c61db217?w=800&q=80",
+      "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=800&q=80"
     ],
     duration: "2 days",
     groupSize: "2-12 people",
@@ -480,9 +480,9 @@ export const tours: Tour[] = [
     id: "sahara-stargazing",
     title: "Sahara Stargazing Night Experience",
     category: "desert",
-    image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800",
+    image: "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800"
+      "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&q=80"
     ],
     duration: "1 night",
     groupSize: "2-8 people",
