@@ -94,37 +94,41 @@ const Navbar = () => {
 
       </div>
 
-      {/* Mobile Menu - Fixed full screen overlay */}
-      {isOpen && (
-        <div className="lg:hidden fixed inset-0 top-[58px] bg-white z-[100] overflow-y-auto">
-          <div className="py-6 px-8 space-y-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={`block py-3 text-lg font-medium ${
-                  location.pathname === link.path
-                    ? "text-primary"
-                    : "text-gray-600"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+      {/* Mobile Menu - Dropdown below header */}
+      <div 
+        className={`lg:hidden absolute top-full left-0 right-0 bg-white border-t shadow-xl transition-all duration-300 ${
+          isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+        }`}
+      >
+        <div className="py-6 px-6 space-y-2">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              onClick={() => setIsOpen(false)}
+              className={`block py-4 px-4 text-lg font-medium transition-colors ${
+                location.pathname === link.path
+                  ? "text-primary bg-primary/5"
+                  : "text-gray-600 hover:bg-gray-50"
+              }`}
+            >
+              {link.name}
+            </Link>
+          ))}
+          <div className="pt-4 mt-2 border-t border-gray-100">
             <Button 
               onClick={() => {
                 handleWhatsApp();
                 setIsOpen(false);
               }}
-              className="w-full h-14 mt-4 rounded-none bg-primary hover:bg-primary/90"
+              className="w-full h-14 rounded-none bg-primary hover:bg-primary/90"
             >
               <Phone className="mr-2 h-5 w-5" />
               Book Now
             </Button>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
