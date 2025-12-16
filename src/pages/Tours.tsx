@@ -9,11 +9,11 @@ const Tours = () => {
 
   const categories = [
     { id: "all", label: "All Tours" },
-    { id: "desert", label: "Desert Tours" },
-    { id: "day-trip", label: "Day Trips" },
-    { id: "activity", label: "Activities" },
-    { id: "cultural", label: "Cultural" },
     { id: "multi-day", label: "Multi-Day" },
+    { id: "desert", label: "Desert" },
+    { id: "mountain", label: "Mountain" },
+    { id: "coastal", label: "Coastal" },
+    { id: "cultural", label: "Cultural" },
   ];
 
   const filteredTours = tours.filter(tour => {

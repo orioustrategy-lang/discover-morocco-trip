@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Phone, Star, Users, Shield, Clock, Award, ArrowRight, MapPin, Compass, Mountain, Sun, Tent } from "lucide-react";
+import { Phone, Star, Users, Shield, Clock, Award, ArrowRight, MapPin, Compass, Mountain, Sun, Waves } from "lucide-react";
 import TourCard from "@/components/TourCard";
 import { tours } from "@/data/tours";
 
@@ -11,38 +11,38 @@ const Index = () => {
 
   // Get featured tours
   const featuredTours = [
-    tours.find(t => t.id === "3-day-sahara-desert"),
-    tours.find(t => t.id === "atlas-mountains-valleys"),
-    tours.find(t => t.id === "agafay-desert-sunset"),
-    tours.find(t => t.id === "essaouira-day-trip"),
-    tours.find(t => t.id === "marrakech-city-tour"),
-    tours.find(t => t.id === "5-day-imperial-cities"),
+    tours.find(t => t.id === "4-day-imperial-cities"),
+    tours.find(t => t.id === "5-day-desert-atlantic"),
+    tours.find(t => t.id === "fes-cultural-immersion"),
+    tours.find(t => t.id === "merzouga-luxury-camp"),
+    tours.find(t => t.id === "atlas-mountains-trek"),
+    tours.find(t => t.id === "essaouira-coastal-day"),
   ].filter(Boolean).slice(0, 6);
 
   const reviews = [
     {
-      name: "Emily Thompson",
-      country: "Canada",
+      name: "James Wilson",
+      country: "United Kingdom",
       rating: 5,
-      text: "The Sahara desert tour was absolutely magical! Sleeping under the stars in the desert camp was a once-in-a-lifetime experience.",
-      tour: "3-Day Sahara Desert",
-      avatar: "E",
+      text: "The Imperial Cities tour was incredible! Fes blew my mind - the medina, the tanneries, everything was perfectly organized.",
+      tour: "Imperial Cities Tour",
+      avatar: "J",
     },
     {
-      name: "Thomas Mueller",
-      country: "Germany",
+      name: "Anna Bergström",
+      country: "Sweden",
       rating: 5,
-      text: "Professional team, excellent organization. The Atlas Mountains trip exceeded all expectations. Highly recommended!",
-      tour: "Atlas Mountains Tour",
-      avatar: "T",
+      text: "From the Sahara desert to the Atlantic coast in 5 days - what an adventure! The luxury desert camp was beyond expectations.",
+      tour: "Desert to Atlantic",
+      avatar: "A",
     },
     {
-      name: "Sophie Laurent",
-      country: "France",
+      name: "Marco Rossi",
+      country: "Italy",
       rating: 5,
-      text: "An authentic Moroccan experience! Our guide was knowledgeable and passionate. The cooking class was a highlight.",
-      tour: "Cooking Class",
-      avatar: "S",
+      text: "Climbing Mount Toubkal was a life-changing experience. The guide was professional and the views were breathtaking!",
+      tour: "Toubkal Summit",
+      avatar: "M",
     },
   ];
 
@@ -70,17 +70,17 @@ const Index = () => {
   ];
 
   const stats = [
-    { value: "8+", label: "Years Experience" },
-    { value: "15K+", label: "Happy Travelers" },
-    { value: "60+", label: "Unique Tours" },
+    { value: "10+", label: "Years Experience" },
+    { value: "20K+", label: "Happy Travelers" },
+    { value: "50+", label: "Unique Tours" },
     { value: "4.9", label: "Average Rating" },
   ];
 
   const categories = [
-    { icon: Tent, title: "Desert Tours", description: "Sahara adventures & camping", link: "/tours?category=desert" },
-    { icon: Mountain, title: "Day Trips", description: "Mountains, valleys & waterfalls", link: "/tours?category=day-trip" },
-    { icon: Sun, title: "Activities", description: "Quad biking, balloons & more", link: "/tours?category=activity" },
-    { icon: Compass, title: "Multi-Day", description: "Complete Morocco discovery", link: "/tours?category=multi-day" },
+    { icon: Compass, title: "Multi-Day Tours", description: "Epic Morocco adventures", link: "/tours?category=multi-day" },
+    { icon: Mountain, title: "Mountain Treks", description: "Atlas peaks & valleys", link: "/tours?category=mountain" },
+    { icon: Sun, title: "Desert Experiences", description: "Sahara camps & camel treks", link: "/tours?category=desert" },
+    { icon: Waves, title: "Coastal Escapes", description: "Atlantic beaches & ports", link: "/tours?category=coastal" },
   ];
 
   return (
@@ -235,10 +235,10 @@ const Index = () => {
                 <span className="text-gradient">Authentic Morocco</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                <strong className="text-foreground">Discover Morocco Trip</strong> is your trusted partner for unforgettable Moroccan adventures. With over 8 years of experience, we specialize in creating personalized journeys that showcase the true essence of Morocco.
+                <strong className="text-foreground">Discover Morocco Trip</strong> offers transformative travel experiences across the entire Kingdom. With a decade of expertise, we craft bespoke journeys from the imperial cities of Fes and Rabat to the endless Sahara dunes.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Our team of passionate local guides brings deep cultural knowledge and authentic experiences to every tour. From the golden dunes of the Sahara to the vibrant streets of Marrakech, we'll help you discover Morocco's hidden treasures.
+                Unlike typical tour operators, we go beyond the surface. Our Morocco-born guides connect you with real communities, secret viewpoints, and experiences you won't find in any guidebook. From northern mountains to southern deserts, we reveal Morocco's soul.
               </p>
               
               {/* Trust badges */}
@@ -253,7 +253,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center gap-2 px-5 py-3 bg-background rounded-full border border-border/50 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300 cursor-default">
                   <MapPin className="h-5 w-5 text-primary" />
-                  <span className="text-sm font-medium">Local Experts</span>
+                  <span className="text-sm font-medium">Nationwide Coverage</span>
                 </div>
               </div>
               

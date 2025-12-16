@@ -9,7 +9,7 @@ export interface PriceTier {
 export interface Tour {
   id: string;
   title: string;
-  category: "activity" | "day-trip" | "multi-day" | "desert" | "cultural";
+  category: "activity" | "day-trip" | "multi-day" | "desert" | "cultural" | "coastal" | "mountain";
   image?: string;
   images?: string[];
   duration: string;
@@ -26,93 +26,147 @@ export interface Tour {
 }
 
 export const tours: Tour[] = [
-  // DESERT TOURS
+  // MULTI-DAY TOURS
   {
-    id: "3-day-sahara-desert",
-    title: "3-Day Sahara Desert Adventure from Marrakech",
-    category: "desert",
-    image: "https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=800",
+    id: "4-day-imperial-cities",
+    title: "4-Day Imperial Cities Grand Tour",
+    category: "multi-day",
+    image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800",
     images: [
-      "https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=800",
-      "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=800",
-      "https://images.unsplash.com/photo-1455091834027-b4ddc96c0a9a?w=800"
+      "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800",
+      "https://images.unsplash.com/photo-1545347980-79e5c840c62c?w=800",
+      "https://images.unsplash.com/photo-1570303278224-4c4e7a5b1d3f?w=800"
     ],
-    duration: "3 days",
-    groupSize: "2-15 people",
-    price: "From 180€",
+    duration: "4 days",
+    groupSize: "2-12 people",
+    price: "From 320€",
     priceTiers: [
-      { min: 1, max: 1, price: 250 },
-      { min: 2, max: 4, price: 200 },
-      { min: 5, price: 180 }
+      { min: 1, max: 1, price: 420 },
+      { min: 2, max: 4, price: 380 },
+      { min: 5, price: 320 }
     ],
     rating: 4.9,
-    reviews: 420,
-    description: "Experience the magic of the Sahara Desert with an unforgettable 3-day journey from Marrakech to Merzouga. Ride camels through golden dunes, sleep under the stars in a traditional desert camp, and witness breathtaking sunrises.",
+    reviews: 156,
+    description: "Embark on an epic journey through Morocco's legendary imperial cities. From the ancient medinas of Fes to the blue streets of Chefchaouen, experience centuries of royal heritage and vibrant culture.",
     highlights: [
-      "Cross the High Atlas Mountains via Tizi n'Tichka Pass",
-      "Visit the UNESCO World Heritage site Ait Ben Haddou",
-      "Camel trek through Erg Chebbi dunes",
-      "Overnight in a luxury desert camp",
-      "Watch sunrise over the Sahara"
+      "Explore the world's oldest university in Fes",
+      "Wander the blue-painted streets of Chefchaouen",
+      "Discover the Roman ruins of Volubilis",
+      "Visit the historic capital Rabat",
+      "Experience traditional Moroccan hospitality"
     ],
     included: [
-      "Private air-conditioned transport",
-      "2 nights accommodation (1 hotel, 1 desert camp)",
-      "Breakfast and dinner daily",
-      "Professional English-speaking guide",
-      "Camel ride to and from camp",
-      "Berber music entertainment"
+      "Private air-conditioned 4x4 vehicle",
+      "3 nights in boutique riads",
+      "Daily breakfast and 2 dinners",
+      "Licensed English-speaking guide",
+      "All entrance fees to monuments",
+      "Airport/hotel pickup and drop-off"
     ],
     notIncluded: [
       "Lunches",
       "Tips and gratuities",
+      "Travel insurance"
+    ],
+    itinerary: [
+      "Day 1: Pickup - Drive to Rabat - Hassan Tower - Kasbah des Oudaias - Continue to Fes",
+      "Day 2: Full day exploring Fes medina - Tanneries - Al-Qarawiyyin Mosque - Bou Inania Madrasa",
+      "Day 3: Fes to Chefchaouen via Volubilis Roman ruins - Explore the Blue Pearl",
+      "Day 4: Chefchaouen morning walk - Return journey with scenic stops"
+    ]
+  },
+  {
+    id: "5-day-desert-atlantic",
+    title: "5-Day Desert to Atlantic Adventure",
+    category: "multi-day",
+    image: "https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=800",
+    images: [
+      "https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=800",
+      "https://images.unsplash.com/photo-1507501336603-6e31db2be093?w=800",
+      "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800"
+    ],
+    duration: "5 days",
+    groupSize: "2-10 people",
+    price: "From 450€",
+    priceTiers: [
+      { min: 1, max: 1, price: 580 },
+      { min: 2, max: 4, price: 520 },
+      { min: 5, price: 450 }
+    ],
+    rating: 5.0,
+    reviews: 89,
+    description: "The ultimate Moroccan experience - from the golden Sahara dunes to the windswept Atlantic coast. Trek through desert landscapes, camp under millions of stars, then rejuvenate by the ocean in Essaouira.",
+    highlights: [
+      "Sunrise camel trek in Erg Chebbi dunes",
+      "Luxury desert camp under the stars",
+      "Drive through the stunning Dades Gorge",
+      "Surf town vibes in Essaouira",
+      "Argan oil cooperative visit"
+    ],
+    included: [
+      "Private 4x4 transportation throughout",
+      "4 nights accommodation (riad + desert camp)",
+      "All breakfasts and 3 dinners",
+      "Camel trek and desert camp experience",
+      "Professional guide",
+      "Sandboarding equipment"
+    ],
+    notIncluded: [
+      "Flights",
+      "Lunches",
+      "Optional activities",
       "Personal expenses"
     ]
   },
   {
-    id: "2-day-zagora-desert",
-    title: "2-Day Zagora Desert Experience",
-    category: "desert",
-    image: "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?w=800",
+    id: "northern-morocco-escape",
+    title: "3-Day Northern Morocco Escape",
+    category: "multi-day",
+    image: "https://images.unsplash.com/photo-1553522991-71439aa49cc4?w=800",
     images: [
-      "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?w=800",
-      "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800"
+      "https://images.unsplash.com/photo-1553522991-71439aa49cc4?w=800",
+      "https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=800"
     ],
-    duration: "2 days",
-    groupSize: "2-12 people",
-    price: "From 110€",
+    duration: "3 days",
+    groupSize: "2-8 people",
+    price: "From 240€",
     priceTiers: [
-      { min: 1, max: 1, price: 150 },
-      { min: 2, max: 4, price: 130 },
-      { min: 5, price: 110 }
+      { min: 1, max: 1, price: 320 },
+      { min: 2, max: 4, price: 280 },
+      { min: 5, price: 240 }
     ],
     rating: 4.8,
-    reviews: 280,
-    description: "A shorter desert adventure perfect for those with limited time. Journey to Zagora, the gateway to the Sahara, and experience authentic desert culture with camel riding and overnight camping.",
+    reviews: 203,
+    description: "Discover the hidden gems of Northern Morocco. From the striking Rif Mountains to the Mediterranean coast, experience a Morocco far from the tourist crowds.",
     highlights: [
-      "Drive through the stunning Draa Valley",
-      "Visit ancient Kasbahs along the route",
-      "Sunset camel ride in the desert",
-      "Traditional Berber dinner under the stars",
-      "Sleep in a comfortable desert camp"
+      "Two nights in the magical Blue City",
+      "Hike in the stunning Rif Mountains",
+      "Visit Tetouan's UNESCO medina",
+      "Explore Akchour waterfalls",
+      "Taste authentic northern cuisine"
     ],
     included: [
-      "Transport from Marrakech",
-      "1 night desert camp accommodation",
-      "Dinner and breakfast",
-      "Camel ride",
-      "English-speaking driver/guide"
+      "Private transport from Tangier or Fes",
+      "2 nights in traditional guesthouse",
+      "Daily breakfast",
+      "Local guide for medina tours",
+      "Hiking guide for Akchour"
+    ],
+    notIncluded: [
+      "Meals not mentioned",
+      "Tips",
+      "Travel insurance"
     ]
   },
-  // DAY TRIPS
+  // COASTAL TOURS
   {
-    id: "atlas-mountains-valleys",
-    title: "Atlas Mountains & Three Valleys Day Trip",
-    category: "day-trip",
-    image: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800",
+    id: "essaouira-coastal-day",
+    title: "Essaouira Coastal Discovery",
+    category: "coastal",
+    image: "https://images.unsplash.com/photo-1507501336603-6e31db2be093?w=800",
     images: [
-      "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800"
+      "https://images.unsplash.com/photo-1507501336603-6e31db2be093?w=800",
+      "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800"
     ],
     duration: "Full day",
     groupSize: "2-15 people",
@@ -122,342 +176,365 @@ export const tours: Tour[] = [
       { min: 2, max: 4, price: 45 },
       { min: 5, price: 35 }
     ],
-    rating: 4.9,
-    reviews: 560,
-    description: "Discover the stunning beauty of the Atlas Mountains with visits to three picturesque valleys. Experience authentic Berber culture, enjoy traditional mint tea, and take in breathtaking mountain views.",
-    highlights: [
-      "Visit Ourika, Asni, and Imlil valleys",
-      "Traditional Berber village experience",
-      "Lunch at a mountain restaurant",
-      "Optional waterfall hike",
-      "Panoramic Atlas Mountain views"
-    ],
-    included: [
-      "Hotel pickup and drop-off",
-      "Air-conditioned transport",
-      "English-speaking guide",
-      "Berber tea welcome",
-      "Visit to Argan cooperative"
-    ]
-  },
-  {
-    id: "essaouira-day-trip",
-    title: "Essaouira Coastal City Day Trip",
-    category: "day-trip",
-    image: "https://images.unsplash.com/photo-1553899017-6c47bc4aa2cc?w=800",
-    images: [
-      "https://images.unsplash.com/photo-1553899017-6c47bc4aa2cc?w=800",
-      "https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=800"
-    ],
-    duration: "Full day",
-    groupSize: "2-15 people",
-    price: "From 30€",
-    priceTiers: [
-      { min: 1, max: 1, price: 50 },
-      { min: 2, max: 4, price: 40 },
-      { min: 5, price: 30 }
-    ],
-    rating: 4.8,
-    reviews: 380,
-    description: "Escape to the charming coastal town of Essaouira. Explore the historic medina, walk along the beach, enjoy fresh seafood, and soak up the relaxed artistic atmosphere of this beautiful port city.",
-    highlights: [
-      "Explore the UNESCO World Heritage medina",
-      "Walk along the windswept beach",
-      "Visit the historic port and fish market",
-      "Free time for shopping and exploration",
-      "Stop at an Argan oil cooperative"
-    ],
-    included: [
-      "Round-trip transport from Marrakech",
-      "Air-conditioned vehicle",
-      "English-speaking driver",
-      "Free time in Essaouira",
-      "Argan cooperative visit"
-    ]
-  },
-  {
-    id: "ouzoud-waterfalls",
-    title: "Ouzoud Waterfalls Day Excursion",
-    category: "day-trip",
-    image: "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800",
-    images: [
-      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800",
-      "https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=800"
-    ],
-    duration: "Full day",
-    groupSize: "2-15 people",
-    price: "From 25€",
-    priceTiers: [
-      { min: 1, max: 1, price: 45 },
-      { min: 2, max: 4, price: 35 },
-      { min: 5, price: 25 }
-    ],
     rating: 4.7,
-    reviews: 290,
-    description: "Visit Morocco's most spectacular waterfalls! The Ouzoud Falls cascade 110 meters down through olive groves, with opportunities to spot Barbary macaque monkeys and take a boat ride to the base.",
+    reviews: 312,
+    description: "Escape to the laid-back Atlantic port town of Essaouira. Wander through the historic medina, watch fishermen unload their catch, and feel the ocean breeze in this bohemian paradise.",
     highlights: [
-      "See the 110-meter cascading waterfalls",
-      "Spot wild Barbary macaque monkeys",
-      "Optional boat ride to the falls base",
-      "Traditional lunch by the river",
-      "Scenic drive through Moroccan countryside"
+      "Explore the UNESCO-listed medina",
+      "Visit the historic fishing port",
+      "Free time for shopping and beaches",
+      "Stop at an Argan cooperative",
+      "Optional camel ride on the beach"
     ],
     included: [
-      "Transport from Marrakech",
-      "English-speaking guide",
-      "Guided walk to the falls",
+      "Round-trip transportation",
+      "English-speaking driver",
+      "Argan cooperative visit",
       "Free time for exploration"
-    ]
-  },
-  // ACTIVITIES
-  {
-    id: "agafay-desert-sunset",
-    title: "Agafay Desert Sunset & Dinner Experience",
-    category: "activity",
-    image: "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=800",
-    images: [
-      "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=800",
-      "https://images.unsplash.com/photo-1531219432768-9f540ce91ef3?w=800"
     ],
-    duration: "5 hours",
-    groupSize: "2-20 people",
-    price: "From 35€",
-    priceTiers: [
-      { min: 1, max: 1, price: 50 },
-      { min: 2, max: 4, price: 40 },
-      { min: 5, price: 35 }
-    ],
-    rating: 4.9,
-    reviews: 420,
-    description: "Experience the magic of the Agafay Desert just outside Marrakech. Enjoy a sunset camel ride, traditional Moroccan dinner, and live entertainment under the stars.",
-    highlights: [
-      "Sunset camel ride through the desert",
-      "Traditional Moroccan dinner",
-      "Live Berber music and fire show",
-      "Star gazing in the desert",
-      "Stunning Atlas Mountain backdrop"
-    ],
-    included: [
-      "Hotel pickup and drop-off",
-      "Camel ride",
-      "Moroccan dinner with tea",
-      "Entertainment show",
-      "Transport in air-conditioned vehicle"
+    notIncluded: [
+      "Meals",
+      "Entrance fees",
+      "Optional activities"
     ]
   },
   {
-    id: "quad-biking-agafay",
-    title: "Quad Biking Adventure in Agafay Desert",
-    category: "activity",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
+    id: "agadir-beach-tour",
+    title: "Agadir Beach & Souk Experience",
+    category: "coastal",
+    image: "https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=800",
     images: [
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
+      "https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=800"
     ],
-    duration: "Half day",
+    duration: "Full day",
     groupSize: "2-12 people",
-    price: "From 45€",
+    price: "From 40€",
     priceTiers: [
       { min: 1, max: 1, price: 60 },
       { min: 2, max: 4, price: 50 },
+      { min: 5, price: 40 }
+    ],
+    rating: 4.6,
+    reviews: 178,
+    description: "Discover Morocco's premier beach resort town. Enjoy golden sands, explore the vibrant souk, and take in panoramic views from the ancient Kasbah ruins.",
+    highlights: [
+      "Relax on Agadir's famous beach",
+      "Explore the colorful Souk El Had",
+      "Visit the Kasbah ruins for sunset views",
+      "See the marina and promenade",
+      "Optional boat trip"
+    ],
+    included: [
+      "Private transportation",
+      "Guide service",
+      "Beach time",
+      "Souk tour"
+    ],
+    notIncluded: [
+      "Meals",
+      "Water sports",
+      "Personal shopping"
+    ]
+  },
+  // MOUNTAIN TOURS
+  {
+    id: "atlas-mountains-trek",
+    title: "2-Day Atlas Mountains Trek",
+    category: "mountain",
+    image: "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=800",
+    images: [
+      "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=800",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800"
+    ],
+    duration: "2 days",
+    groupSize: "2-10 people",
+    price: "From 120€",
+    priceTiers: [
+      { min: 1, max: 1, price: 180 },
+      { min: 2, max: 4, price: 150 },
+      { min: 5, price: 120 }
+    ],
+    rating: 4.9,
+    reviews: 267,
+    description: "Challenge yourself with a trek through the majestic High Atlas Mountains. Stay in a traditional Berber village, summit breathtaking viewpoints, and connect with authentic mountain culture.",
+    highlights: [
+      "Trek through stunning mountain scenery",
+      "Stay overnight in a Berber village",
+      "Experience authentic mountain hospitality",
+      "Summit panoramic viewpoints",
+      "Traditional tagine dinner by firelight"
+    ],
+    included: [
+      "Professional mountain guide",
+      "Mule for luggage transport",
+      "1 night village guesthouse",
+      "All meals during trek",
+      "Transport to/from trailhead"
+    ],
+    notIncluded: [
+      "Trekking gear",
+      "Tips for guide and muleteer",
+      "Travel insurance"
+    ]
+  },
+  {
+    id: "toubkal-summit-challenge",
+    title: "Mount Toubkal Summit Challenge",
+    category: "mountain",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+    images: [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800"
+    ],
+    duration: "3 days",
+    groupSize: "2-8 people",
+    price: "From 220€",
+    priceTiers: [
+      { min: 1, max: 1, price: 320 },
+      { min: 2, max: 4, price: 270 },
+      { min: 5, price: 220 }
+    ],
+    rating: 4.9,
+    reviews: 134,
+    description: "Conquer North Africa's highest peak! This challenging trek takes you to the 4,167m summit of Mount Toubkal, offering incredible views and an unforgettable sense of achievement.",
+    highlights: [
+      "Summit North Africa's highest mountain",
+      "Stay at the Toubkal Refuge",
+      "Witness stunning sunrise from the peak",
+      "Trek through Imlil Valley",
+      "Experience Berber mountain culture"
+    ],
+    included: [
+      "Certified mountain guide",
+      "2 nights accommodation (refuge + village)",
+      "All meals during trek",
+      "Mule for equipment",
+      "Crampons in winter"
+    ],
+    notIncluded: [
+      "Technical gear rental",
+      "Tips",
+      "Travel insurance",
+      "Transport to Imlil"
+    ]
+  },
+  // CULTURAL TOURS
+  {
+    id: "fes-cultural-immersion",
+    title: "Fes Medina Cultural Immersion",
+    category: "cultural",
+    image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800",
+    images: [
+      "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800",
+      "https://images.unsplash.com/photo-1545347980-79e5c840c62c?w=800"
+    ],
+    duration: "Full day",
+    groupSize: "2-10 people",
+    price: "From 45€",
+    priceTiers: [
+      { min: 1, max: 1, price: 70 },
+      { min: 2, max: 4, price: 55 },
       { min: 5, price: 45 }
     ],
     rating: 4.8,
-    reviews: 310,
-    description: "Feel the thrill of quad biking through the stunning Agafay Desert landscape. Navigate rocky terrain with panoramic views of the Atlas Mountains on this exciting adventure.",
+    reviews: 445,
+    description: "Dive deep into the world's largest car-free urban area. Your expert guide reveals the hidden treasures of Fes el-Bali, from ancient tanneries to sacred monuments and artisan workshops.",
     highlights: [
-      "2-hour quad biking experience",
-      "Scenic desert and mountain views",
-      "Professional safety briefing",
-      "Traditional mint tea break",
-      "Photo opportunities"
+      "Visit the famous Chouara Tannery",
+      "Explore Al-Qarawiyyin University",
+      "Discover hidden artisan workshops",
+      "Traditional lunch in a riad",
+      "Navigate the labyrinthine medina"
     ],
     included: [
-      "Hotel transfer",
-      "Quad bike and equipment",
-      "Safety gear",
-      "Guide",
-      "Mint tea and snacks"
-    ]
-  },
-  {
-    id: "hot-air-balloon",
-    title: "Hot Air Balloon Ride at Sunrise",
-    category: "activity",
-    image: "https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=800",
-    images: [
-      "https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=800"
+      "Licensed local guide",
+      "Traditional Moroccan lunch",
+      "All entrance fees",
+      "Artisan workshop visits",
+      "Hotel pickup in Fes"
     ],
-    duration: "4 hours",
-    groupSize: "2-20 people",
-    price: "From 150€",
-    priceTiers: [
-      { min: 1, max: 2, price: 180 },
-      { min: 3, price: 150 }
-    ],
-    rating: 5.0,
-    reviews: 180,
-    description: "Soar above the Atlas Mountains and Moroccan countryside at sunrise in a hot air balloon. An unforgettable experience with stunning views and a traditional breakfast to finish.",
-    highlights: [
-      "1-hour hot air balloon flight",
-      "Sunrise over the Atlas Mountains",
-      "Panoramic views of Marrakech",
-      "Traditional Berber breakfast",
-      "Flight certificate"
-    ],
-    included: [
-      "Early morning hotel pickup",
-      "Hot air balloon flight",
-      "Berber breakfast",
-      "Flight certificate",
-      "Return transfer"
-    ]
-  },
-  // CULTURAL
-  {
-    id: "marrakech-city-tour",
-    title: "Marrakech Medina & Souks Walking Tour",
-    category: "cultural",
-    image: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800",
-    images: [
-      "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800",
-      "https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=800"
-    ],
-    duration: "4 hours",
-    groupSize: "2-10 people",
-    price: "From 25€",
-    priceTiers: [
-      { min: 1, max: 1, price: 40 },
-      { min: 2, max: 4, price: 30 },
-      { min: 5, price: 25 }
-    ],
-    rating: 4.9,
-    reviews: 620,
-    description: "Explore the heart of Marrakech with an expert local guide. Discover the historic medina, vibrant souks, and hidden gems of this magical city.",
-    highlights: [
-      "Jemaa el-Fnaa square experience",
-      "Explore the colorful souks",
-      "Visit historic monuments",
-      "Sample local street food",
-      "Hidden gems and local tips"
-    ],
-    included: [
-      "Professional local guide",
-      "Walking tour of the medina",
-      "Mint tea at a local café",
-      "Entrance to Ben Youssef Madrasa"
+    notIncluded: [
+      "Transport from other cities",
+      "Tips",
+      "Personal purchases"
     ]
   },
   {
     id: "moroccan-cooking-class",
-    title: "Traditional Moroccan Cooking Class",
+    title: "Authentic Moroccan Cooking Experience",
     category: "cultural",
-    image: "https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=800",
+    image: "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=800",
     images: [
-      "https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=800"
+      "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=800"
     ],
-    duration: "4 hours",
+    duration: "5 hours",
     groupSize: "2-8 people",
-    price: "From 40€",
+    price: "From 50€",
     priceTiers: [
-      { min: 1, max: 2, price: 55 },
-      { min: 3, price: 40 }
-    ],
-    rating: 4.9,
-    reviews: 220,
-    description: "Learn to cook authentic Moroccan cuisine with a local chef. Visit the market to buy fresh ingredients and prepare a traditional tagine, couscous, and Moroccan salads.",
-    highlights: [
-      "Market visit for fresh ingredients",
-      "Learn traditional cooking techniques",
-      "Prepare tagine and couscous",
-      "Enjoy the meal you created",
-      "Take home recipes"
-    ],
-    included: [
-      "Market visit",
-      "All cooking ingredients",
-      "Cooking instruction",
-      "Full meal and drinks",
-      "Recipe booklet"
-    ]
-  },
-  // MULTI-DAY
-  {
-    id: "5-day-imperial-cities",
-    title: "5-Day Imperial Cities Grand Tour",
-    category: "multi-day",
-    image: "https://images.unsplash.com/photo-1549924231-f129b911e442?w=800",
-    images: [
-      "https://images.unsplash.com/photo-1549924231-f129b911e442?w=800",
-      "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800"
-    ],
-    duration: "5 days",
-    groupSize: "2-12 people",
-    price: "From 450€",
-    priceTiers: [
-      { min: 1, max: 1, price: 600 },
-      { min: 2, max: 4, price: 500 },
-      { min: 5, price: 450 }
-    ],
-    rating: 4.9,
-    reviews: 150,
-    description: "Explore Morocco's magnificent imperial cities on this comprehensive 5-day tour. Visit Fes, Meknes, Rabat, and Casablanca, discovering centuries of Moroccan history and culture.",
-    highlights: [
-      "Explore the ancient medina of Fes",
-      "Visit the Roman ruins of Volubilis",
-      "Discover the royal city of Meknes",
-      "Tour the modern capital Rabat",
-      "See the Hassan II Mosque in Casablanca"
-    ],
-    included: [
-      "Private transportation",
-      "4 nights hotel accommodation",
-      "Daily breakfast",
-      "English-speaking guide",
-      "All entrance fees"
-    ]
-  },
-  {
-    id: "7-day-grand-morocco",
-    title: "7-Day Grand Morocco Discovery",
-    category: "multi-day",
-    image: "https://images.unsplash.com/photo-1545041347-a8e5b3a37d04?w=800",
-    images: [
-      "https://images.unsplash.com/photo-1545041347-a8e5b3a37d04?w=800",
-      "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=800"
-    ],
-    duration: "7 days",
-    groupSize: "2-12 people",
-    price: "From 750€",
-    priceTiers: [
-      { min: 1, max: 1, price: 950 },
-      { min: 2, max: 4, price: 850 },
-      { min: 5, price: 750 }
+      { min: 1, max: 1, price: 75 },
+      { min: 2, max: 4, price: 60 },
+      { min: 5, price: 50 }
     ],
     rating: 5.0,
-    reviews: 95,
-    description: "The ultimate Morocco experience! This comprehensive 7-day journey covers the Sahara Desert, imperial cities, Atlas Mountains, and coastal towns for a complete Moroccan adventure.",
+    reviews: 189,
+    description: "Learn the secrets of Moroccan cuisine from a local chef. Visit a traditional market, select fresh ingredients, and master the art of preparing tagine, couscous, and Moroccan salads.",
     highlights: [
-      "Sahara Desert camping experience",
-      "Imperial cities of Fes and Meknes",
-      "Atlas Mountain scenic drives",
-      "Chefchaouen blue city visit",
-      "Coastal town of Essaouira"
+      "Shop at a traditional souk for ingredients",
+      "Learn to prepare authentic tagine",
+      "Master Moroccan bread making",
+      "Create traditional mint tea ceremony",
+      "Enjoy the meal you prepared"
     ],
     included: [
-      "Private transportation throughout",
-      "6 nights accommodation",
-      "Daily breakfast and select dinners",
-      "Professional English-speaking guide",
-      "All entrance fees",
-      "Desert camping with camel ride"
+      "All ingredients and materials",
+      "Professional chef instruction",
+      "Recipe cards to take home",
+      "Full meal with beverages",
+      "Apron as a souvenir"
+    ],
+    notIncluded: [
+      "Transport",
+      "Additional drinks"
+    ]
+  },
+  {
+    id: "berber-village-experience",
+    title: "Authentic Berber Village Day",
+    category: "cultural",
+    image: "https://images.unsplash.com/photo-1549924231-f129b911e442?w=800",
+    images: [
+      "https://images.unsplash.com/photo-1549924231-f129b911e442?w=800"
+    ],
+    duration: "Full day",
+    groupSize: "2-10 people",
+    price: "From 55€",
+    priceTiers: [
+      { min: 1, max: 1, price: 85 },
+      { min: 2, max: 4, price: 70 },
+      { min: 5, price: 55 }
+    ],
+    rating: 4.9,
+    reviews: 234,
+    description: "Experience genuine Berber hospitality in a traditional mountain village. Meet local families, participate in daily activities, and share a home-cooked meal with your hosts.",
+    highlights: [
+      "Visit a traditional Berber home",
+      "Learn about Berber culture and traditions",
+      "Participate in bread making",
+      "Enjoy authentic home-cooked lunch",
+      "Easy scenic hikes available"
+    ],
+    included: [
+      "Round-trip transport",
+      "Local guide/translator",
+      "Traditional Berber lunch",
+      "Mint tea ceremony",
+      "Donation to village community"
+    ],
+    notIncluded: [
+      "Tips",
+      "Personal purchases"
+    ]
+  },
+  // DESERT EXPERIENCES
+  {
+    id: "merzouga-luxury-camp",
+    title: "2-Day Merzouga Luxury Desert Camp",
+    category: "desert",
+    image: "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=800",
+    images: [
+      "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=800",
+      "https://images.unsplash.com/photo-1455091834027-b4ddc96c0a9a?w=800"
+    ],
+    duration: "2 days",
+    groupSize: "2-12 people",
+    price: "From 150€",
+    priceTiers: [
+      { min: 1, max: 1, price: 220 },
+      { min: 2, max: 4, price: 180 },
+      { min: 5, price: 150 }
+    ],
+    rating: 4.9,
+    reviews: 389,
+    description: "Experience the Sahara in style with our luxury desert camp. Private tented suites, gourmet dining, and exclusive experiences create an unforgettable desert escape.",
+    highlights: [
+      "Private luxury tent with en-suite bathroom",
+      "Sunset and sunrise camel treks",
+      "Gourmet Moroccan dinner under stars",
+      "Live Berber music and drumming",
+      "Sandboarding on the dunes"
+    ],
+    included: [
+      "Luxury tent accommodation",
+      "All meals (dinner + breakfast)",
+      "Camel trek (sunset + sunrise)",
+      "Berber entertainment",
+      "Sandboarding",
+      "4x4 dune drive"
+    ],
+    notIncluded: [
+      "Transport to Merzouga",
+      "Alcoholic beverages",
+      "Tips"
+    ]
+  },
+  {
+    id: "sahara-stargazing",
+    title: "Sahara Stargazing Night Experience",
+    category: "desert",
+    image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800",
+    images: [
+      "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800"
+    ],
+    duration: "1 night",
+    groupSize: "2-8 people",
+    price: "From 80€",
+    priceTiers: [
+      { min: 1, max: 1, price: 120 },
+      { min: 2, max: 4, price: 100 },
+      { min: 5, price: 80 }
+    ],
+    rating: 5.0,
+    reviews: 167,
+    description: "Witness the most spectacular night sky on Earth. Far from city lights, the Sahara reveals millions of stars. Our expert astronomer guide introduces you to constellations, planets, and cosmic wonders.",
+    highlights: [
+      "Professional astronomy guide",
+      "Telescope viewing session",
+      "Learn desert navigation by stars",
+      "Traditional dinner in nomad tent",
+      "Sleeping under the Milky Way"
+    ],
+    included: [
+      "Astronomy guide and equipment",
+      "Desert camp accommodation",
+      "Dinner and breakfast",
+      "Blankets and mats for stargazing",
+      "Camel trek to camp"
+    ],
+    notIncluded: [
+      "Transport to starting point",
+      "Personal photography equipment",
+      "Tips"
     ]
   }
 ];
 
-export const getTourById = (id: string): Tour | undefined => {
-  return tours.find(tour => tour.id === id);
+export const getToursByCategory = (category: Tour["category"]): Tour[] => {
+  return tours.filter((tour) => tour.category === category);
 };
 
-export const getToursByCategory = (category: Tour["category"]): Tour[] => {
-  return tours.filter(tour => tour.category === category);
+export const getTourById = (id: string): Tour | undefined => {
+  return tours.find((tour) => tour.id === id);
+};
+
+export const getFeaturedTours = (): Tour[] => {
+  return tours.filter((tour) => tour.rating && tour.rating >= 4.8).slice(0, 6);
+};
+
+export const searchTours = (query: string): Tour[] => {
+  const lowercaseQuery = query.toLowerCase();
+  return tours.filter(
+    (tour) =>
+      tour.title.toLowerCase().includes(lowercaseQuery) ||
+      tour.description.toLowerCase().includes(lowercaseQuery) ||
+      tour.category.toLowerCase().includes(lowercaseQuery)
+  );
 };
