@@ -50,33 +50,33 @@ const TourCard = ({
         </div>
 
         {/* Content */}
-        <div className="p-6 flex flex-col flex-grow">
-          <h3 className="font-serif font-bold text-xl text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300 line-clamp-2">
+        <div className="p-4 sm:p-6 flex flex-col flex-grow">
+          <h3 className="font-serif font-bold text-lg sm:text-xl text-gray-900 mb-2 sm:mb-3 group-hover:text-primary transition-colors duration-300 line-clamp-2">
             {title}
           </h3>
           
-          <p className="text-gray-600 text-sm mb-5 line-clamp-2 flex-grow leading-relaxed">
+          <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-5 line-clamp-2 flex-grow leading-relaxed">
             {description}
           </p>
           
           {/* Meta */}
-          <div className="flex items-center gap-4 text-sm text-gray-500 mb-5 pb-5 border-b border-gray-100">
-            <div className="flex items-center gap-2">
-              <Clock className="h-4 w-4 text-primary" />
+          <div className="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500 mb-4 sm:mb-5 pb-4 sm:pb-5 border-b border-gray-100">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <Clock className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary" />
               <span>{duration}</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Users className="h-4 w-4 text-primary" />
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <Users className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary" />
               <span>{groupSize}</span>
             </div>
           </div>
           
           {/* CTA */}
           <div className="flex items-center justify-between">
-            <span className="text-lg font-bold text-gray-900">{price}</span>
-            <span className="flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all duration-300">
+            <span className="text-base sm:text-lg font-bold text-gray-900">{price}</span>
+            <span className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium text-primary group-hover:gap-2 sm:group-hover:gap-3 transition-all duration-300">
               View Details
-              <ArrowUpRight className="h-4 w-4" />
+              <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             </span>
           </div>
         </div>

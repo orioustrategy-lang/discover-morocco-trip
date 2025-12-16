@@ -121,7 +121,7 @@ const TourDetail = () => {
   return (
     <div className="min-h-screen bg-[#faf9f7]">
       {/* Hero Image */}
-      <section className="relative h-[60vh] lg:h-[70vh]">
+      <section className="relative h-[50vh] sm:h-[60vh] lg:h-[70vh]">
         <div 
           className="absolute inset-0"
           onTouchStart={handleTouchStart}
@@ -152,10 +152,10 @@ const TourDetail = () => {
         {/* Back Button */}
         <Link 
           to="/tours"
-          className="absolute top-28 left-8 lg:left-16 z-10 flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+          className="absolute top-20 sm:top-28 left-4 sm:left-8 lg:left-16 z-10 flex items-center gap-2 text-white/80 hover:text-white transition-colors"
         >
-          <ArrowLeft className="h-5 w-5" />
-          <span className="text-sm font-medium">Back to Tours</span>
+          <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+          <span className="text-xs sm:text-sm font-medium">Back to Tours</span>
         </Link>
         
         {/* Image Navigation */}
@@ -163,15 +163,15 @@ const TourDetail = () => {
           <>
             <button
               onClick={() => setCurrentImageIndex((prev) => (prev - 1 + displayImages.length) % displayImages.length)}
-              className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 backdrop-blur-sm transition-all z-10"
+              className="absolute left-2 sm:left-4 lg:left-8 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 sm:p-3 backdrop-blur-sm transition-all z-10"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
             <button
               onClick={() => setCurrentImageIndex((prev) => (prev + 1) % displayImages.length)}
-              className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 backdrop-blur-sm transition-all z-10"
+              className="absolute right-2 sm:right-4 lg:right-8 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 sm:p-3 backdrop-blur-sm transition-all z-10"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
             
             {/* Dots */}
@@ -190,21 +190,21 @@ const TourDetail = () => {
         )}
         
         {/* Title Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-16">
+        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8 lg:p-16">
           <div className="max-w-7xl mx-auto">
-            <div className="flex items-center gap-4 mb-4">
-              <span className="px-3 py-1 bg-primary text-white text-sm font-medium uppercase tracking-wider">
+            <div className="flex items-center gap-2 sm:gap-4 mb-2 sm:mb-4">
+              <span className="px-2 sm:px-3 py-1 bg-primary text-white text-xs sm:text-sm font-medium uppercase tracking-wider">
                 {tour.category}
               </span>
               {tour.rating && (
                 <div className="flex items-center gap-1 text-white">
-                  <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
-                  <span className="font-semibold">{tour.rating}</span>
-                  <span className="text-white/70">({tour.reviews} reviews)</span>
+                  <Star className="h-4 w-4 sm:h-5 sm:w-5 fill-amber-400 text-amber-400" />
+                  <span className="font-semibold text-sm sm:text-base">{tour.rating}</span>
+                  <span className="text-white/70 text-xs sm:text-sm">({tour.reviews} reviews)</span>
                 </div>
               )}
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-serif">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-serif">
               {tour.title}
             </h1>
           </div>
@@ -212,84 +212,84 @@ const TourDetail = () => {
       </section>
 
       {/* Content */}
-      <section className="max-w-7xl mx-auto px-8 lg:px-16 py-16">
-        <div className="grid lg:grid-cols-3 gap-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-8 sm:py-16">
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Main Content */}
-          <div className="lg:col-span-2 space-y-12">
+          <div className="lg:col-span-2 space-y-8 sm:space-y-12">
             {/* Quick Info */}
-            <div className="flex flex-wrap gap-6 pb-8 border-b border-gray-200">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
-                  <Clock className="h-5 w-5 text-primary" />
+            <div className="flex flex-wrap gap-4 sm:gap-6 pb-6 sm:pb-8 border-b border-gray-200">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 flex items-center justify-center">
+                  <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 </div>
                 <div>
-                  <div className="text-sm text-gray-500">Duration</div>
-                  <div className="font-semibold text-gray-900">{tour.duration}</div>
+                  <div className="text-xs sm:text-sm text-gray-500">Duration</div>
+                  <div className="font-semibold text-gray-900 text-sm sm:text-base">{tour.duration}</div>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
-                  <Users className="h-5 w-5 text-primary" />
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 flex items-center justify-center">
+                  <Users className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 </div>
                 <div>
-                  <div className="text-sm text-gray-500">Group Size</div>
-                  <div className="font-semibold text-gray-900">{tour.groupSize}</div>
+                  <div className="text-xs sm:text-sm text-gray-500">Group Size</div>
+                  <div className="font-semibold text-gray-900 text-sm sm:text-base">{tour.groupSize}</div>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
-                  <MapPin className="h-5 w-5 text-primary" />
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 flex items-center justify-center">
+                  <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 </div>
                 <div>
-                  <div className="text-sm text-gray-500">Location</div>
-                  <div className="font-semibold text-gray-900">Morocco</div>
+                  <div className="text-xs sm:text-sm text-gray-500">Location</div>
+                  <div className="font-semibold text-gray-900 text-sm sm:text-base">Morocco</div>
                 </div>
               </div>
             </div>
 
             {/* Description */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 font-serif mb-4">About This Journey</h2>
-              <p className="text-gray-600 leading-relaxed text-lg">{tour.description}</p>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 font-serif mb-3 sm:mb-4">About This Journey</h2>
+              <p className="text-gray-600 leading-relaxed text-base sm:text-lg">{tour.description}</p>
             </div>
 
             {/* Highlights */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 font-serif mb-6">Highlights</h2>
-              <div className="grid md:grid-cols-2 gap-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 font-serif mb-4 sm:mb-6">Highlights</h2>
+              <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                 {tour.highlights.map((highlight, index) => (
-                  <div key={index} className="flex items-start gap-3 p-4 bg-white border border-gray-100">
-                    <div className="w-6 h-6 bg-primary flex items-center justify-center flex-shrink-0">
-                      <Check className="h-4 w-4 text-white" />
+                  <div key={index} className="flex items-start gap-2 sm:gap-3 p-3 sm:p-4 bg-white border border-gray-100">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-primary flex items-center justify-center flex-shrink-0">
+                      <Check className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
                     </div>
-                    <span className="text-gray-700">{highlight}</span>
+                    <span className="text-gray-700 text-sm sm:text-base">{highlight}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Included / Not Included */}
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white border border-gray-100 p-6">
-                <h3 className="text-xl font-bold text-gray-900 font-serif mb-6">What's Included</h3>
-                <ul className="space-y-4">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-8">
+              <div className="bg-white border border-gray-100 p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 font-serif mb-4 sm:mb-6">What's Included</h3>
+                <ul className="space-y-3 sm:space-y-4">
                   {tour.included.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-600">{item}</span>
+                    <li key={index} className="flex items-start gap-2 sm:gap-3">
+                      <Check className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-600 text-sm sm:text-base">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               
               {tour.notIncluded && tour.notIncluded.length > 0 && (
-                <div className="bg-white border border-gray-100 p-6">
-                  <h3 className="text-xl font-bold text-gray-900 font-serif mb-6">Not Included</h3>
-                  <ul className="space-y-4">
+                <div className="bg-white border border-gray-100 p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 font-serif mb-4 sm:mb-6">Not Included</h3>
+                  <ul className="space-y-3 sm:space-y-4">
                     {tour.notIncluded.map((item, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <X className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-600">{item}</span>
+                      <li key={index} className="flex items-start gap-2 sm:gap-3">
+                        <X className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600 text-sm sm:text-base">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -299,13 +299,13 @@ const TourDetail = () => {
 
             {/* Pricing Table */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 font-serif mb-6">Group Pricing</h2>
-              <div className="bg-white border border-gray-100 p-6">
-                <div className="grid grid-cols-5 gap-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 font-serif mb-4 sm:mb-6">Group Pricing</h2>
+              <div className="bg-white border border-gray-100 p-4 sm:p-6 overflow-x-auto">
+                <div className="grid grid-cols-5 gap-2 sm:gap-4 min-w-[280px]">
                   {pricingTiers.map((tier, index) => (
                     <div key={index} className="text-center">
-                      <div className="text-sm text-gray-500 mb-2">{tier.label} pax</div>
-                      <div className="text-xl font-bold text-primary">€{tier.price}</div>
+                      <div className="text-xs sm:text-sm text-gray-500 mb-1 sm:mb-2">{tier.label} pax</div>
+                      <div className="text-base sm:text-xl font-bold text-primary">€{tier.price}</div>
                     </div>
                   ))}
                 </div>
@@ -315,61 +315,61 @@ const TourDetail = () => {
 
           {/* Booking Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-28 bg-white border border-gray-200 p-8">
-              <div className="mb-6">
-                <div className="text-sm text-gray-500 mb-1">From</div>
+            <div className="sticky top-24 sm:top-28 bg-white border border-gray-200 p-5 sm:p-8">
+              <div className="mb-4 sm:mb-6">
+                <div className="text-xs sm:text-sm text-gray-500 mb-1">From</div>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-primary">€{pricePerPerson}</span>
-                  <span className="text-gray-500">/ person</span>
+                  <span className="text-3xl sm:text-4xl font-bold text-primary">€{pricePerPerson}</span>
+                  <span className="text-gray-500 text-sm sm:text-base">/ person</span>
                 </div>
               </div>
               
               {/* People Selector */}
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-3">Travelers</label>
-                <div className="flex items-center justify-between border border-gray-200 p-3">
+              <div className="mb-4 sm:mb-6">
+                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2 sm:mb-3">Travelers</label>
+                <div className="flex items-center justify-between border border-gray-200 p-2 sm:p-3">
                   <button
                     onClick={decrementPeople}
                     disabled={numberOfPeople <= 1}
-                    className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition-colors disabled:opacity-30"
+                    className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center hover:bg-gray-100 transition-colors disabled:opacity-30"
                   >
-                    <Minus className="h-5 w-5" />
+                    <Minus className="h-4 w-4 sm:h-5 sm:w-5" />
                   </button>
-                  <span className="text-2xl font-bold">{numberOfPeople}</span>
+                  <span className="text-xl sm:text-2xl font-bold">{numberOfPeople}</span>
                   <button
                     onClick={incrementPeople}
                     disabled={numberOfPeople >= 20}
-                    className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition-colors disabled:opacity-30"
+                    className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center hover:bg-gray-100 transition-colors disabled:opacity-30"
                   >
-                    <Plus className="h-5 w-5" />
+                    <Plus className="h-4 w-4 sm:h-5 sm:w-5" />
                   </button>
                 </div>
               </div>
               
               {/* Total */}
-              <div className="flex items-center justify-between py-4 border-t border-b border-gray-200 mb-6">
-                <span className="font-medium text-gray-700">Total</span>
-                <span className="text-2xl font-bold text-gray-900">€{totalPrice}</span>
+              <div className="flex items-center justify-between py-3 sm:py-4 border-t border-b border-gray-200 mb-4 sm:mb-6">
+                <span className="font-medium text-gray-700 text-sm sm:text-base">Total</span>
+                <span className="text-xl sm:text-2xl font-bold text-gray-900">€{totalPrice}</span>
               </div>
               
               {/* Book Button */}
               <Button 
                 onClick={handleWhatsApp}
-                className="w-full h-14 rounded-none bg-primary hover:bg-primary/90 text-base"
+                className="w-full h-12 sm:h-14 rounded-none bg-primary hover:bg-primary/90 text-sm sm:text-base"
                 size="lg"
               >
-                <Phone className="h-5 w-5 mr-2" />
+                <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                 Book Now
               </Button>
               
               {/* Trust */}
-              <div className="mt-6 pt-6 border-t border-gray-200 space-y-3">
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <Shield className="h-4 w-4 text-primary" />
+              <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200 space-y-2 sm:space-y-3">
+                <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600">
+                  <Shield className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary" />
                   <span>Free cancellation up to 48h</span>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <Check className="h-4 w-4 text-primary" />
+                <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600">
+                  <Check className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary" />
                   <span>Instant confirmation</span>
                 </div>
               </div>
@@ -380,14 +380,14 @@ const TourDetail = () => {
 
       {/* Related Tours */}
       {relatedTours.length > 0 && (
-        <section className="max-w-7xl mx-auto px-8 lg:px-16 py-16 border-t border-gray-200">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 font-serif">Similar Journeys</h2>
-            <Link to="/tours" className="flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all">
+        <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-12 sm:py-16 border-t border-gray-200">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 font-serif">Similar Journeys</h2>
+            <Link to="/tours" className="flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all text-sm sm:text-base">
               View All <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {relatedTours.map((relatedTour) => (
               <TourCard key={relatedTour.id} {...relatedTour} />
             ))}

@@ -7,20 +7,20 @@ const Footer = () => {
   return (
     <footer className="bg-[#1a1a1a] text-white">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16 py-12 sm:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-8">
           {/* Brand - Takes more space */}
-          <div className="lg:col-span-5">
-            <Link to="/" className="inline-flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-primary flex items-center justify-center">
-                <span className="font-serif font-bold text-xl text-white">D</span>
+          <div className="sm:col-span-2 lg:col-span-5">
+            <Link to="/" className="inline-flex items-center gap-3 mb-4 sm:mb-6">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary flex items-center justify-center">
+                <span className="font-serif font-bold text-lg sm:text-xl text-white">D</span>
               </div>
               <div>
-                <span className="font-serif font-bold text-xl text-white">Discover</span>
-                <span className="font-light text-xl ml-1 text-white/80">Morocco</span>
+                <span className="font-serif font-bold text-lg sm:text-xl text-white">Discover</span>
+                <span className="font-light text-lg sm:text-xl ml-1 text-white/80">Morocco</span>
               </div>
             </Link>
-            <p className="text-white/60 max-w-sm leading-relaxed mb-8">
+            <p className="text-white/60 max-w-sm leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
               Your trusted local partner for authentic Moroccan adventures. 
               From the Sahara Desert to the Atlas Mountains, we craft journeys that inspire.
             </p>
@@ -109,8 +109,8 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16 py-4 sm:py-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm text-white/40">
             <p>&copy; {currentYear} Discover Morocco Trip. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-primary transition-colors duration-300">Privacy</a>
