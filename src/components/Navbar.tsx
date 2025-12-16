@@ -94,9 +94,9 @@ const Navbar = () => {
 
       </div>
 
-      {/* Mobile Menu - Outside the container for proper positioning */}
+      {/* Mobile Menu - Fixed full screen overlay */}
       {isOpen && (
-        <div className="lg:hidden absolute left-0 right-0 top-full bg-white border-t shadow-xl z-50">
+        <div className="lg:hidden fixed inset-0 top-[58px] bg-white z-[100] overflow-y-auto">
           <div className="py-6 px-8 space-y-4">
             {navLinks.map((link) => (
               <Link
