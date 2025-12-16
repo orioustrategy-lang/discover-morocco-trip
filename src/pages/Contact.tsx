@@ -16,7 +16,7 @@ const Contact = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open("https://wa.me/212600000000?text=Hello, I have a question about your tours!", "_blank");
+    window.open("https://wa.me/212623956727?text=Hello, I have a question about your tours!", "_blank");
   };
 
   return (
@@ -42,13 +42,13 @@ const Contact = () => {
             
             {/* Quick Contact */}
             <div className="space-y-4">
-              <a href="tel:+212600000000" className="flex items-center gap-4 p-4 bg-white border border-gray-200 hover:border-primary transition-colors group">
+              <a href="tel:+212623956727" className="flex items-center gap-4 p-4 bg-white border border-gray-200 hover:border-primary transition-colors group">
                 <div className="w-12 h-12 bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
                   <Phone className="h-5 w-5 text-primary group-hover:text-white transition-colors" />
                 </div>
                 <div>
                   <div className="text-sm text-gray-500">Call us</div>
-                  <div className="font-semibold text-gray-900">+212 600 000 000</div>
+                  <div className="font-semibold text-gray-900">+212 623-956727</div>
                 </div>
                 <ArrowRight className="h-5 w-5 text-gray-400 ml-auto group-hover:text-primary transition-colors" />
               </a>

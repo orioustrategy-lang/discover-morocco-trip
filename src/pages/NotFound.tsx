@@ -40,7 +40,7 @@ const NotFound = () => {
         
         <div className="mt-12 pt-8 border-t border-border">
           <p className="text-sm text-muted-foreground">
-            Need help? <a href="https://wa.me/212600000000" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Chat with us on WhatsApp</a>
+            Need help? <a href="https://wa.me/212623956727" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Chat with us on WhatsApp</a>
           </p>
         </div>
       </div>

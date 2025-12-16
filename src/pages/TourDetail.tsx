@@ -110,7 +110,7 @@ const TourDetail = () => {
 
   const handleWhatsApp = () => {
     window.open(
-      `https://wa.me/212600000000?text=Hello, I'm interested in the tour: ${tour.title} for ${numberOfPeople} people (€${totalPrice} total)`,
+      `https://wa.me/212623956727?text=Hello, I'm interested in the tour: ${tour.title} for ${numberOfPeople} people (€${totalPrice} total)`,
       "_blank"
     );
   };
