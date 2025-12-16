@@ -70,7 +70,7 @@ const Contact = () => {
         {/* Right - Image */}
         <div className="relative hidden lg:block">
           <img
-            src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=1200"
+            src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1200&q=80"
             alt="Morocco"
             className="absolute inset-0 w-full h-full object-cover"
           />

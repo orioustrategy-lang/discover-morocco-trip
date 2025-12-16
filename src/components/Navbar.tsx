@@ -35,21 +35,17 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
           ? "bg-white shadow-lg py-3" 
-          : "bg-transparent py-6"
+          : "bg-white/95 backdrop-blur-sm py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-8 lg:px-16">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className={`w-10 h-10 flex items-center justify-center transition-colors ${
-              scrolled ? "bg-primary" : "bg-white"
-            }`}>
-              <span className={`font-serif font-bold text-xl ${
-                scrolled ? "text-white" : "text-primary"
-              }`}>D</span>
+            <div className="w-10 h-10 bg-primary flex items-center justify-center">
+              <span className="font-serif font-bold text-xl text-white">D</span>
             </div>
-            <div className={`hidden sm:block transition-colors ${scrolled ? "text-gray-900" : "text-white"}`}>
+            <div className="hidden sm:block text-gray-900">
               <span className="font-serif font-bold text-lg tracking-tight">Discover</span>
               <span className="font-light text-lg ml-1">Morocco</span>
             </div>
@@ -62,13 +58,9 @@ const Navbar = () => {
                 key={link.name}
                 to={link.path}
                 className={`relative font-medium text-sm tracking-wide uppercase transition-colors ${
-                  scrolled 
-                    ? location.pathname === link.path 
-                      ? "text-primary" 
-                      : "text-gray-600 hover:text-primary"
-                    : location.pathname === link.path
-                      ? "text-white"
-                      : "text-white/70 hover:text-white"
+                  location.pathname === link.path 
+                    ? "text-primary" 
+                    : "text-gray-600 hover:text-primary"
                 } ${
                   location.pathname === link.path 
                     ? "after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-0.5 after:bg-primary" 
@@ -84,11 +76,7 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <Button 
               onClick={handleWhatsApp}
-              className={`h-12 px-6 rounded-none transition-all ${
-                scrolled 
-                  ? "bg-primary hover:bg-primary/90 text-white" 
-                  : "bg-white hover:bg-white/90 text-gray-900"
-              }`}
+              className="h-12 px-6 rounded-none bg-primary hover:bg-primary/90 text-white"
             >
               <Phone className="mr-2 h-4 w-4" />
               Book Now
@@ -97,7 +85,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden p-2 ${scrolled ? "text-gray-900" : "text-white"}`}
+            className="lg:hidden p-2 text-gray-900"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

@@ -19,12 +19,12 @@ const Index = () => {
   ].filter(Boolean).slice(0, 6);
 
   const destinations = [
-    { name: "Fes", image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600", tours: 8 },
-    { name: "Sahara Desert", image: "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=600", tours: 12 },
-    { name: "Chefchaouen", image: "https://images.unsplash.com/photo-1553522991-71439aa49cc4?w=600", tours: 5 },
-    { name: "Atlas Mountains", image: "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=600", tours: 7 },
-    { name: "Essaouira", image: "https://images.unsplash.com/photo-1507501336603-6e31db2be093?w=600", tours: 4 },
-    { name: "Rabat", image: "https://images.unsplash.com/photo-1570303278224-4c4e7a5b1d3f?w=600", tours: 3 },
+    { name: "Fes", image: "https://images.unsplash.com/photo-1548017871-6bc6dd93ea9a?w=600&q=80", tours: 8 },
+    { name: "Sahara Desert", image: "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?w=600&q=80", tours: 12 },
+    { name: "Chefchaouen", image: "https://images.unsplash.com/photo-1560095633-6803d6f4de2c?w=600&q=80", tours: 5 },
+    { name: "Atlas Mountains", image: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=600&q=80", tours: 7 },
+    { name: "Essaouira", image: "https://images.unsplash.com/photo-1528657249085-893fe000cbe5?w=600&q=80", tours: 4 },
+    { name: "Marrakech", image: "https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=600&q=80", tours: 10 },
   ];
 
   const testimonials = [
@@ -33,21 +33,21 @@ const Index = () => {
       location: "London, UK",
       text: "The Imperial Cities tour completely changed how I see travel. Every detail was perfect, from the riads to the guides. An absolute masterpiece of a journey.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&q=80",
     },
     {
       name: "Anna Bergström",
       location: "Stockholm, Sweden", 
       text: "Five days from desert to coast - I've never experienced anything like it. Waking up to sunrise over the dunes was worth the entire trip.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80",
     },
     {
       name: "Marco Rossi",
       location: "Milan, Italy",
       text: "Summiting Toubkal was a dream come true. The team's expertise and care made what could be challenging into pure adventure.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80",
     },
   ];
 
@@ -114,7 +114,7 @@ const Index = () => {
         {/* Right Image */}
         <div className="relative order-1 lg:order-2 min-h-[50vh] lg:min-h-screen">
           <img
-            src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=1200"
+            src="https://images.unsplash.com/photo-1548017871-6bc6dd93ea9a?w=1200&q=80"
             alt="Morocco Architecture"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -249,7 +249,7 @@ const Index = () => {
             
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1549924231-f129b911e442?w=800"
+                src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=800&q=80"
                 alt="Morocco Guide"
                 className="w-full aspect-[4/5] object-cover"
               />
@@ -298,7 +298,7 @@ const Index = () => {
       <section className="relative py-32 px-8">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=1920"
+            src="https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?w=1920&q=80"
             alt="Morocco Desert"
             className="w-full h-full object-cover"
           />
