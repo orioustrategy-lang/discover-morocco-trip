@@ -21,10 +21,10 @@ const Index = () => {
   const destinations = [
     { name: "Fes", image: "https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=600&q=80", tours: 8 },
     { name: "Sahara Desert", image: "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=600&q=80", tours: 12 },
-    { name: "Chefchaouen", image: "https://images.unsplash.com/photo-1553244438-2e818a1dd4fb?w=600&q=80", tours: 5 },
-    { name: "Atlas Mountains", image: "https://images.unsplash.com/photo-1548017871-6bc6dd93ea9a?w=600&q=80", tours: 7 },
-    { name: "Essaouira", image: "https://images.unsplash.com/photo-1565689534933-99e87d0948a5?w=600&q=80", tours: 4 },
-    { name: "Marrakech", image: "https://images.unsplash.com/photo-1518544866330-4e716499f800?w=600&q=80", tours: 10 },
+    { name: "Chefchaouen", image: "https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=600&q=80", tours: 5 },
+    { name: "Atlas Mountains", image: "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=600&q=80", tours: 7 },
+    { name: "Essaouira", image: "https://images.unsplash.com/photo-1558370781-d6196949e317?w=600&q=80", tours: 4 },
+    { name: "Marrakech", image: "https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=600&q=80", tours: 10 },
   ];
 
   const testimonials = [

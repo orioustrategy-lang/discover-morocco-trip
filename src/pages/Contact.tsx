@@ -109,16 +109,6 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-10 sm:gap-16">
             {/* Form */}
             <div>
-              <span className="text-primary font-medium tracking-widest text-sm uppercase mb-4 block">Send a Message</span>
-              <h2 className="text-4xl font-bold text-gray-900 font-serif mb-6">
-                Tell Us About Your Trip
-              </h2>
-              <p className="text-gray-600 mb-10">
-                Share your travel dates, group size, and preferences. We'll create a customized itinerary just for you.
-              </p>
-              
-            {/* Form */}
-            <div>
               <span className="text-primary font-medium tracking-widest text-xs sm:text-sm uppercase mb-3 sm:mb-4 block">Send a Message</span>
               <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 font-serif mb-4 sm:mb-6">
                 Tell Us About Your Trip

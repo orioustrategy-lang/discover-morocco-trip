@@ -34,8 +34,8 @@ export const tours: Tour[] = [
     image: "https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=800&q=80",
     images: [
       "https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=800&q=80",
-      "https://images.unsplash.com/photo-1553244438-2e818a1dd4fb?w=800&q=80",
-      "https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=800&q=80"
+      "https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=800&q=80",
+      "https://images.unsplash.com/photo-1573816050632-c08b7ec0de07?w=800&q=80"
     ],
     duration: "4 days",
     groupSize: "2-12 people",
@@ -82,8 +82,8 @@ export const tours: Tour[] = [
     image: "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=800&q=80",
     images: [
       "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=800&q=80",
-      "https://images.unsplash.com/photo-1542401886-65d6c61db217?w=800&q=80",
-      "https://images.unsplash.com/photo-1565689534933-99e87d0948a5?w=800&q=80"
+      "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&q=80",
+      "https://images.unsplash.com/photo-1558370781-d6196949e317?w=800&q=80"
     ],
     duration: "5 days",
     groupSize: "2-10 people",
@@ -122,10 +122,10 @@ export const tours: Tour[] = [
     id: "northern-morocco-escape",
     title: "3-Day Northern Morocco Escape",
     category: "multi-day",
-    image: "https://images.unsplash.com/photo-1553244438-2e818a1dd4fb?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1553244438-2e818a1dd4fb?w=800&q=80",
-      "https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=800&q=80"
+      "https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=800&q=80",
+      "https://images.unsplash.com/photo-1573816050632-c08b7ec0de07?w=800&q=80"
     ],
     duration: "3 days",
     groupSize: "2-8 people",
@@ -163,10 +163,10 @@ export const tours: Tour[] = [
     id: "essaouira-coastal-day",
     title: "Essaouira Coastal Discovery",
     category: "coastal",
-    image: "https://images.unsplash.com/photo-1565689534933-99e87d0948a5?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1558370781-d6196949e317?w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1565689534933-99e87d0948a5?w=800&q=80",
-      "https://images.unsplash.com/photo-1542401886-65d6c61db217?w=800&q=80"
+      "https://images.unsplash.com/photo-1558370781-d6196949e317?w=800&q=80",
+      "https://images.unsplash.com/photo-1570478029589-73eae5c62e83?w=800&q=80"
     ],
     duration: "Full day",
     groupSize: "2-15 people",
@@ -241,10 +241,10 @@ export const tours: Tour[] = [
     id: "atlas-mountains-trek",
     title: "2-Day Atlas Mountains Trek",
     category: "mountain",
-    image: "https://images.unsplash.com/photo-1548017871-6bc6dd93ea9a?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1548017871-6bc6dd93ea9a?w=800&q=80",
-      "https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=800&q=80"
+      "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=800&q=80",
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=800&q=80"
     ],
     duration: "2 days",
     groupSize: "2-10 people",
