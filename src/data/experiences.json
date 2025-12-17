@@ -1,0 +1,241 @@
+{
+  "experiences": [
+    {
+      "id": "8-day-morocco-discovery",
+      "title": "8-Day Morocco Discovery Tour",
+      "subtitle": "Casablanca • Rabat • Fes • Marrakech • Sahara Desert",
+      "category": "multi-day",
+      "duration": "8 days",
+      "tourType": "Private Tour",
+      "description": "Experience the ultimate Morocco adventure from Casablanca to the Sahara Desert. This comprehensive 8-day private tour takes you through Morocco's most iconic destinations including Casablanca, Rabat, Fes, Marrakech, and the magical Sahara Desert with luxury accommodations throughout.",
+      "highlights": [
+        "Private airport/hotel pick-up & drop-off",
+        "Explore Casablanca: Hassan II Mosque, Old Medina, Corniche",
+        "Discover Rabat: Kasbah des Oudayas, Medina, historic gates",
+        "Wander Fes' ancient streets, Chouara Tannery & Al Quaraouiyine",
+        "Stay in top-quality hotels & traditional riads (breakfast included)",
+        "Visit Marrakech: Koutoubia Mosque, Ben Youssef Medersa, Bahia Palace & Souks",
+        "3-day Sahara Desert adventure: camel ride, luxury desert camp, Berber music",
+        "Scenic drives through Atlas Mountains, Valley of Roses & Todra Gorges",
+        "Private, air-conditioned land transport throughout"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Casablanca City Tour",
+          "activities": ["Hassan II Mosque", "Old Medina", "Corniche"],
+          "overnight": "4★ hotel in Casablanca"
+        },
+        {
+          "day": 2,
+          "title": "Casablanca → Rabat → Fes",
+          "activities": ["Rabat Medina", "Kasbah des Oudayas", "Remparts"],
+          "overnight": "Hotel in Fes"
+        },
+        {
+          "day": 3,
+          "title": "Fes City Tour",
+          "activities": ["Fes El Bali", "Chouara Tannery", "Al Quaraouiyine"],
+          "overnight": "Hotel in Fes"
+        },
+        {
+          "day": 4,
+          "title": "Fes → Sahara Desert",
+          "activities": ["Middle Atlas", "Ziz Valley", "Sunset camel ride"],
+          "overnight": "Luxury desert camp"
+        },
+        {
+          "day": 5,
+          "title": "Merzouga → Dades Valley",
+          "activities": ["Todra Gorges", "Dades Valley"],
+          "overnight": "Traditional hotel in Dades"
+        },
+        {
+          "day": 6,
+          "title": "Dades → Marrakech",
+          "activities": ["Valley of Roses", "Ait Ben Haddou", "Tichka Pass"],
+          "overnight": "Traditional riad"
+        },
+        {
+          "day": 7,
+          "title": "Marrakech City Tour",
+          "activities": ["Koutoubia Mosque", "Ben Youssef Medersa", "Bahia Palace", "Souks", "Jemaa El-Fnaa"],
+          "overnight": "Riad in Marrakech"
+        },
+        {
+          "day": 8,
+          "title": "Marrakech → Casablanca Airport",
+          "activities": ["Transfer to airport"],
+          "overnight": "End of tour"
+        }
+      ],
+      "included": [
+        "Private air-conditioned transport throughout",
+        "4★ hotel & traditional riad accommodations",
+        "All breakfasts included",
+        "Desert camp dinner & breakfast",
+        "Sunset camel trekking",
+        "Sandboarding & Berber drumming",
+        "Professional English-speaking driver/guide"
+      ],
+      "notIncluded": [
+        "Lunches and dinners (except desert camp)",
+        "Entrance fees to monuments",
+        "Tips and gratuities",
+        "Travel insurance",
+        "Personal expenses"
+      ]
+    },
+    {
+      "id": "private-transport-morocco",
+      "title": "Private Transport for Tours & Trips Across Morocco 24/7",
+      "category": "transport",
+      "duration": "Up to 12 hours",
+      "groupSize": "1-7 passengers",
+      "description": "Private transport service from Casablanca to all destinations in Morocco. Available 24/7 with fair pricing, full reliability, and respect for time. Travel comfortably in a modern, air-conditioned vehicle with a professional driver.",
+      "highlights": [
+        "24/7 availability for all your travel needs",
+        "Fair and transparent pricing",
+        "Professional English or French speaking drivers",
+        "Comfortable air-conditioned vehicles",
+        "Door-to-door service",
+        "Flexible scheduling"
+      ],
+      "pricing": {
+        "currency": "MAD",
+        "routes": [
+          { "destination": "Casablanca → Rabat", "oneWay": 800, "roundTrip": 1600 },
+          { "destination": "Casablanca → Marrakech", "oneWay": 1600, "roundTrip": 2500 },
+          { "destination": "Casablanca → Fes", "oneWay": 2500, "roundTrip": 4500 },
+          { "destination": "Casablanca → Chefchaouen", "oneWay": 2700, "roundTrip": 5200 },
+          { "destination": "Casablanca → Tangier", "oneWay": 2300, "roundTrip": 4400 },
+          { "destination": "Casablanca → Meknes", "oneWay": 2200, "roundTrip": 4000 },
+          { "destination": "Casablanca → Tetouan", "oneWay": 2500, "roundTrip": 4900 },
+          { "destination": "Casablanca → Merzouga (Sahara)", "oneWay": 3500, "roundTrip": 6800 }
+        ]
+      },
+      "included": [
+        "Hotel pickup and drop-off (within Casablanca city center)",
+        "Private air-conditioned vehicle",
+        "Professional and friendly driver (English or French speaking)",
+        "Bottled water during the tour",
+        "Parking fees and tolls",
+        "Door-to-door pickup and drop-off"
+      ],
+      "notIncluded": [
+        "Personal expenses (shopping, etc.)"
+      ],
+      "accessibility": [
+        "Wheelchair accessible",
+        "Stroller accessible",
+        "Service animals allowed",
+        "Near public transportation"
+      ]
+    },
+    {
+      "id": "hammam-massage-casablanca",
+      "title": "Relaxing Hammam and Massage at Casablanca",
+      "category": "wellness",
+      "duration": "1 - 1.5 hours",
+      "groupSize": "Individual or couples",
+      "location": {
+        "name": "H2O Center - Spa & Hammam",
+        "address": "31 Rue Abou El Hassan Es-Séghir, Casablanca"
+      },
+      "description": "Indulge in an authentic Moroccan spa experience at one of Casablanca's finest hammams. Choose from a variety of traditional treatments including Oriental Hammam, relaxing massages, and luxurious VIP packages. Experience the centuries-old tradition of Moroccan bathing rituals.",
+      "highlights": [
+        "Authentic Moroccan hammam experience",
+        "Multiple treatment options available",
+        "Professional spa therapists",
+        "Private access to spa facilities",
+        "Relaxing atmosphere",
+        "Traditional Moroccan products used"
+      ],
+      "treatments": [
+        { "name": "Oriental Hammam", "price": 100, "currency": "USD", "duration": "1 hour" },
+        { "name": "Candle Massage", "price": 110, "currency": "USD", "duration": "1 hour" },
+        { "name": "Tonic Massage", "price": 110, "currency": "USD", "duration": "1 hour" },
+        { "name": "Traditional Hammam", "price": 110, "currency": "USD", "duration": "1 hour" },
+        { "name": "Relaxing Hammam & Massage (Boutique Hotel)", "price": 110, "currency": "USD", "duration": "1 hour" },
+        { "name": "Californian Massage", "price": 130, "currency": "USD", "duration": "1 hour" },
+        { "name": "Hot Stone Massage", "price": 150, "currency": "USD", "duration": "1 hour" },
+        { "name": "VIP Hammam", "price": 200, "currency": "USD", "duration": "1.5 hours" },
+        { "name": "Royal Hammam", "price": 250, "currency": "USD", "duration": "1.5 hours" }
+      ],
+      "included": [
+        "Reception assistance in English",
+        "Traditional Moroccan Hammam treatment",
+        "Full-body relaxing massage (for massage packages)",
+        "Private access to the spa facilities",
+        "Traditional Moroccan products (black soap, ghassoul, argan oil)"
+      ],
+      "notIncluded": [
+        "Hotel pickup and drop-off",
+        "Personal expenses or additional spa treatments not listed"
+      ]
+    },
+    {
+      "id": "dinner-dj-james-rooftop",
+      "title": "Dinner and DJ Night on The James Rooftop",
+      "subtitle": "An Elevated Casablanca Experience",
+      "category": "dining",
+      "duration": "5 hours",
+      "groupSize": "Max 30 travelers (shared experience)",
+      "price": 180,
+      "currency": "USD",
+      "location": {
+        "name": "JM Suites Hotel",
+        "address": "161 Angle Bd Rachidi, Casablanca 20070"
+      },
+      "description": "Experience an elevated evening in Casablanca at The James Rooftop. Enjoy a delicious 3-course dinner with panoramic city views while listening to live DJ sets (Thursday-Saturday) or curated background music. The perfect way to spend an evening in the vibrant city of Casablanca.",
+      "highlights": [
+        "Panoramic rooftop city views",
+        "Live DJ entertainment (Thu-Sat)",
+        "Gourmet 3-course dinner",
+        "Signature cocktails",
+        "Elegant rooftop atmosphere",
+        "Perfect for special occasions"
+      ],
+      "menu": [
+        {
+          "name": "The Jame's Rooftop Signature Salad",
+          "description": "Fresh seasonal greens with house dressing",
+          "course": "Starter"
+        },
+        {
+          "name": "Pasta Bolognese",
+          "description": "Rich meat sauce with perfectly cooked pasta",
+          "course": "Main"
+        },
+        {
+          "name": "The Jame's Tiramisu",
+          "description": "Homemade creamy signature dessert",
+          "course": "Dessert"
+        },
+        {
+          "name": "Dream Cocktail",
+          "description": "Strawberries, basil, brown sugar, apple juice, 7Up (Non-Alcoholic)",
+          "course": "Drink"
+        }
+      ],
+      "included": [
+        "3-course dinner (salad, pasta, tiramisu)",
+        "Dream Cocktail (Non-Alcoholic)",
+        "Live DJ (Thursday-Saturday) or curated background music (Sunday-Wednesday)",
+        "Panoramic city views",
+        "Table reservation"
+      ],
+      "notIncluded": [
+        "Private transportation",
+        "Personal expenses",
+        "Additional drinks or menu items"
+      ]
+    }
+  ],
+  "metadata": {
+    "extractedFrom": "PDF documents in src/data folder",
+    "extractionDate": "2025-12-17",
+    "totalExperiences": 4,
+    "categories": ["multi-day", "transport", "wellness", "dining"]
+  }
+}
