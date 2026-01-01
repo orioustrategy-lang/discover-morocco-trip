@@ -12,10 +12,12 @@ import Newsletter from "@/components/Newsletter";
 import { tours } from "@/data/tours";
 // Video paths
 const heroVideos = [
-  "/videos/4954871-uhd_3840_2160_30fps.mp4",
-  "/videos/14677477_3840_2160_60fps.mp4",
-  "/videos/14691203_3840_2160_60fps.mp4",
-  "/videos/14741843_3840_2160_60fps.mp4"
+  "/videos/1224 (1)(1).mp4",
+  "/videos/1224 (1).mp4",
+  "/videos/kech sld.mp4",
+  "/videos/rabat.mp4",
+  "/videos/rabat1.mp4",
+  "/videos/sld csblnca.mp4"
 ];
 
 const Index = () => {
@@ -307,7 +309,7 @@ const Index = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="h-14 px-10 border-2 border-white text-white hover:bg-white hover:text-gray-900 rounded-lg font-semibold"
+                className="h-14 px-10 border-2 border-white bg-transparent text-white hover:bg-white hover:text-gray-900 rounded-lg font-semibold"
               >
                 Contact Form
                 <ArrowRight className="ml-2 h-5 w-5" />
