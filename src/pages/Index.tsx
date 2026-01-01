@@ -10,13 +10,13 @@ import Newsletter from "@/components/Newsletter";
 import { tours } from "@/data/tours";
 import { useState, useEffect } from "react";
 
-// Import videos
-import video1 from "@/data/4954871-uhd_3840_2160_30fps.mp4";
-import video2 from "@/data/14677477_3840_2160_60fps.mp4";
-import video3 from "@/data/14691203_3840_2160_60fps.mp4";
-import video4 from "@/data/14741843_3840_2160_60fps.mp4";
-
-const heroVideos = [video1, video2, video3, video4];
+// Video paths
+const heroVideos = [
+  "/videos/4954871-uhd_3840_2160_30fps.mp4",
+  "/videos/14677477_3840_2160_60fps.mp4",
+  "/videos/14691203_3840_2160_60fps.mp4",
+  "/videos/14741843_3840_2160_60fps.mp4"
+];
 
 const Index = () => {
   const [currentVideo, setCurrentVideo] = useState(heroVideos[0]);
@@ -67,16 +67,17 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section - Atlas Voyages Style */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black">
         {/* Background Video */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-black">
           <video
             key={currentVideo} // Key forces reload when video changes
             autoPlay
             muted
             loop
             playsInline
-            className="w-full h-full object-cover"
+            poster="https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=1920&q=80"
+            className="w-full h-full object-cover opacity-90"
           >
             <source src={currentVideo} type="video/mp4" />
           </video>
