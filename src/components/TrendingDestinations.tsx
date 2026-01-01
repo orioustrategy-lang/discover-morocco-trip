@@ -33,12 +33,12 @@ const destinations = [
   },
   {
     name: "Casablanca",
-    image: "https://images.unsplash.com/photo-1577147443647-81856d5150a4?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=600&q=80",
     slug: "casablanca",
   },
   {
     name: "Tangier",
-    image: "https://images.unsplash.com/photo-1553899017-91a3abfcbecd?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=600&q=80",
     slug: "tangier",
   },
 ];
@@ -55,22 +55,22 @@ const TrendingDestinations = () => {
         </div>
 
         <div className="relative">
-          <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {destinations.map((destination) => (
               <Link
                 key={destination.slug}
                 to={`/tours?search=${destination.name}`}
-                className="flex-shrink-0 snap-start group"
+                className="group block"
               >
-                <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-2xl overflow-hidden">
+                <div className="relative aspect-square rounded-2xl overflow-hidden cursor-pointer">
                   <img
                     src={destination.image}
                     alt={destination.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                   <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-white font-semibold text-sm md:text-base text-center">
+                    <h3 className="text-white font-bold text-lg md:text-xl text-center font-serif tracking-wide">
                       {destination.name}
                     </h3>
                   </div>

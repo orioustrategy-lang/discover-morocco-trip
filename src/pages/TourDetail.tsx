@@ -7,7 +7,7 @@ import TourCard from "@/components/TourCard";
 
 const TourDetail = () => {
   const { id } = useParams();
-  const [numberOfPeople, setNumberOfPeople] = useState(2);
+  const [numberOfPeople, setNumberOfPeople] = useState(1);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -86,7 +86,7 @@ const TourDetail = () => {
 
   const handleWhatsApp = () => {
     window.open(
-      `https://wa.me/212623956727?text=Hello, I'm interested in the tour: ${tour.title} for ${numberOfPeople} people (€${totalPrice} total)`,
+      `https://wa.me/212623956727?text=Hello, I'm interested in the tour: ${tour.title} for ${numberOfPeople} people (${totalPrice} USD total)`,
       "_blank"
     );
   };
@@ -297,7 +297,7 @@ const TourDetail = () => {
                   {pricingTiers.map((tier, index) => (
                     <div key={index} className="text-center">
                       <div className="text-xs sm:text-sm text-gray-500 mb-1 sm:mb-2">{tier.label} pax</div>
-                      <div className="text-base sm:text-xl font-bold text-primary">€{tier.price}</div>
+                      <div className="text-base sm:text-xl font-bold text-primary">{tier.price} USD</div>
                     </div>
                   ))}
                 </div>
@@ -311,7 +311,7 @@ const TourDetail = () => {
               <div className="mb-4 sm:mb-6">
                 <div className="text-xs sm:text-sm text-gray-500 mb-1">From</div>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-3xl sm:text-4xl font-bold text-primary">€{pricePerPerson}</span>
+                  <span className="text-3xl sm:text-4xl font-bold text-primary">{pricePerPerson} USD</span>
                   <span className="text-gray-500 text-sm sm:text-base">/ person</span>
                 </div>
               </div>
@@ -341,7 +341,7 @@ const TourDetail = () => {
               {/* Total */}
               <div className="flex items-center justify-between py-3 sm:py-4 border-t border-b border-gray-200 mb-4 sm:mb-6">
                 <span className="font-medium text-gray-700 text-sm sm:text-base">Total</span>
-                <span className="text-xl sm:text-2xl font-bold text-gray-900">€{totalPrice}</span>
+                <span className="text-xl sm:text-2xl font-bold text-gray-900">{totalPrice} USD</span>
               </div>
 
               {/* Book Button */}

@@ -20,7 +20,7 @@ const Footer = () => {
               <span className="text-xs tracking-[0.4em] font-light opacity-80 uppercase -mt-1">Morocco Trip</span>
             </Link>
             <p className="text-white/40 text-sm leading-relaxed max-w-xs">
-              Signature journeys since 2014. We create authentic experiences that connect you to the heart of Morocco.
+              Signature journeys since 1994. We create authentic experiences that connect you to the heart of Morocco.
             </p>
             <div className="flex gap-4">
               <Facebook className="h-5 w-5 text-white/40 hover:text-white cursor-pointer transition-colors" />

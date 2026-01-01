@@ -32,7 +32,7 @@ const WhyChooseUs = () => {
             Why Discover Morocco Trip?
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            60 years of creating luxury travel experiences
+            30+ years of creating luxury travel experiences
           </p>
         </div>
 

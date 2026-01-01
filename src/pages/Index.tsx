@@ -1,4 +1,6 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Phone, Star, ArrowRight, Quote } from "lucide-react";
 import TourCard from "@/components/TourCard";
@@ -8,8 +10,6 @@ import CustomTravelSection from "@/components/CustomTravelSection";
 import TravelCategories from "@/components/TravelCategories";
 import Newsletter from "@/components/Newsletter";
 import { tours } from "@/data/tours";
-import { useState, useEffect } from "react";
-
 // Video paths
 const heroVideos = [
   "/videos/4954871-uhd_3840_2160_30fps.mp4",
@@ -86,14 +86,29 @@ const Index = () => {
 
         {/* Hero Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-              Des voyages signature <br /> <span className="italic font-normal">depuis 1964</span>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8 }}
+            className="text-left mb-8 ml-0 md:ml-10"
+          >
+            <h1 className="text-6xl sm:text-7xl md:text-9xl font-bold text-white mb-2 leading-none drop-shadow-lg font-serif italic tracking-tighter">
+              Des voyages signature
             </h1>
-          </div>
+            <p className="text-2xl sm:text-3xl md:text-4xl text-white font-light italic opacity-90 ml-2">
+              depuis 1994
+            </p>
+          </motion.div>
 
           {/* Search Form - Atlas Voyages Minimal Style */}
-          <div className="max-w-5xl mx-auto bg-white p-2 shadow-2xl rounded-sm">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-5xl mx-auto bg-white p-2 shadow-2xl rounded-sm"
+          >
             <div className="flex flex-col md:flex-row items-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
               <div className="flex-1 w-full p-4">
                 <label className="block text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1">Destination</label>
@@ -118,15 +133,18 @@ const Index = () => {
                 </Button>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <WhyChooseUs />
-
-      {/* 10 Years of Luxury */}
-      <section className="py-16 md:py-24">
+      {/* 30+ Years of Luxury (About Us) */}
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+        className="py-16 md:py-24"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
@@ -136,23 +154,20 @@ const Index = () => {
                 className="w-full aspect-[4/3] object-cover rounded-3xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-2xl shadow-xl hidden md:block">
-                <div className="text-4xl font-bold">10+</div>
+                <div className="text-4xl font-bold">30+</div>
                 <div className="text-sm opacity-80">Years of Excellence</div>
               </div>
             </div>
             <div>
               <p className="text-primary font-medium uppercase tracking-wide mb-4">About Us</p>
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 font-serif mb-6 leading-tight">
-                10 Years of Luxury Travel Excellence
+                30+ Years of Luxury Travel Excellence
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Since our founding, we have forged a reputation for excellence in creating luxurious journeys,
-                guided by a passion for exploration and dedication to our clients. Each trip is meticulously
-                designed to reflect our clients' unique desires, while ensuring an authentic and memorable adventure.
+                Since our establishment in 1994, we have built a strong reputation for delivering refined and high-quality travel experiences, driven by a genuine passion for exploration and a deep commitment to our guests.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
-                Our luxury lies in space, intimacy, and style. We believe that true luxury is not about excess,
-                but about meaningful experiences that connect you deeply with Morocco's rich heritage.
+                Each experience is thoughtfully crafted to reflect the unique preferences of our travelers, while ensuring authenticity, comfort, and lasting memories. Our approach to luxury is defined by attention to detail, privacy, and elegant simplicity—creating meaningful and unforgettable moments.
               </p>
               <Link to="/tours">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-lg px-8">
@@ -163,10 +178,27 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
+
+      {/* Why Choose Us */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
+        <WhyChooseUs />
+      </motion.div>
 
       {/* Trending Destinations */}
-      <TrendingDestinations />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.8 }}
+      >
+        <TrendingDestinations />
+      </motion.div>
 
       {/* Featured Tours */}
       <section className="py-16 md:py-24 bg-gray-50">
