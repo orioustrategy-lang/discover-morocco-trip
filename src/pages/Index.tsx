@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -11,23 +11,34 @@ import TravelCategories from "@/components/TravelCategories";
 import Newsletter from "@/components/Newsletter";
 import { tours } from "@/data/tours";
 // Video paths
+// Video paths
 const heroVideos = [
   "/videos/1224 (1)(1).mp4",
-  "/videos/1224 (1).mp4",
-  "/videos/kech sld.mp4",
-  "/videos/rabat.mp4",
-  "/videos/rabat1.mp4",
-  "/videos/sld csblnca.mp4"
+  "/videos/hero-casablanca.mp4",
+  "/videos/hero-intro.mp4",
+  "/videos/hero-marrakech.mp4",
+  "/videos/hero-rabat.mp4",
+  "/videos/rabat.mp4"
 ];
 
 const Index = () => {
   const [currentVideo, setCurrentVideo] = useState(heroVideos[0]);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     // Randomly select a video on mount
     const randomVideo = heroVideos[Math.floor(Math.random() * heroVideos.length)];
     setCurrentVideo(randomVideo);
   }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load();
+      videoRef.current.play().catch(error => {
+        console.log("Video autoplay failed:", error);
+      });
+    }
+  }, [currentVideo]);
 
   const handleWhatsApp = () => {
     window.open("https://wa.me/212623956727?text=Hello, I'm interested in your Morocco tours!", "_blank");
@@ -73,16 +84,21 @@ const Index = () => {
         {/* Background Video */}
         <div className="absolute inset-0 bg-black">
           <video
-            key={currentVideo} // Key forces reload when video changes
+            ref={videoRef}
+            src={currentVideo}
             autoPlay
             muted
-            loop
             playsInline
+            preload="auto"
+            onEnded={() => {
+              // Play next video in sequence
+              const currentIndex = heroVideos.indexOf(currentVideo);
+              const nextIndex = (currentIndex + 1) % heroVideos.length;
+              setCurrentVideo(heroVideos[nextIndex]);
+            }}
             poster="https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=1920&q=80"
             className="w-full h-full object-cover opacity-90"
-          >
-            <source src={currentVideo} type="video/mp4" />
-          </video>
+          />
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
@@ -93,12 +109,12 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.8 }}
-            className="text-left mb-8 ml-0 md:ml-10"
+            className="max-w-5xl mx-auto text-left mb-8"
           >
-            <h1 className="text-6xl sm:text-7xl md:text-9xl font-bold text-white mb-2 leading-none drop-shadow-lg font-serif italic tracking-tighter">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-2 leading-none drop-shadow-lg font-serif italic tracking-tighter">
               Des voyages signature
             </h1>
-            <p className="text-2xl sm:text-3xl md:text-4xl text-white font-light italic opacity-90 ml-2">
+            <p className="text-xl sm:text-2xl md:text-3xl text-white font-light italic opacity-90">
               depuis 1994
             </p>
           </motion.div>
@@ -137,10 +153,10 @@ const Index = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* 30+ Years of Luxury (About Us) */}
-      <motion.section
+      < motion.section
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.3 }}
@@ -180,30 +196,30 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </motion.section>
+      </motion.section >
 
       {/* Why Choose Us */}
-      <motion.div
+      < motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.8 }}
       >
         <WhyChooseUs />
-      </motion.div>
+      </motion.div >
 
       {/* Trending Destinations */}
-      <motion.div
+      < motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.8 }}
       >
         <TrendingDestinations />
-      </motion.div>
+      </motion.div >
 
       {/* Featured Tours */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      < section className="py-16 md:py-24 bg-gray-50" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-primary font-medium uppercase tracking-wide mb-4">Our Selection</p>
@@ -230,16 +246,16 @@ const Index = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Custom Travel Section */}
-      <CustomTravelSection />
+      < CustomTravelSection />
 
       {/* Travel Categories */}
-      <TravelCategories />
+      < TravelCategories />
 
       {/* Testimonials */}
-      <section className="py-16 md:py-24">
+      < section className="py-16 md:py-24" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-primary font-medium uppercase tracking-wide mb-4">Testimonials</p>
@@ -273,13 +289,13 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Newsletter */}
-      <Newsletter />
+      < Newsletter />
 
       {/* CTA */}
-      <section className="relative py-24 md:py-32">
+      < section className="relative py-24 md:py-32" >
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=1920&q=80"
@@ -317,8 +333,8 @@ const Index = () => {
             </Link>
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 
