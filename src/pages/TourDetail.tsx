@@ -1,5 +1,5 @@
 import { useParams, Navigate, Link } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Clock, Users, MapPin, Check, X, Plus, Minus, Shield, ArrowRight } from "lucide-react";
 import { getTourById, tours } from "@/data/tours";
@@ -16,6 +16,13 @@ const TourDetail = () => {
   }, [id]);
 
   const tour = getTourById(id || "");
+
+  if (!tour) {
+    return <Navigate to="/tours" replace />;
+  }
+
+  const displayImages = tour.images && tour.images.length > 0 ? tour.images : (tour.image ? [tour.image] : []);
+  const hasImages = displayImages.length > 0;
 
   const relatedTours = tours
     .filter(t => t.category === tour.category && t.id !== tour.id)
@@ -178,7 +185,64 @@ const TourDetail = () => {
             {/* Description */}
             <div>
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900 font-serif mb-3 sm:mb-4">About This Journey</h2>
-              <p className="text-gray-600 leading-relaxed text-base sm:text-lg">{tour.description}</p>
+              <div className="space-y-6">
+                {tour.description.split('\n').map((line, index) => {
+                  const content = line.trim();
+                  if (!content) return null;
+
+                  if (content.match(/^Day \d+/)) {
+                    return (
+                      <div key={index} className="flex items-center gap-3 mt-8 mb-4">
+                        <div className="bg-primary/10 p-2 rounded-full">
+                          <Check className="h-5 w-5 text-primary" />
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900">{content}</h3>
+                      </div>
+                    );
+                  }
+
+                  if (content.toLowerCase().includes('meals included')) {
+                    return (
+                      <div key={index} className="flex items-start gap-3 p-4 bg-green-50 border border-green-100 rounded-lg">
+                        <Users className="h-5 w-5 text-green-600 mt-0.5" />
+                        <span className="text-green-800 font-medium">{content}</span>
+                      </div>
+                    );
+                  }
+
+                  if (content.toLowerCase().includes('accommodation included')) {
+                    return (
+                      <div key={index} className="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-lg">
+                        <MapPin className="h-5 w-5 text-blue-600 mt-0.5" />
+                        <span className="text-blue-800 font-medium">{content}</span>
+                      </div>
+                    );
+                  }
+
+                  if (content.toLowerCase().includes('meals not included') || content.toLowerCase().includes('accommodation not included')) {
+                    return (
+                      <div key={index} className="flex items-start gap-3 text-gray-500 text-sm italic pl-2 border-l-2 border-gray-200">
+                        <span>{content}</span>
+                      </div>
+                    );
+                  }
+
+                  if (content.startsWith('•') || content.startsWith('-')) {
+                    return (
+                      <p key={index} className="pl-4 text-gray-700 font-medium flex items-start gap-2">
+                        <span className="text-primary">•</span>
+                        {content.substring(1).trim()}
+                      </p>
+                    );
+                  }
+
+                  return (
+                    <p key={index} className="text-gray-600 leading-relaxed text-base sm:text-lg">
+                      {content}
+                    </p>
+                  );
+                })}
+              </div>
             </div>
 
             {/* Highlights */}

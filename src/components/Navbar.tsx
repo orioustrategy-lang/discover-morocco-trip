@@ -55,10 +55,9 @@ const Navbar = () => {
                 +212 623-956727
               </a>
               <Link to="/contact" className="text-sm font-medium hover:text-primary transition-colors flex items-center gap-2">
-                <Link to="/contact" className="text-sm font-medium hover:text-primary transition-colors flex items-center gap-2">
-                  <HelpCircle className="h-4 w-4" />
-                  Aide
-                </Link>
+                <HelpCircle className="h-4 w-4" />
+                Aide
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
