@@ -111,10 +111,10 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="max-w-5xl mx-auto text-left mb-8"
           >
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-2 leading-none drop-shadow-lg font-serif italic tracking-tighter">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 leading-none drop-shadow-lg font-serif italic tracking-tighter">
               Des voyages signature
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-white font-light italic opacity-90">
+            <p className="text-lg sm:text-xl md:text-2xl text-white font-light italic opacity-90">
               depuis 1994
             </p>
           </motion.div>
