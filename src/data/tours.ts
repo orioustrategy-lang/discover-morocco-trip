@@ -1,4 +1,5 @@
 // Centralized tours data for Discover Morocco Trip
+// Generated from experiences_rows.json
 
 export interface PriceTier {
   min: number;
@@ -43,214 +44,81 @@ export interface Tour {
 }
 
 export const tours: Tour[] = [
-  // 8-DAY MOROCCO DISCOVERY TOUR
   {
-    id: "8-day-morocco-discovery",
-    title: "8-Day Morocco Discovery Tour",
-    category: "multi-day",
-    image: "https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=800&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=800&q=80",
-      "https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=800&q=80",
-      "https://images.unsplash.com/photo-1573816050632-c08b7ec0de07?w=800&q=80",
-      "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=800&q=80",
-      "https://images.unsplash.com/photo-1542401886-65d6c61db217?w=800&q=80"
+    "id": "8911d793-70da-4d46-80ef-aec28eb72706",
+    "title": "Dinner and DJ Night on The James Rooftop An Elevated Casablanca ",
+    "category": "dining",
+    "image": "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1767024331289-9ymds.jpg",
+    "images": [
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1767024331289-9ymds.jpg"
     ],
-    duration: "8 days",
-    groupSize: "Private Tour",
-    price: "Contact for pricing",
-    rating: 5.0,
-    reviews: 127,
-    description: "Experience the ultimate Morocco adventure from Casablanca to the Sahara Desert. This comprehensive 8-day private tour takes you through Morocco's most iconic destinations including Casablanca, Rabat, Fes, Marrakech, and the magical Sahara Desert with luxury accommodations throughout.",
-    highlights: [
-      "Private airport/hotel pick-up & drop-off",
-      "Explore Casablanca: Hassan II Mosque, Old Medina, Corniche",
-      "Discover Rabat: Kasbah des Oudayas, Medina, historic gates",
-      "Wander Fes' ancient streets, Chouara Tannery & Al Quaraouiyine",
-      "Stay in top-quality hotels & traditional riads (breakfast included)",
-      "Visit Marrakech: Koutoubia Mosque, Ben Youssef Medersa, Bahia Palace & Souks",
-      "3-day Sahara Desert adventure: camel ride, luxury desert camp, Berber music",
-      "Scenic drives through Atlas Mountains, Valley of Roses & Todra Gorges",
-      "Private, air-conditioned land transport throughout"
+    "duration": "5",
+    "groupSize": "Max 39 travelers",
+    "price": "180.00 USD",
+    "rating": 5,
+    "reviews": 161,
+    "description": "Upon arrival at JM Suites Hotel, simply check in at the hotel reception. Show your Viator reservation (either printed or on your phone), and the team will guide you to the elevator that takes you directly to The Jame’s Rooftop.\n\nAs you step onto the rooftop, you’ll be welcomed with a refreshing signature cocktail while enjoying breathtaking 360° views over Casablanca, including the city's most iconic church right in front of you.\n\nThe evening unfolds with:\n\nA delicious 3-course dinner, featuring:\n• Starter: The Jame’s Rooftop Signature Salad\n• Main Course: Pasta Bolognese\n• Dessert: The Jame’s Tiramisu\n\nLive DJ music and entertainment to set the mood.\n\nTime to relax, enjoy the city lights, take pictures, and enjoy a vibrant rooftop vibe.\n\nThe experience lasts about 4 hours, and it's ideal for couples, friends, or solo travelers looking for something unique to do in Casablanca at night.\n\nJust come hungry, bring your camera, and enjoy one of the best rooftop nights in the city.\n\nShow less\nSample Menu\n1. The Jame’s rooftop signature salad, A fresh and vibrant mix of seasonal greens, crunchy vegetables, and our special house dressing – light and flavorful to start your evening.\n2. Pasta Bolognese, A hearty Italian classic prepared with rich meat sauce and perfectly cooked pasta – a warm and satisfying main dish.\n3. The Jame’s Tiramisu, Our homemade signature tiramisu – creamy, airy, and deliciously sweet, offering the perfect end to your meal.\n4. Dream Cocktail (Non-Alcoholic), A refreshing mocktail crafted with fresh strawberries, basil, brown sugar, apple juice, and a splash of 7Up",
+    "highlights": [
+      "Starter: The Jame’s Rooftop Signature Salad",
+      "Main Course: Pasta Bolognese",
+      "Dessert: The Jame’s Tiramisu"
     ],
-    included: [
-      "Private air-conditioned transport throughout",
-      "4★ hotel & traditional riad accommodations",
-      "All breakfasts included",
-      "Desert camp dinner & breakfast",
-      "Sunset camel trekking",
-      "Sandboarding & Berber drumming",
-      "Professional English-speaking driver/guide"
-    ],
-    notIncluded: [
-      "Lunches and dinners (except desert camp)",
-      "Entrance fees to monuments",
-      "Tips and gratuities",
-      "Travel insurance",
-      "Personal expenses"
-    ],
-    itinerary: [
-      "Day 1: Casablanca city tour - Hassan II Mosque, Old Medina, Corniche | Overnight: 4★ hotel in Casablanca",
-      "Day 2: Casablanca → Rabat (Medina, Kasbah des Oudayas, Remparts) → Fes | Overnight: Hotel in Fes",
-      "Day 3: Fes city tour - Fes El Bali, Chouara Tannery, Al Quaraouiyine | Overnight: Hotel in Fes",
-      "Day 4: Fes → Sahara Desert via Middle Atlas & Ziz Valley, sunset camel ride | Overnight: Luxury desert camp",
-      "Day 5: Merzouga → Todra Gorges → Dades Valley | Overnight: Traditional hotel in Dades",
-      "Day 6: Dades → Valley of Roses → Ait Ben Haddou → Marrakech via Tichka Pass | Overnight: Traditional riad",
-      "Day 7: Marrakech city tour - Koutoubia, Ben Youssef Medersa, Bahia Palace, Souks, free evening at Jemaa El-Fnaa | Overnight: Riad in Marrakech",
-      "Day 8: Marrakech → Casablanca Airport | End of tour"
-    ]
+    "included": [],
+    "location": "https://www.google.com/maps/place/JM+Suites+Hotel/@33.592192,-7.6280423,17z/data=!4m9!3m8!1s0xda4e2027da8aedf:0x432162896d0a7a34!5m2!4m1!1i2!8m2!3d33.5921876!4d-7.6254674!16s%2Fg%2F1tdsl45f?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
   },
-
-  // PRIVATE TRANSPORT SERVICE
   {
-    id: "private-transport-morocco",
-    title: "Private Transport for Tours & Trips Across Morocco 24/7",
-    category: "transport",
-    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
-      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80"
+    "id": "82c1bba9-85c2-4a51-ab9e-894f2e01e031",
+    "title": "Relaxing Hammam and Massage at Casablanca",
+    "category": "wellness",
+    "image": "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1767024078890-5dk4wj.jpg",
+    "images": [
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1767024078890-5dk4wj.jpg"
     ],
-    duration: "Up to 12 hours",
-    groupSize: "1-7 passengers",
-    price: "From 800 MAD",
-    rating: 4.9,
-    reviews: 256,
-    description: "Private transport service from Casablanca to all destinations in Morocco. Available 24/7 with fair pricing, full reliability, and respect for time. Travel comfortably in a modern, air-conditioned vehicle with a professional driver.",
-    highlights: [
-      "24/7 availability for all your travel needs",
-      "Fair and transparent pricing",
-      "Professional English or French speaking drivers",
-      "Comfortable air-conditioned vehicles",
-      "Door-to-door service",
-      "Flexible scheduling"
-    ],
-    transportRoutes: [
-      { destination: "Casablanca → Rabat", oneWay: 800, roundTrip: 1600 },
-      { destination: "Casablanca → Marrakech", oneWay: 1600, roundTrip: 2500 },
-      { destination: "Casablanca → Fes", oneWay: 2500, roundTrip: 4500 },
-      { destination: "Casablanca → Chefchaouen", oneWay: 2700, roundTrip: 5200 },
-      { destination: "Casablanca → Tangier", oneWay: 2300, roundTrip: 4400 },
-      { destination: "Casablanca → Meknes", oneWay: 2200, roundTrip: 4000 },
-      { destination: "Casablanca → Tetouan", oneWay: 2500, roundTrip: 4900 },
-      { destination: "Casablanca → Merzouga (Sahara)", oneWay: 3500, roundTrip: 6800 }
-    ],
-    included: [
-      "Hotel pickup and drop-off (within Casablanca city center)",
-      "Private air-conditioned vehicle",
-      "Professional and friendly driver (English or French speaking)",
-      "Bottled water during the tour",
-      "Parking fees and tolls",
-      "Door-to-door pickup and drop-off"
-    ],
-    notIncluded: [
-      "Personal expenses (shopping, etc.)"
-    ],
-    accessibility: [
-      "Wheelchair accessible",
-      "Stroller accessible",
-      "Service animals allowed",
-      "Near public transportation"
-    ]
+    "duration": "1 hour",
+    "groupSize": "Max 25 travelers",
+    "price": "110.00 USD",
+    "rating": 5,
+    "reviews": 88,
+    "description": "Step out of your daily routine and come recharge in an environment designed for relaxation and well-being. Located in the heart of the Ghandi- district in Casablanca, H2O Center - Spa & Hammam offers a variety of massages, luxurious private hammams, a hair and beauty salon using top-quality products — all provided by attentive and professional staff. All these elements have been brought together to offer your body a special moment of relaxation, helping you clear your mind and release all mental and muscular tension.\n\nStep away from the busy city life and treat yourself to a deeply relaxing and rejuvenating experience in one of Casablanca’s most elegant wellness spaces — H2O Center - Spa & Hammam .\n\nLocated in the vibrant Ghandi district, this hidden gem offers a luxurious private hammam, a wide variety of professional massages, and a modern beauty and hair salon using only the finest products.\n\nLet yourself be pampered by our experienced and attentive team. Whether you're visiting Casablanca for the first time or a returning traveler, this is your chance to experience authentic Moroccan wellness with a modern touch.\n",
+    "highlights": [],
+    "included": [],
+    "location": "https://www.google.com/maps/place/H2O+Center+-+Spa+%26+Hammam+Casablanca/@33.5750614,-7.6511316,17z/data=!3m1!4b1!4m6!3m5!1s0xda7d3ba5d3a355f:0xc394b58541f70c35!8m2!3d33.575057!4d-7.6485567!16s%2Fg%2F11w36q9g77?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
   },
-
-  // RELAXING HAMMAM AND MASSAGE
   {
-    id: "hammam-massage-casablanca",
-    title: "Relaxing Hammam and Massage at Casablanca",
-    category: "wellness",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80",
-      "https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=80"
+    "id": "426d7b48-7836-457e-ab84-95a70ed69d87",
+    "title": "8 Day Morocco Casablanca with Sahara Desert and More",
+    "category": "multi-day",
+    "image": "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1767023505942-phmi9p.jpg",
+    "images": [
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1767023505942-phmi9p.jpg"
     ],
-    duration: "1 - 1.5 hours",
-    groupSize: "Individual or couples",
-    price: "From $100",
-    rating: 4.8,
-    reviews: 189,
-    location: "H2O Center - Spa & Hammam, 31 Rue Abou El Hassan Es-Séghir, Casablanca",
-    description: "Indulge in an authentic Moroccan spa experience at one of Casablanca's finest hammams. Choose from a variety of traditional treatments including Oriental Hammam, relaxing massages, and luxurious VIP packages. Experience the centuries-old tradition of Moroccan bathing rituals.",
-    highlights: [
-      "Authentic Moroccan hammam experience",
-      "Multiple treatment options available",
-      "Professional spa therapists",
-      "Private access to spa facilities",
-      "Relaxing atmosphere",
-      "Traditional Moroccan products used"
-    ],
-    treatmentOptions: [
-      { name: "Oriental Hammam", price: 100, duration: "1 hour" },
-      { name: "Candle Massage", price: 110, duration: "1 hour" },
-      { name: "Tonic Massage", price: 110, duration: "1 hour" },
-      { name: "Traditional Hammam", price: 110, duration: "1 hour" },
-      { name: "Relaxing Hammam & Massage (Boutique Hotel)", price: 110, duration: "1 hour" },
-      { name: "Californian Massage", price: 130, duration: "1 hour" },
-      { name: "Hot Stone Massage", price: 150, duration: "1 hour" },
-      { name: "VIP Hammam", price: 200, duration: "1.5 hours" },
-      { name: "Royal Hammam", price: 250, duration: "1.5 hours" }
-    ],
-    included: [
-      "Reception assistance in English",
-      "Traditional Moroccan Hammam treatment",
-      "Full-body relaxing massage (for massage packages)",
-      "Private access to the spa facilities",
-      "Traditional Moroccan products (black soap, ghassoul, argan oil)"
-    ],
-    notIncluded: [
-      "Hotel pickup and drop-off",
-      "Personal expenses or additional spa treatments not listed"
-    ]
+    "duration": "8 days",
+    "groupSize": "Max 100 travelers",
+    "price": "2950.00 USD",
+    "rating": 5,
+    "reviews": 76,
+    "description": "Total Duration: 8 days\nDay 1 : Day 1 Casablanca city tour (Hassan II Mosque, Medina, Corniche)\nItinerary steps: 1\nMeals not included\nAccommodation not included\nDay 2 : Day 2 Casablanca Rabat (Medina, Kasbah des Oudayas, Remparts) drive to Fes\nItinerary steps: 1\nMeals not included\nAccommodation not included\nDay 3 : Day 3 Fes city tour (Fes El Bali, Chouara Tannery, Al Quaraouiyine) – Overnight hotel\nItinerary steps: 1\nMeals not included\nAccommodation included: Stay in a comfortable 4 star hotel in Fes with breakfast, modern rooms, and central location.\nDay 4 : Day 4: Fes Sahara Desert via Middle Atlas and Ziz Valley Sunset camel ride, overnight luxury desert camp.\nItinerary steps: 1\nMeals included: dinner\nAccommodation included: Overnight in a luxury Sahara desert camp\nDay 5 : Day 5 Merzouga Todra Gorges Dades Valley Overnight traditional hotel\nItinerary steps: 1\nMeals included: dinner\nAccommodation included: Overnight in a traditional hotel in Dades\nDay 6 : Day 6: Dades Valley of Roses Ait Ben Haddou Marrakech via Tichka Pass Overnight riad\nItinerary steps: 1\nMeals included: breakfast\nAccommodation included: Overnight in a traditional Moroccan riad (breakfast included)\nDay 7 : Day 7 Marrakech city tour (Koutoubia, Ben Youssef Medersa, Bahia Palace, Souks)\nItinerary steps: 1\nMeals included: breakfast\nAccommodation included: Overnight in your riad in Marrakech (breakfast included)\nDay 8 : Day 8 Marrakech Casablanca Airport .\nItinerary steps: 1\nMeals not included\nAccommodation not included",
+    "highlights": [],
+    "included": [],
+    "location": "https://www.google.com/maps/place/Casablanca/@33.5724032,-7.6693946,12z/data=!3m1!4b1!4m6!3m5!1s0xda7cd4778aa113b:0xb06c1d84f310fd3!8m2!3d33.5731104!4d-7.5898434!16zL20vMDIyYl8?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
   },
-
-  // DINNER AND DJ NIGHT
   {
-    id: "dinner-dj-james-rooftop",
-    title: "Dinner and DJ Night on The James Rooftop",
-    category: "dining",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80",
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+    "id": "0fc260f6-82c3-4e01-9254-0e6cea68d4a6",
+    "title": "Private Transport for Tours & Trips Across Morocco 24/7",
+    "category": "transport",
+    "image": "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1767023368870-9yugnh.jpg",
+    "images": [
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1767023368870-9yugnh.jpg"
     ],
-    duration: "5 hours",
-    groupSize: "Max 30 travelers (shared experience)",
-    price: "$180",
-    priceTiers: [
-      { min: 1, price: 180 }
-    ],
-    rating: 4.9,
-    reviews: 94,
-    location: "JM Suites Hotel, 161 Angle Bd Rachidi, Casablanca 20070",
-    description: "Experience an elevated evening in Casablanca at The James Rooftop. Enjoy a delicious 3-course dinner with panoramic city views while listening to live DJ sets (Thursday-Saturday) or curated background music. The perfect way to spend an evening in the vibrant city of Casablanca.",
-    highlights: [
-      "Panoramic rooftop city views",
-      "Live DJ entertainment (Thu-Sat)",
-      "Gourmet 3-course dinner",
-      "Signature cocktails",
-      "Elegant rooftop atmosphere",
-      "Perfect for special occasions"
-    ],
-    menu: [
-      "The Jame's Rooftop Signature Salad - Fresh seasonal greens with house dressing",
-      "Pasta Bolognese - Rich meat sauce with perfectly cooked pasta",
-      "The Jame's Tiramisu - Homemade creamy signature dessert",
-      "Dream Cocktail (Non-Alcoholic) - Strawberries, basil, brown sugar, apple juice, 7Up"
-    ],
-    included: [
-      "3-course dinner (salad, pasta, tiramisu)",
-      "Dream Cocktail (Non-Alcoholic)",
-      "Live DJ (Thursday-Saturday) or curated background music (Sunday-Wednesday)",
-      "Panoramic city views",
-      "Table reservation"
-    ],
-    notIncluded: [
-      "Private transportation",
-      "Personal expenses",
-      "Additional drinks or menu items"
-    ]
+    "duration": "24 hours",
+    "groupSize": "Max 96 travelers",
+    "price": "87.00 USD",
+    "rating": 5,
+    "reviews": 124,
+    "description": "What truly sets us apart is our fair pricing, our full reliability, and our strong respect for time. We are available 24/7 to assist you, ensuring comfort, trust, and a seamless travel experience wherever you go in Morocco.\nWe offer flexible pickup from any location in Casablanca and take you to the most popular cities in Morocco at competitive rates:\n\nRoute One Way ---------- Round Trip.\nCasablanca → Rabat 800 MAD 1,600 MAD\nCasablanca → Marrakech 1,600 MAD 2,500 MAD\nCasablanca → Fes 2,500 MAD 4,500 MAD\nCasablanca → Chefchaouen 2,700 MAD 5,200 MAD\nCasablanca → Tangier 2,300 MAD 4,400 MAD\nCasablanca → Meknes 2,200 MAD 4,000 MAD\nCasablanca → Tetouan 2,500 MAD 4,900 MAD\nCasablanca → Merzouga (Sahara) 3,500 MAD 6,800 MAD \n\nFor any other city in Morocco, we can arrange the trip and agree on the price together once you contact us. Your comfort and satisfaction are always our priority.",
+    "highlights": [],
+    "included": [],
+    "location": "https://www.google.com/maps/place/Casablanca/@33.5724032,-7.6693946,12z/data=!3m1!4b1!4m6!3m5!1s0xda7cd4778aa113b:0xb06c1d84f310fd3!8m2!3d33.5731104!4d-7.5898434!16zL20vMDIyYl8?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
   }
 ];
 

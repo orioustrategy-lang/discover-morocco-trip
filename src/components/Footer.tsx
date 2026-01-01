@@ -1,121 +1,87 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Instagram, Facebook, ArrowRight } from "lucide-react";
+import { Phone, Instagram, Facebook, Twitter, ArrowRight } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const destinations = [
+    "Marrakech", "Fes", "Sahara Desert", "Chefchaouen",
+    "Atlas Mountains", "Essaouira", "Casablanca", "Tangier"
+  ];
+
   return (
-    <footer className="bg-[#1a1a1a] text-white">
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16 py-12 sm:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-8">
-          {/* Brand - Takes more space */}
-          <div className="sm:col-span-2 lg:col-span-5">
-            <Link to="/" className="inline-flex items-center gap-3 mb-4 sm:mb-6">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary flex items-center justify-center">
-                <span className="font-serif font-bold text-lg sm:text-xl text-white">D</span>
-              </div>
-              <div>
-                <span className="font-serif font-bold text-lg sm:text-xl text-white">Discover</span>
-                <span className="font-light text-lg sm:text-xl ml-1 text-white/80">Morocco</span>
-              </div>
+    <footer className="bg-black text-white pt-20 pb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Brand */}
+          <div className="space-y-6">
+            <Link to="/" className="flex flex-col">
+              <span className="font-serif font-bold text-3xl tracking-tighter">DISCOVER</span>
+              <span className="text-xs tracking-[0.4em] font-light opacity-80 uppercase -mt-1">Morocco Trip</span>
             </Link>
-            <p className="text-white/60 max-w-sm leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
-              Your trusted local partner for authentic Moroccan adventures. 
-              From the Sahara Desert to the Atlas Mountains, we craft journeys that inspire.
+            <p className="text-white/40 text-sm leading-relaxed max-w-xs">
+              Signature journeys since 2014. We create authentic experiences that connect you to the heart of Morocco.
             </p>
-            
-            {/* Social Links */}
-            <div className="flex gap-3">
-              <a 
-                href="https://www.instagram.com/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300"
-              >
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a 
-                href="https://www.facebook.com/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
+            <div className="flex gap-4">
+              <Facebook className="h-5 w-5 text-white/40 hover:text-white cursor-pointer transition-colors" />
+              <Instagram className="h-5 w-5 text-white/40 hover:text-white cursor-pointer transition-colors" />
+              <Twitter className="h-5 w-5 text-white/40 hover:text-white cursor-pointer transition-colors" />
             </div>
+          </div>
+
+          {/* Destinations */}
+          <div>
+            <h3 className="font-bold uppercase tracking-[0.2em] text-xs mb-8">Nos Destinations</h3>
+            <ul className="grid grid-cols-1 gap-4">
+              {destinations.map((dest) => (
+                <li key={dest}>
+                  <Link to={`/tours?search=${dest}`} className="text-white/40 hover:text-white text-sm transition-colors">
+                    {dest}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2">
-            <h3 className="font-semibold text-sm uppercase tracking-widest mb-6 text-white/40">Navigation</h3>
+          <div>
+            <h3 className="font-bold uppercase tracking-[0.2em] text-xs mb-8">Informations</h3>
             <ul className="space-y-4">
-              {[
-                { name: "Home", path: "/" },
-                { name: "Journeys", path: "/tours" },
-                { name: "Contact", path: "/contact" },
-              ].map((link) => (
-                <li key={link.path}>
-                  <Link 
-                    to={link.path} 
-                    className="text-white/60 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"
-                  >
-                    <ArrowRight className="h-3 w-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+              <li><Link to="/contact" className="text-white/40 hover:text-white text-sm transition-colors">Conditions générales</Link></li>
+              <li><Link to="/contact" className="text-white/40 hover:text-white text-sm transition-colors">Professionnel</Link></li>
+              <li><Link to="/contact" className="text-white/40 hover:text-white text-sm transition-colors">Qui sommes-nous</Link></li>
+              <li><Link to="/contact" className="text-white/40 hover:text-white text-sm transition-colors">Nos Agences</Link></li>
             </ul>
           </div>
 
-          {/* Tours */}
-          <div className="lg:col-span-2">
-            <h3 className="font-semibold text-sm uppercase tracking-widest mb-6 text-white/40">Experiences</h3>
-            <ul className="space-y-4">
-              {["Desert Tours", "Mountain Treks", "Cultural Visits", "Coastal Escapes"].map((item) => (
-                <li key={item}>
-                  <Link 
-                    to="/tours" 
-                    className="text-white/60 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"
-                  >
-                    <ArrowRight className="h-3 w-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div className="lg:col-span-3">
-            <h3 className="font-semibold text-sm uppercase tracking-widest mb-6 text-white/40">Contact</h3>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-4">
-                <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-                <span className="text-white/60">+212 623-956727</span>
-              </li>
-              <li className="flex items-center gap-4">
-                <Mail className="h-4 w-4 text-primary flex-shrink-0" />
-                <span className="text-white/60 text-sm">contact@discovermoroccotrip.com</span>
-              </li>
-              <li className="flex items-center gap-4">
-                <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
-                <span className="text-white/60">Morocco</span>
-              </li>
-            </ul>
+          {/* Newsletter / Contact */}
+          <div>
+            <h3 className="font-bold uppercase tracking-[0.2em] text-xs mb-8">Newsletter</h3>
+            <div className="flex bg-white/5 p-1 mb-8">
+              <input type="email" placeholder="Votre email" className="bg-transparent border-none outline-none flex-1 px-4 py-3 text-sm" />
+              <button className="bg-primary p-3">
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
+            <div className="space-y-4">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 border border-white/10 flex items-center justify-center">
+                  <Phone className="h-4 w-4 text-primary" />
+                </div>
+                <div>
+                  <div className="text-[10px] text-white/40 uppercase tracking-widest">Call center</div>
+                  <div className="text-sm font-bold">+212 623-956727</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16 py-4 sm:py-6">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm text-white/40">
-            <p>&copy; {currentYear} Discover Morocco Trip. All rights reserved.</p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-primary transition-colors duration-300">Privacy</a>
-              <a href="#" className="hover:text-primary transition-colors duration-300">Terms</a>
-            </div>
+        <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/20 uppercase tracking-widest">
+          <p>&copy; {currentYear} Discover Morocco Trip. Luxury Travel.</p>
+          <div className="flex gap-8">
+            <span className="cursor-pointer hover:text-white">IATA Verified</span>
+            <span className="cursor-pointer hover:text-white">Privacy Policy</span>
           </div>
         </div>
       </div>

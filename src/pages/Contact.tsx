@@ -30,16 +30,16 @@ const Contact = () => {
               <div className="h-px w-8 sm:w-12 bg-primary" />
               <span className="text-primary font-medium tracking-widest text-xs sm:text-sm uppercase">Contact Us</span>
             </div>
-            
+
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-gray-900 font-serif mb-4 sm:mb-6">
               Let's Plan Your
               <span className="block text-primary">Adventure</span>
             </h1>
-            
+
             <p className="text-base sm:text-xl text-gray-600 mb-8 sm:mb-10 leading-relaxed">
               Ready to explore Morocco? Reach out and we'll help craft your perfect journey.
             </p>
-            
+
             {/* Quick Contact */}
             <div className="space-y-3 sm:space-y-4">
               <a href="tel:+212623956727" className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white border border-gray-200 hover:border-primary transition-colors group">
@@ -52,21 +52,21 @@ const Contact = () => {
                 </div>
                 <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 ml-auto group-hover:text-primary transition-colors" />
               </a>
-              
-              <a href="mailto:contact@discovermoroccotrip.com" className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white border border-gray-200 hover:border-primary transition-colors group">
+
+              <a href="mailto:abdelmajiddyani@gmail.com" className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white border border-gray-200 hover:border-primary transition-colors group">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
                   <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-primary group-hover:text-white transition-colors" />
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="text-xs sm:text-sm text-gray-500">Email us</div>
-                  <div className="font-semibold text-gray-900 text-sm sm:text-base truncate">contact@discovermoroccotrip.com</div>
+                  <div className="font-semibold text-gray-900 text-sm sm:text-base truncate">abdelmajiddyani@gmail.com</div>
                 </div>
                 <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 flex-shrink-0 group-hover:text-primary transition-colors" />
               </a>
             </div>
           </div>
         </div>
-        
+
         {/* Right - Image */}
         <div className="relative hidden lg:block">
           <img
@@ -91,7 +91,7 @@ const Contact = () => {
                 <p className="text-gray-400 text-sm sm:text-base">Get instant responses – we're online daily from 8AM to 9PM</p>
               </div>
             </div>
-            <Button 
+            <Button
               onClick={handleWhatsApp}
               size="lg"
               className="w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-10 rounded-none bg-green-500 hover:bg-green-600 text-white"
@@ -116,23 +116,23 @@ const Contact = () => {
               <p className="text-gray-600 mb-8 sm:mb-10 text-sm sm:text-base">
                 Share your travel dates, group size, and preferences. We'll create a customized itinerary just for you.
               </p>
-              
+
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">Name</label>
-                    <Input 
-                      placeholder="Your name" 
-                      required 
+                    <Input
+                      placeholder="Your name"
+                      required
                       className="h-11 sm:h-12 rounded-none border-gray-300 focus:border-primary focus:ring-0"
                     />
                   </div>
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">Email</label>
-                    <Input 
-                      type="email" 
-                      placeholder="your@email.com" 
-                      required 
+                    <Input
+                      type="email"
+                      placeholder="your@email.com"
+                      required
                       className="h-11 sm:h-12 rounded-none border-gray-300 focus:border-primary focus:ring-0"
                     />
                   </div>
@@ -141,17 +141,17 @@ const Contact = () => {
                 <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">Phone</label>
-                    <Input 
-                      type="tel" 
-                      placeholder="+1 234 567 8900" 
+                    <Input
+                      type="tel"
+                      placeholder="+1 234 567 8900"
                       className="h-11 sm:h-12 rounded-none border-gray-300 focus:border-primary focus:ring-0"
                     />
                   </div>
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">Travelers</label>
-                    <Input 
-                      type="number" 
-                      placeholder="Number of travelers" 
+                    <Input
+                      type="number"
+                      placeholder="Number of travelers"
                       min="1"
                       className="h-11 sm:h-12 rounded-none border-gray-300 focus:border-primary focus:ring-0"
                     />
@@ -160,7 +160,7 @@ const Contact = () => {
 
                 <div>
                   <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">Message</label>
-                  <Textarea 
+                  <Textarea
                     placeholder="Tell us about your dream Morocco trip: preferred dates, destinations, interests..."
                     rows={5}
                     required
@@ -168,8 +168,8 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   size="lg"
                   className="w-full h-12 sm:h-14 rounded-none bg-primary hover:bg-primary/90 text-sm sm:text-base"
                 >
@@ -200,7 +200,7 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Map */}
               <div className="h-[250px] sm:h-[300px] bg-gray-200">
                 <iframe

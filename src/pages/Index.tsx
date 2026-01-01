@@ -1,10 +1,32 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Phone, Star, Users, Shield, Clock, Award, ArrowRight, Quote } from "lucide-react";
+import { Phone, Star, ArrowRight, Quote } from "lucide-react";
 import TourCard from "@/components/TourCard";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import TrendingDestinations from "@/components/TrendingDestinations";
+import CustomTravelSection from "@/components/CustomTravelSection";
+import TravelCategories from "@/components/TravelCategories";
+import Newsletter from "@/components/Newsletter";
 import { tours } from "@/data/tours";
+import { useState, useEffect } from "react";
+
+// Import videos
+import video1 from "@/data/4954871-uhd_3840_2160_30fps.mp4";
+import video2 from "@/data/14677477_3840_2160_60fps.mp4";
+import video3 from "@/data/14691203_3840_2160_60fps.mp4";
+import video4 from "@/data/14741843_3840_2160_60fps.mp4";
+
+const heroVideos = [video1, video2, video3, video4];
 
 const Index = () => {
+  const [currentVideo, setCurrentVideo] = useState(heroVideos[0]);
+
+  useEffect(() => {
+    // Randomly select a video on mount
+    const randomVideo = heroVideos[Math.floor(Math.random() * heroVideos.length)];
+    setCurrentVideo(randomVideo);
+  }, []);
+
   const handleWhatsApp = () => {
     window.open("https://wa.me/212623956727?text=Hello, I'm interested in your Morocco tours!", "_blank");
   };
@@ -18,15 +40,6 @@ const Index = () => {
     tours.find(t => t.id === "essaouira-coastal-day"),
   ].filter(Boolean).slice(0, 6);
 
-  const destinations = [
-    { name: "Fes", image: "https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=600&q=80", tours: 8 },
-    { name: "Sahara Desert", image: "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=600&q=80", tours: 12 },
-    { name: "Chefchaouen", image: "https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=600&q=80", tours: 5 },
-    { name: "Atlas Mountains", image: "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=600&q=80", tours: 7 },
-    { name: "Essaouira", image: "https://images.unsplash.com/photo-1558370781-d6196949e317?w=600&q=80", tours: 4 },
-    { name: "Marrakech", image: "https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=600&q=80", tours: 10 },
-  ];
-
   const testimonials = [
     {
       name: "James Wilson",
@@ -37,7 +50,7 @@ const Index = () => {
     },
     {
       name: "Anna Bergström",
-      location: "Stockholm, Sweden", 
+      location: "Stockholm, Sweden",
       text: "Five days from desert to coast - I've never experienced anything like it. Waking up to sunrise over the dunes was worth the entire trip.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80",
@@ -52,241 +65,174 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#faf9f7]">
-      {/* Hero - Split Design */}
-      <section className="min-h-screen grid lg:grid-cols-2">
-        {/* Left Content */}
-        <div className="flex flex-col justify-center px-5 sm:px-8 lg:px-16 xl:px-24 py-24 sm:py-32 lg:py-20 order-2 lg:order-1">
-          <div className="max-w-xl">
-            <div className="flex items-center gap-3 mb-6 sm:mb-8">
-              <div className="h-px w-8 sm:w-12 bg-primary" />
-              <span className="text-primary font-medium tracking-widest text-xs sm:text-sm uppercase">Welcome to Morocco</span>
-            </div>
-            
-            <h1 className="text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-[1.1] font-serif">
-              Where Ancient
-              <span className="block text-primary">Meets Adventure</span>
+    <div className="min-h-screen bg-white">
+      {/* Hero Section - Atlas Voyages Style */}
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        {/* Background Video */}
+        <div className="absolute inset-0">
+          <video
+            key={currentVideo} // Key forces reload when video changes
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src={currentVideo} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+          <div className="text-center mb-12">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+              Des voyages signature <br /> <span className="italic font-normal">depuis 1964</span>
             </h1>
-            
-            <p className="text-base sm:text-xl text-gray-600 mb-8 sm:mb-10 leading-relaxed">
-              Curated journeys through imperial cities, golden deserts, and mountain peaks. 
-              Experience Morocco beyond the ordinary.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10 sm:mb-12">
-              <Link to="/tours" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base rounded-none bg-primary hover:bg-primary/90">
-                  View All Journeys
-                  <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
+          </div>
+
+          {/* Search Form - Atlas Voyages Minimal Style */}
+          <div className="max-w-5xl mx-auto bg-white p-2 shadow-2xl rounded-sm">
+            <div className="flex flex-col md:flex-row items-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
+              <div className="flex-1 w-full p-4">
+                <label className="block text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1">Destination</label>
+                <input type="text" placeholder="Où voulez-vous aller ?" className="w-full text-sm font-medium outline-none placeholder:text-gray-300" />
+              </div>
+              <div className="flex-1 w-full p-4">
+                <label className="block text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1">Type de voyage</label>
+                <select className="w-full text-sm font-medium outline-none bg-transparent">
+                  <option>Toutes les catégories</option>
+                  <option>Multi-day Tours</option>
+                  <option>Wellness</option>
+                  <option>Dining</option>
+                </select>
+              </div>
+              <div className="flex-1 w-full p-4">
+                <label className="block text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1">Période</label>
+                <input type="date" className="w-full text-sm font-medium outline-none" />
+              </div>
+              <div className="w-full md:w-auto p-2">
+                <Button className="w-full md:w-32 h-16 bg-primary hover:bg-primary/90 text-white rounded-none uppercase tracking-widest text-xs font-bold">
+                  RECHERCHER
                 </Button>
-              </Link>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                onClick={handleWhatsApp}
-                className="w-full sm:w-auto h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base rounded-none border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
-              >
-                <Phone className="mr-2 h-4 sm:h-5 w-4 sm:w-5" />
-                Get in Touch
-              </Button>
-            </div>
-            
-            {/* Mini Stats */}
-            <div className="flex items-center justify-between sm:justify-start sm:gap-8 pt-6 sm:pt-8 border-t border-gray-200">
-              <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl font-bold text-gray-900">10+</div>
-                <div className="text-xs sm:text-sm text-gray-500">Years</div>
-              </div>
-              <div className="h-10 sm:h-12 w-px bg-gray-200" />
-              <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl font-bold text-gray-900">20K+</div>
-                <div className="text-xs sm:text-sm text-gray-500">Travelers</div>
-              </div>
-              <div className="h-10 sm:h-12 w-px bg-gray-200" />
-              <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl font-bold text-gray-900">4.9</div>
-                <div className="text-xs sm:text-sm text-gray-500">Rating</div>
               </div>
             </div>
-          </div>
-        </div>
-        
-        {/* Right Image */}
-        <div className="relative order-1 lg:order-2 min-h-[40vh] sm:min-h-[50vh] lg:min-h-screen">
-          <img
-            src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=1200&q=80"
-            alt="Morocco Architecture"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent lg:bg-gradient-to-r lg:from-[#faf9f7] lg:via-transparent lg:to-transparent" />
-          
-          {/* Floating Card */}
-          <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8 lg:bottom-12 lg:left-12 lg:right-auto lg:max-w-xs bg-white p-4 sm:p-6 shadow-2xl">
-            <div className="flex items-center gap-3 sm:gap-4 mb-2 sm:mb-3">
-              <div className="flex -space-x-2">
-                {[1,2,3].map(i => (
-                  <div key={i} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary/20 border-2 border-white" />
-                ))}
-              </div>
-              <div className="text-xs sm:text-sm">
-                <span className="font-semibold">500+</span> travelers this month
-              </div>
-            </div>
-            <div className="flex gap-1">
-              {[1,2,3,4,5].map(i => (
-                <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 fill-amber-400 text-amber-400" />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Destinations Grid */}
-      <section className="py-16 sm:py-24 px-5 sm:px-8 lg:px-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
-            <div>
-              <span className="text-primary font-medium tracking-widest text-xs sm:text-sm uppercase mb-3 sm:mb-4 block">Destinations</span>
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 font-serif">
-                Explore Morocco's Treasures
-              </h2>
-            </div>
-            <Link to="/tours" className="text-primary font-medium flex items-center gap-2 hover:gap-4 transition-all text-sm sm:text-base">
-              View all destinations <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
-            {destinations.map((dest, index) => (
-              <Link 
-                key={dest.name}
-                to={`/tours?search=${dest.name}`}
-                className={`group relative overflow-hidden ${
-                  index === 0 ? 'col-span-2 row-span-2' : ''
-                }`}
-                style={{ aspectRatio: index === 0 ? '1' : '4/3' }}
-              >
-                <img 
-                  src={dest.image} 
-                  alt={dest.name}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-6">
-                  <h3 className={`font-serif font-bold text-white mb-1 ${index === 0 ? 'text-xl sm:text-3xl' : 'text-base sm:text-xl'}`}>
-                    {dest.name}
-                  </h3>
-                  <p className="text-white/70 text-xs sm:text-sm">{dest.tours} experiences</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Tours */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16">
-          <div className="text-center mb-10 sm:mb-16">
-            <span className="text-primary font-medium tracking-widest text-xs sm:text-sm uppercase mb-3 sm:mb-4 block">Curated Experiences</span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 font-serif mb-3 sm:mb-4">
-              Popular Journeys
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
-              Hand-picked adventures designed to immerse you in Morocco's rich culture and breathtaking landscapes.
-            </p>
-          </div>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-            {featuredTours.map((tour) => (
-              tour && <TourCard key={tour.id} {...tour} />
-            ))}
-          </div>
-          
-          <div className="text-center mt-8 sm:mt-12">
-            <Link to="/tours" className="inline-block w-full sm:w-auto">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-10 rounded-none border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white text-sm sm:text-base">
-                Explore All Tours
-                <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
-              </Button>
-            </Link>
           </div>
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 sm:py-24 px-5 sm:px-8 lg:px-16 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
-            <div>
-              <span className="text-primary font-medium tracking-widest text-xs sm:text-sm uppercase mb-3 sm:mb-4 block">Why Choose Us</span>
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold font-serif mb-4 sm:mb-6">
-                Travel with the Experts
-              </h2>
-              <p className="text-gray-400 text-base sm:text-lg mb-6 sm:mb-8">
-                We're not just tour operators – we're storytellers, culture enthusiasts, and adventure seekers who call Morocco home.
-              </p>
-              
-              <div className="space-y-4 sm:space-y-6">
-                {[
-                  { icon: Users, title: "Local Expertise", desc: "Guides born and raised in Morocco" },
-                  { icon: Shield, title: "Trusted & Safe", desc: "Licensed operator with 24/7 support" },
-                  { icon: Award, title: "Award Winning", desc: "Top-rated on TripAdvisor & Google" },
-                  { icon: Clock, title: "Flexible Booking", desc: "Free cancellation up to 48 hours" },
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-3 sm:gap-4">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1 text-sm sm:text-base">{item.title}</h3>
-                      <p className="text-gray-400 text-xs sm:text-sm">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
+      <WhyChooseUs />
+
+      {/* 10 Years of Luxury */}
+      <section className="py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <img
+                src="https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=800&q=80"
+                alt="Morocco Experience"
+                className="w-full aspect-[4/3] object-cover rounded-3xl shadow-2xl"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-2xl shadow-xl hidden md:block">
+                <div className="text-4xl font-bold">10+</div>
+                <div className="text-sm opacity-80">Years of Excellence</div>
               </div>
             </div>
-            
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=800&q=80"
-                alt="Morocco Guide"
-                className="w-full aspect-[4/5] object-cover"
-              />
-              <div className="absolute -bottom-4 sm:-bottom-8 -left-4 sm:-left-8 bg-primary p-4 sm:p-8 text-white max-w-[200px] sm:max-w-xs hidden md:block">
-                <div className="text-2xl sm:text-4xl font-bold mb-2">10+</div>
-                <div className="text-xs sm:text-sm opacity-80">Years of creating unforgettable memories across Morocco</div>
-              </div>
+            <div>
+              <p className="text-primary font-medium uppercase tracking-wide mb-4">About Us</p>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 font-serif mb-6 leading-tight">
+                10 Years of Luxury Travel Excellence
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Since our founding, we have forged a reputation for excellence in creating luxurious journeys,
+                guided by a passion for exploration and dedication to our clients. Each trip is meticulously
+                designed to reflect our clients' unique desires, while ensuring an authentic and memorable adventure.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-8">
+                Our luxury lies in space, intimacy, and style. We believe that true luxury is not about excess,
+                but about meaningful experiences that connect you deeply with Morocco's rich heritage.
+              </p>
+              <Link to="/tours">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-lg px-8">
+                  Explore Our Tours
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Trending Destinations */}
+      <TrendingDestinations />
+
+      {/* Featured Tours */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary font-medium uppercase tracking-wide mb-4">Our Selection</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-serif mb-4">
+              Popular Journeys
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Hand-picked adventures designed to immerse you in Morocco's rich culture and breathtaking landscapes.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {featuredTours.map((tour) => (
+              tour && <TourCard key={tour.id} {...tour} />
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link to="/tours">
+              <Button size="lg" variant="outline" className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white rounded-lg px-10">
+                View All Tours
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Custom Travel Section */}
+      <CustomTravelSection />
+
+      {/* Travel Categories */}
+      <TravelCategories />
+
       {/* Testimonials */}
-      <section className="py-16 sm:py-24 px-5 sm:px-8 lg:px-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10 sm:mb-16">
-            <span className="text-primary font-medium tracking-widest text-xs sm:text-sm uppercase mb-3 sm:mb-4 block">Testimonials</span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 font-serif">
+      <section className="py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary font-medium uppercase tracking-wide mb-4">Testimonials</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-serif">
               Stories from Our Travelers
             </h2>
           </div>
-          
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
+
+          <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-5 sm:p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                <Quote className="h-8 w-8 sm:h-10 sm:w-10 text-primary/20 mb-4 sm:mb-6" />
-                <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">"{testimonial.text}"</p>
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <img 
-                    src={testimonial.image} 
+              <div key={index} className="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                <Quote className="h-10 w-10 text-primary/20 mb-6" />
+                <p className="text-gray-600 mb-6 leading-relaxed">"{testimonial.text}"</p>
+                <div className="flex items-center gap-4">
+                  <img
+                    src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover"
+                    className="w-14 h-14 rounded-full object-cover"
                   />
                   <div>
-                    <div className="font-semibold text-gray-900 text-sm sm:text-base">{testimonial.name}</div>
-                    <div className="text-xs sm:text-sm text-gray-500">{testimonial.location}</div>
+                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                    <div className="text-sm text-gray-500">{testimonial.location}</div>
                   </div>
+                </div>
+                <div className="flex gap-1 mt-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  ))}
                 </div>
               </div>
             ))}
@@ -294,41 +240,44 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Newsletter */}
+      <Newsletter />
+
       {/* CTA */}
-      <section className="relative py-20 sm:py-32 px-5 sm:px-8">
+      <section className="relative py-24 md:py-32">
         <div className="absolute inset-0">
-          <img 
+          <img
             src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=1920&q=80"
             alt="Morocco Desert"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gray-900/80" />
         </div>
-        
-        <div className="relative z-10 max-w-3xl mx-auto text-center text-white px-4">
-          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 sm:mb-6">
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-white px-4">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold font-serif mb-6">
             Ready to Discover Morocco?
           </h2>
-          <p className="text-base sm:text-xl text-white/80 mb-8 sm:mb-10">
+          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
             Let us craft your perfect Moroccan adventure. Contact us today for a personalized itinerary.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <Button 
-              size="lg" 
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
               onClick={handleWhatsApp}
-              className="w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-10 text-sm sm:text-base rounded-none bg-primary hover:bg-primary/90"
+              className="h-14 px-10 bg-primary hover:bg-primary/90 text-white rounded-lg font-semibold"
             >
-              <Phone className="mr-2 h-4 sm:h-5 w-4 sm:w-5" />
+              <Phone className="mr-2 h-5 w-5" />
               WhatsApp Us
             </Button>
-            <Link to="/contact" className="w-full sm:w-auto">
-              <Button 
-                size="lg" 
+            <Link to="/contact">
+              <Button
+                size="lg"
                 variant="outline"
-                className="w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-10 text-sm sm:text-base rounded-none border-2 border-white text-white hover:bg-white hover:text-gray-900"
+                className="h-14 px-10 border-2 border-white text-white hover:bg-white hover:text-gray-900 rounded-lg font-semibold"
               >
                 Contact Form
-                <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
           </div>

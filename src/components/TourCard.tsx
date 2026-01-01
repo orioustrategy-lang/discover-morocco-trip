@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Clock, Users, ArrowUpRight } from "lucide-react";
+import { Clock, ArrowRight } from "lucide-react";
 
 interface TourCardProps {
   id: string;
@@ -20,64 +20,50 @@ const TourCard = ({
   image,
   images,
   duration,
-  groupSize,
   price,
-  description,
 }: TourCardProps) => {
   const displayImage = images && images.length > 0 ? images[0] : image;
 
   return (
     <Link to={`/tours/${id}`} className="block group">
-      <article className="h-full flex flex-col bg-white border border-gray-100 hover:shadow-2xl transition-all duration-500">
+      <article className="h-full flex flex-col bg-white overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 rounded-sm">
         {/* Image Container */}
-        <div className="relative aspect-[4/3] overflow-hidden">
+        <div className="relative aspect-[3/2] overflow-hidden">
           {displayImage ? (
             <img
               src={displayImage}
               alt={title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
           ) : (
-            <div className="w-full h-full bg-gray-100 flex items-center justify-center">
-              <span className="text-gray-400 text-4xl">🏔</span>
-            </div>
+            <div className="w-full h-full bg-gray-100" />
           )}
-          
-          {/* Price Tag */}
-          <div className="absolute top-0 right-0 bg-primary text-white px-4 py-2 font-bold">
-            {price}
-          </div>
+          <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-6 flex flex-col flex-grow">
-          <h3 className="font-serif font-bold text-lg sm:text-xl text-gray-900 mb-2 sm:mb-3 group-hover:text-primary transition-colors duration-300 line-clamp-2">
+        <div className="p-6 flex flex-col flex-grow">
+          <div className="flex justify-between items-start mb-4">
+            <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400">Morocco</div>
+            {price && <div className="text-sm font-bold text-gray-900">{price}</div>}
+          </div>
+
+          <h3 className="font-serif font-bold text-xl text-gray-900 mb-6 group-hover:text-primary transition-colors duration-300 min-h-[56px] line-clamp-2">
             {title}
           </h3>
-          
-          <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-5 line-clamp-2 flex-grow leading-relaxed">
-            {description}
-          </p>
-          
-          {/* Meta */}
-          <div className="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500 mb-4 sm:mb-5 pb-4 sm:pb-5 border-b border-gray-100">
-            <div className="flex items-center gap-1.5 sm:gap-2">
-              <Clock className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary" />
-              <span>{duration}</span>
+
+          <div className="mt-auto pt-6 border-t border-gray-100 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-widest text-gray-500 font-medium">
+                <Clock className="h-3 w-3" />
+                {duration}
+              </div>
             </div>
-            <div className="flex items-center gap-1.5 sm:gap-2">
-              <Users className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary" />
-              <span>{groupSize}</span>
+
+            <div className="h-10 w-10 bg-primary text-white flex items-center justify-center rounded-none group-hover:w-32 transition-all duration-500 overflow-hidden relative">
+              <ArrowRight className="h-4 w-4 absolute" />
+              <span className="opacity-0 group-hover:opacity-100 text-[10px] uppercase font-bold tracking-widest ml-2 whitespace-nowrap">Découvrir</span>
             </div>
-          </div>
-          
-          {/* CTA */}
-          <div className="flex items-center justify-between">
-            <span className="text-base sm:text-lg font-bold text-gray-900">{price}</span>
-            <span className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium text-primary group-hover:gap-2 sm:group-hover:gap-3 transition-all duration-300">
-              View Details
-              <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            </span>
           </div>
         </div>
       </article>
