@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Phone, Star, ArrowRight, Quote } from "lucide-react";
 import TourCard from "@/components/TourCard";
@@ -9,8 +9,8 @@ import TrendingDestinations from "@/components/TrendingDestinations";
 import CustomTravelSection from "@/components/CustomTravelSection";
 import TravelCategories from "@/components/TravelCategories";
 import Newsletter from "@/components/Newsletter";
+import SearchBar from "@/components/SearchBar";
 import { tours } from "@/data/tours";
-// Video paths
 // Video paths
 const heroVideos = [
   "/videos/1224 (1)(1).mp4",
@@ -23,22 +23,12 @@ const heroVideos = [
 
 const Index = () => {
   const [currentVideo, setCurrentVideo] = useState(heroVideos[0]);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     // Randomly select a video on mount
     const randomVideo = heroVideos[Math.floor(Math.random() * heroVideos.length)];
     setCurrentVideo(randomVideo);
   }, []);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.load();
-      videoRef.current.play().catch(error => {
-        console.log("Video autoplay failed:", error);
-      });
-    }
-  }, [currentVideo]);
 
   const handleWhatsApp = () => {
     window.open("https://wa.me/212623956727?text=Hello, I'm interested in your Morocco tours!", "_blank");
@@ -82,23 +72,30 @@ const Index = () => {
       {/* Hero Section - Atlas Voyages Style */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black">
         {/* Background Video */}
+        {/* Background Video */}
         <div className="absolute inset-0 bg-black">
-          <video
-            ref={videoRef}
-            src={currentVideo}
-            autoPlay
-            muted
-            playsInline
-            preload="auto"
-            onEnded={() => {
-              // Play next video in sequence
-              const currentIndex = heroVideos.indexOf(currentVideo);
-              const nextIndex = (currentIndex + 1) % heroVideos.length;
-              setCurrentVideo(heroVideos[nextIndex]);
-            }}
-            poster="https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=1920&q=80"
-            className="w-full h-full object-cover opacity-90"
-          />
+          <AnimatePresence mode="popLayout">
+            <motion.video
+              key={currentVideo}
+              src={currentVideo}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.9 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5 }}
+              autoPlay
+              muted
+              playsInline
+              preload="auto"
+              onEnded={() => {
+                // Play next video in sequence
+                const currentIndex = heroVideos.indexOf(currentVideo);
+                const nextIndex = (currentIndex + 1) % heroVideos.length;
+                setCurrentVideo(heroVideos[nextIndex]);
+              }}
+              poster="https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=1920&q=80"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </AnimatePresence>
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
@@ -119,39 +116,8 @@ const Index = () => {
             </p>
           </motion.div>
 
-          {/* Search Form - Atlas Voyages Minimal Style */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-5xl mx-auto bg-white p-2 shadow-2xl rounded-sm"
-          >
-            <div className="flex flex-col md:flex-row items-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
-              <div className="flex-1 w-full p-4">
-                <label className="block text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1">Destination</label>
-                <input type="text" placeholder="Où voulez-vous aller ?" className="w-full text-sm font-medium outline-none placeholder:text-gray-300" />
-              </div>
-              <div className="flex-1 w-full p-4">
-                <label className="block text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1">Type de voyage</label>
-                <select className="w-full text-sm font-medium outline-none bg-transparent">
-                  <option>Toutes les catégories</option>
-                  <option>Multi-day Tours</option>
-                  <option>Wellness</option>
-                  <option>Dining</option>
-                </select>
-              </div>
-              <div className="flex-1 w-full p-4">
-                <label className="block text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1">Période</label>
-                <input type="date" className="w-full text-sm font-medium outline-none" />
-              </div>
-              <div className="w-full md:w-auto p-2">
-                <Button className="w-full md:w-32 h-16 bg-primary hover:bg-primary/90 text-white rounded-none uppercase tracking-widest text-xs font-bold">
-                  RECHERCHER
-                </Button>
-              </div>
-            </div>
-          </motion.div>
+          {/* Tabs */}
+          <SearchBar />
         </div>
       </section >
 
