@@ -92,7 +92,6 @@ const Index = () => {
                 const nextIndex = (currentIndex + 1) % heroVideos.length;
                 setCurrentVideo(heroVideos[nextIndex]);
               }}
-              poster="https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=1920&q=80"
               className="absolute inset-0 w-full h-full object-cover"
             />
           </AnimatePresence>
