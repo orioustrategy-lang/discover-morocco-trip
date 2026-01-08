@@ -39,11 +39,11 @@ const HeroSearch = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-2xl p-2 md:p-3">
+    <div className="bg-white/95 backdrop-blur-md rounded-xl shadow-2xl p-2 md:p-3 border border-white/20">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-0">
         {/* Destination */}
-        <div className="relative group md:border-r border-gray-200">
-          <div className="px-4 py-3 cursor-pointer hover:bg-gray-50 rounded-lg md:rounded-none transition-colors">
+        <div className="relative group md:border-r border-gray-200/50">
+          <div className="px-4 py-3 cursor-pointer hover:bg-white/50 rounded-lg md:rounded-none transition-colors">
             <div className="flex items-center gap-3">
               <MapPin className="h-5 w-5 text-primary" />
               <div className="flex-1">
@@ -62,8 +62,8 @@ const HeroSearch = () => {
         </div>
 
         {/* Date */}
-        <div className="relative md:border-r border-gray-200">
-          <div className="px-4 py-3 cursor-pointer hover:bg-gray-50 rounded-lg md:rounded-none transition-colors">
+        <div className="relative md:border-r border-gray-200/50">
+          <div className="px-4 py-3 cursor-pointer hover:bg-white/50 rounded-lg md:rounded-none transition-colors">
             <div className="flex items-center gap-3">
               <Calendar className="h-5 w-5 text-primary" />
               <div className="flex-1">
@@ -78,8 +78,8 @@ const HeroSearch = () => {
         </div>
 
         {/* Travelers */}
-        <div className="relative md:border-r border-gray-200">
-          <div className="px-4 py-3 cursor-pointer hover:bg-gray-50 rounded-lg md:rounded-none transition-colors">
+        <div className="relative md:border-r border-gray-200/50">
+          <div className="px-4 py-3 cursor-pointer hover:bg-white/50 rounded-lg md:rounded-none transition-colors">
             <div className="flex items-center gap-3">
               <Users className="h-5 w-5 text-primary" />
               <div className="flex-1">
@@ -106,13 +106,13 @@ const HeroSearch = () => {
       </div>
 
       {/* Quick Destination Pills */}
-      <div className="hidden md:flex items-center gap-2 px-4 py-3 border-t border-gray-100">
+      <div className="hidden md:flex items-center gap-2 px-4 py-3 border-t border-gray-200/50">
         <span className="text-xs text-gray-500">Popular:</span>
         {popularDestinations.slice(0, 5).map((dest) => (
           <button
             key={dest}
             onClick={() => handleDestinationClick(dest)}
-            className="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-100 hover:bg-primary hover:text-white rounded-full transition-colors"
+            className="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-100/80 hover:bg-primary hover:text-white rounded-full transition-colors"
           >
             {dest}
           </button>
