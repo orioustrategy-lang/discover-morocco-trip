@@ -70,7 +70,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section - Atlas Voyages Style */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black">
+      <section className="relative h-[100dvh] flex items-center justify-center overflow-hidden bg-black">
         {/* Background Video */}
         {/* Background Video */}
         <div className="absolute inset-0 bg-black">

@@ -1,11 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import TourCard from "@/components/TourCard";
 import { tours } from "@/data/tours";
 import { Search } from "lucide-react";
 
 const Tours = () => {
+  const [searchParams] = useSearchParams();
   const [activeTab, setActiveTab] = useState("all");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("search") || "");
+
+  useEffect(() => {
+    const query = searchParams.get("search");
+    if (query) {
+      setSearchQuery(query);
+    }
+  }, [searchParams]);
 
   const categories = [
     { id: "all", label: "All" },
@@ -19,7 +28,7 @@ const Tours = () => {
   const filteredTours = tours.filter(tour => {
     const matchesCategory = activeTab === "all" || tour.category === activeTab;
     const matchesSearch = tour.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         tour.description.toLowerCase().includes(searchQuery.toLowerCase());
+      tour.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -35,18 +44,18 @@ const Tours = () => {
                 <span className="text-primary font-medium tracking-widest text-xs sm:text-sm uppercase">Our Journeys</span>
               </div>
               <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-gray-900 font-serif mb-4 sm:mb-6">
-                Curated Moroccan 
+                Curated Moroccan
                 <span className="block text-primary">Experiences</span>
               </h1>
               <p className="text-base sm:text-xl text-gray-600 leading-relaxed">
-                From imperial cities to desert camps, discover our collection of 
+                From imperial cities to desert camps, discover our collection of
                 handcrafted journeys through Morocco's most captivating destinations.
               </p>
             </div>
-            
+
             <div className="relative hidden lg:block">
               <div className="absolute -top-8 -right-8 w-64 h-64 bg-primary/10" />
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=600&q=80"
                 alt="Morocco"
                 className="relative z-10 w-full aspect-[4/3] object-cover"
@@ -66,17 +75,16 @@ const Tours = () => {
                 <button
                   key={cat.id}
                   onClick={() => setActiveTab(cat.id)}
-                  className={`px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-300 ${
-                    activeTab === cat.id
+                  className={`px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-300 ${activeTab === cat.id
                       ? "bg-gray-900 text-white"
                       : "text-gray-600 hover:bg-gray-100"
-                  }`}
+                    }`}
                 >
                   {cat.label}
                 </button>
               ))}
             </div>
-            
+
             {/* Search */}
             <div className="relative w-full lg:max-w-xs">
               <Search className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />

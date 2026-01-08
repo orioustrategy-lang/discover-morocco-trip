@@ -40,13 +40,14 @@ const WhyChooseUs = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300"
+              className="text-center p-4"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-4">
-                <feature.icon className="h-8 w-8 text-primary" />
+              <div className="flex flex-col items-center justify-center mb-4">
+                <feature.icon className="h-10 w-10 text-gray-900 pb-1" strokeWidth={1.5} />
+                <div className="w-12 h-6 bg-black rounded-b-full" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">{feature.title}</h3>
-              <p className="text-sm text-gray-500">{feature.description}</p>
+              <h3 className="font-serif text-lg font-medium text-gray-900 mb-2">{feature.title}</h3>
+              <p className="text-sm text-gray-500 leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>

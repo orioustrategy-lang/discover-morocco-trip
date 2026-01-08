@@ -36,7 +36,11 @@ const TourCard = ({
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
           ) : (
-            <div className="w-full h-full bg-gray-100" />
+            <img
+              src="/images/fallback-tour.png"
+              alt={title}
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            />
           )}
           <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </div>
