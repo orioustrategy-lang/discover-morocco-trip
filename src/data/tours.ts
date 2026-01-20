@@ -179,7 +179,316 @@ export const tours: Tour[] = [
       "Accommodation"
     ],
     "location": "https://www.google.com/maps/place/Casablanca/@33.5724032,-7.6693946,12z/data=!3m1!4b1!4m6!3m5!1s0xda7cd4778aa113b:0xb06c1d84f310fd3!8m2!3d33.5731104!4d-7.5898434!16zL20vMDIyYl8?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
-  }
+  },
+  {
+    "id": "0d688efc-6b91-4601-b119-0fcc8e19671f",
+    "title": "Horseback Riding Experience at Casablanca Beach",
+    "category": "activity",
+    "image": "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1767387153212-ln2z5.webp",
+    "images": [
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1767387153212-ln2z5.webp",
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1767387153879-fohl2g.webp"
+    ],
+    "duration": "3 hours",
+    "groupSize": "Max 25 travelers",
+    "price": "120.00 USD",
+    "rating": 5,
+    "reviews": 0,
+    "description": "This experience offers travelers the flexibility to choose between two unique horseback riding options: a peaceful countryside ride at the equestrian farm or a scenic ride along the Atlantic beach.\n\nCombined with professional guides, well-trained horses, and personalized service from pickup to drop-off, this activity delivers a safe, authentic, and unforgettable experience in Casablanca.\n\nEnjoy a unique horseback riding experience along Dar Bouazza beach with scenic countryside views.\n\nRide well-trained horses suitable for beginners and experienced riders alike.\n\nPrivate or small group experience with a professional local guide to ensure safety and personalized attention.\n\nIncludes pick-up from Casablanca and a stop for traditional Moroccan tea, making it a convenient and authentic Moroccan adventure.\n\nPerfect for couples, families, and travelers seeking a memorable outdoor activity close to the city.",
+    "highlights": [
+      "Horseback riding along Dar Bouazza beach",
+      "Scenic countryside views",
+      "Professional local guide",
+      "Traditional Moroccan tea break"
+    ],
+    "included": [
+      "Hotel pickup and drop-off",
+      "Professional guide",
+      "Safety equipment",
+      "Moroccan tea"
+    ],
+    "notIncluded": [
+      "Food and drinks not mentioned",
+      "Tips"
+    ],
+    "location": "https://www.google.com/maps/place/Casablanca"
+  },
+  {
+    "id": "1f3d25c6-a826-45a2-a190-529e4dfbb3a2",
+    "title": "Marrakech: Agafay Desert Quad & Camel Rides with Dinner Show",
+    "category": "desert",
+    "image": "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1767995599483-jic278.jpg",
+    "images": [
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1767995599483-jic278.jpg",
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1767995600916-8q4kf3.JPG"
+    ],
+    "duration": "5 hours",
+    "groupSize": "Max 30 travelers",
+    "price": "110.00 USD",
+    "rating": 5,
+    "reviews": 0,
+    "description": "Day 1: Adrenaline & Serenity in the Agafay\nBegin your adventure with a convenient pickup from your Marrakech city center hotel. As you journey towards the Agafay Desert in a comfortable air-conditioned minibus, feel the anticipation build. Upon arrival, gear up for an exhilarating 40-minute quad bike tour, where you and your partner will navigate the thrilling rocky dunes of this mesmerizing landscape. As the sun begins its descent, transition from adrenaline to tranquility with a 15-minute camel ride. Feel the gentle sway of the camel beneath you, as the golden hues of sunset paint the desert in a magical light.\nAfterward, settle into a traditional desert camp for an authentic Moroccan dinner. The aroma of local spices will tantalize your senses as you indulge in a meal that captures the essence of Moroccan cuisine, complete with refreshing water. As the evening unfolds, enjoy the rhythm of live Moroccan music, creating an enchanting atmosphere. The night concludes with a spectacular fire show under the vast, starry desert sky—a perfect end to an unforgettable experience.\nMeals included: Dinner\nAccommodation included: Not applicable",
+    "highlights": [
+      "40-minute quad bike tour",
+      "Sunset camel ride",
+      "Authentic Moroccan dinner with live music",
+      "Spectacular fire show"
+    ],
+    "included": [
+      "Hotel pickup and drop-off",
+      "Quad bike and equipment",
+      "Camel ride",
+      "Dinner and show",
+      "Water"
+    ],
+    "location": "https://www.google.com/maps/place/Medina,+Marrakesh+40000"
+  },
+  {
+    "id": "cde42221-9768-4f6c-b4c9-eab442edec05",
+    "title": "From Marrakech: Private 3-Day Luxury Merzouga Desert Tour",
+    "category": "multi-day",
+    "image": "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768003391529-feqqfb.JPG",
+    "images": [
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768003391529-feqqfb.JPG",
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768003392246-hlqtei.jpg",
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768003392680-4gpl7.jpg"
+    ],
+    "duration": "3 days",
+    "groupSize": "Max 30 travelers",
+    "price": "849.00 USD",
+    "rating": 5,
+    "reviews": 0,
+    "description": "Day 1: Journey Through the Heart of Morocco\nEmbark on your adventure as you depart from the vibrant streets of Marrakech in a private, air-conditioned vehicle. Ascend the majestic Atlas Mountains, where the landscape transforms from bustling city life to serene mountain vistas. Your first stop is the UNESCO World Heritage site of Ait Ben Haddou. Wander through this ancient fortified village, famed for its stunning kasbahs and as a backdrop to countless films. Continue to Ouarzazate, known as the Hollywood of Africa, and explore its renowned film studios. As the day winds down, travel through the captivating Valley of Roses, arriving in the Dades Gorges where you'll settle into a comfortable hotel/riad. Enjoy a delightful dinner as you soak in the breathtaking views of the rugged terrain.\nMeals included: Dinner\nAccommodation included: Comfortable hotel/riad in Dades\n\nDay 2: Into the Sands of Time\nAfter a hearty breakfast, journey through the dramatic Todra Gorges, where you'll hike along the Todra River, marveling at the towering cliffs surrounding you. Continue your adventure as you head towards the golden sands of Merzouga. Upon arrival, mount your camel for an unforgettable trek across the iconic Erg Chebbi dunes, timing your ride with the magical desert sunset. As the stars begin to twinkle, arrive at your luxury desert camp where a warm Berber welcome awaits. Savor a traditional dinner under the vast Sahara sky, followed by an enthralling Berber drumming and music experience around the campfire.\nMeals included: Breakfast, Dinner\nAccommodation included: Luxury desert camp in Merzouga\n\nDay 3: From Dunes to Draa - The Road Back to Marrakech\nRise early for a spectacular 4WD transfer to witness the desert sunrise, painting the dunes in a kaleidoscope of colors. After breakfast at the camp, make your way back towards Marrakech. Travel through the scenic Draa Valley, dotted with lush oases and quaint Berber villages. Experience the rich cultural tapestry of these communities as you make your way back to the city. Your journey concludes with a drop-off at your chosen location in Marrakech, leaving you with memories of the desert's captivating allure.\nMeals included: Breakfast\nAccommodation included: Not applicable",
+    "highlights": [
+      "Ait Ben Haddou & Ouarzazate Film Studios",
+      "Luxury desert camp in Merzouga",
+      "Sunset camel trek in Erg Chebbi",
+      "Scenic drive through Draa Valley & Atlas Mountains"
+    ],
+    "included": [
+      "Private transportation",
+      "Accommodation (Hotel/Riad & Luxury Camp)",
+      "Meals as specified (Breakfasts, Dinners)",
+      "Camel trek",
+      "Local guides"
+    ],
+    "notIncluded": [
+      "Lunches",
+      "Drinks",
+      "Tips"
+    ],
+    "location": "https://maps.app.goo.gl/QRxuLUwFWXDDhY7b9"
+  },
+  {
+    "id": "ce4b9cd5-58b7-47b1-8066-37e5028c001e",
+    "title": "From Marrakech: Private Atlas Mountains Full-Day Hiking Trip w Lunch",
+    "category": "mountain",
+    "image": "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768003838709-tjwtp.jpg",
+    "images": [
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768003838709-tjwtp.jpg",
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768003840202-l7ytos.jpg",
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768003841015-3ubcq.jpg"
+    ],
+    "duration": "8 hours",
+    "groupSize": "Max 30 travelers",
+    "price": "99.00 USD",
+    "rating": 5,
+    "reviews": 0,
+    "description": "Experience Overview\n\nEscape the hustle of Marrakech and enjoy a refreshing day trip to the Ourika Valley, nestled in the heart of the Atlas Mountains. This experience offers a perfect blend of nature, culture, and relaxation. Discover traditional Berber villages, learn about the authentic production of argan oil, and explore lush green landscapes leading to the beautiful waterfalls of Setti Fatma.\n\nHighlights\n\nDiscover the rich culture of traditional Berber villages\n\nVisit a local Argan Oil cooperative and learn about the artisanal process\n\nAdmire majestic waterfalls flowing through the Ourika Valley\n\nExplore lush green landscapes on scenic hiking trails\n\nEnjoy breathtaking views of the Atlas Mountains\n\nEscape the city and relax in a peaceful natural environment",
+    "highlights": [
+      "Ourika Valley & Setti Fatma Waterfalls",
+      "Traditional Berber villages",
+      "Argan Oil cooperative visit",
+      "Scenic hiking trails"
+    ],
+    "included": [
+      "Hotel pickup and drop-off",
+      "Lunch (If option selected)",
+      "Guided hike",
+      "Visit to Argan cooperative",
+      "Bottled water"
+    ],
+    "location": "https://maps.app.goo.gl/QRxuLUwFWXDDhY7b9"
+  },
+  {
+    "id": "aadc66d2-5cb0-4d27-a8a8-50360809906b",
+    "title": "Marrakech: Dunes of the Palmeraie Quad Bike Ride with Tea",
+    "category": "activity",
+    "image": "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768004529326-kea4oa.png",
+    "images": [
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768004529326-kea4oa.png",
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768004530432-4ikky8.jpg",
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768004530875-5n12jf.jpg"
+    ],
+    "duration": "3 hours",
+    "groupSize": "Max 12 travelers",
+    "price": "79.00 USD",
+    "rating": 5,
+    "reviews": 0,
+    "description": "Enjoy an exciting quad biking adventure through the Jbilet Desert, just outside Marrakech. This immersive experience takes you across wild desert landscapes, lush palm groves, and authentic rural Berber villages, offering a perfect mix of adventure and cultural discovery.\n\nHighlights\n\nRide through the stunning Palmeraie of Marrakech\n\nExplore the wild desert landscapes of the Jbilet region by quad\n\nDiscover traditional Berber villages off the beaten path\n\nEnjoy a relaxing break with authentic Moroccan mint tea in the desert",
+    "highlights": [
+      "Quad biking in Jbilet Desert",
+      "See Marrakech Palmeraie",
+      "Traditional Berber villages",
+      "Moroccan mint tea break"
+    ],
+    "included": [
+      "Hotel pickup and drop-off",
+      "2 hours of quad biking",
+      "Helmet & goggles",
+      "Mint tea"
+    ],
+    "location": "https://maps.app.goo.gl/QRxuLUwFWXDDhY7b9"
+  },
+  {
+    "id": "28f7fa17-b8ef-46f4-b256-1146aad55f6c",
+    "title": "Marrakech: Camel Ride in the Oasis Palmeraie",
+    "category": "activity",
+    "image": "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768005103877-gwiko.jpg",
+    "images": [
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768005103877-gwiko.jpg",
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768005104794-f0pmko.jpg"
+    ],
+    "duration": "2 hours",
+    "groupSize": "Max 15 travelers",
+    "price": "99.00 USD",
+    "rating": 5,
+    "reviews": 0,
+    "description": "Enjoy a relaxing shared camel ride through the lush palm groves of the Oasis Palmeraie of Marrakech. This peaceful experience takes you beyond the city center to discover traditional villages, scenic palm and orange tree landscapes, and authentic Moroccan hospitality. A perfect cultural escape for first-time visitors and families alike.\n\nHighlights\n\nRide a camel through the Palmeraie of Marrakech\n\nAdmire stunning views of palm groves and orange trees\n\nExperience traditional Moroccan village life outside the city\n\nEnjoy a refreshing mint tea in a nomadic-style setting",
+    "highlights": [
+      "Camel ride in Palmeraie oasis",
+      "Scenic palm and orange tree landscapes",
+      "Traditional Moroccan village life",
+      "Mint tea in nomadic setting"
+    ],
+    "included": [
+      "Hotel pickup and drop-off",
+      "1-hour camel ride",
+      "Traditional attire",
+      "Mint tea"
+    ],
+    "location": "https://maps.app.goo.gl/QRxuLUwFWXDDhY7b9"
+  },
+  {
+    "id": "4d6bc38b-7943-4119-8668-2a55ee8bfdd4",
+    "title": "Marrakech: Paragliding over Agafay Desert & Atlas Mnt Views",
+    "category": "activity",
+    "image": "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768005387776-bf449j.JPG",
+    "images": [
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768005387776-bf449j.JPG",
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768005388567-lxvxrt.JPG",
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768005389112-rcg9do.JPG"
+    ],
+    "duration": "5.5 hours",
+    "groupSize": "Max 8 travelers",
+    "price": "139.00 USD",
+    "rating": 5,
+    "reviews": 0,
+    "description": "Live an unforgettable adventure with tandem paragliding over the Atlas Mountains, guided by a certified and experienced instructor. Take off from an altitude of over 1,000 meters, soaring above the breathtaking landscapes of the Agafay Desert and surrounding valleys. This unique experience perfectly combines adrenaline, discovery, and cultural immersion.\n\nHighlights\n\nSoar through the sky and experience the thrill of paragliding above the clouds\n\nAdmire panoramic views of the Atlas Mountains and Agafay Desert\n\nVisit a local Argan Oil cooperative and learn about traditional production methods\n\nEnjoy a 15-minute camel ride through the desert landscape (optional)\n\nCapture unforgettable moments with GoPro video footage",
+    "highlights": [
+      "Tandem paragliding flight",
+      "Panoramas of Atlas Mountains & Agafay Desert",
+      "GoPro video footage",
+      "Optional camel ride"
+    ],
+    "included": [
+      "Hotel pickup and drop-off",
+      "Certified paragliding pilot & equipment",
+      "GoPro footage",
+      "Camel ride",
+      "Breakfast & Tea"
+    ],
+    "location": "https://maps.app.goo.gl/QRxuLUwFWXDDhY7b9"
+  },
+  {
+    "id": "3e876e9d-b3cc-4d79-baea-166f829036a6",
+    "title": "Trekking through Berber Villages of Atlas Mountains (3 Days)",
+    "category": "multi-day",
+    "image": "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768320578499-f9c98b.JPG",
+    "images": [
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768320578499-f9c98b.JPG",
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768320579412-sh5xg.jpg"
+    ],
+    "duration": "3 days",
+    "groupSize": "Max 25 travelers",
+    "price": "180.00 USD",
+    "rating": 5,
+    "reviews": 0,
+    "description": "Day 1: Into the Heart of the Ouirgane National Park\nBegin your adventure with a scenic drive from Marrakech to the picturesque village of Ouirgane. Trek through verdant pastures and pine forests to the charming Berber village of Tinzert. Arrive where you will be welcomed with warm Berber hospitality. Enjoy a traditional meal as you settle into the village's gentle pace.\nMeals included: Lunch, Dinner\nAccommodation included: Berber guest house in Tinzert\n\nDay 2: Crossing the Spectacular Tizi n Mzik Pass\nEmbark on a challenging yet rewarding trek across the Tizi n Mzik pass (2489 meters). Marvel at views of the Azzaden Valley. Descend to explore the vibrant village of Ait Aissa, renowned for its welcoming residents. Spend the night enjoying local delicacies.\nMeals included: Breakfast, Lunch, Dinner\nAccommodation included: Berber guest house in Ait Aissa\n\nDay 3: Embracing Berber Culture in Azzaden Valley\nImmerse yourself in daily life of the Azzaden Valley, visiting local homes. As you trek through the valley, take in the stunning scenery, with its dramatic red cliffs and lush green terraces. Conclude your adventure with a return trek to Ouirgane and transport back to Marrakech.\nMeals included: Breakfast, Lunch\nAccommodation included: None",
+    "highlights": [
+      "Trek in Ouirgane National Park",
+      "Cross Tizi n Mzik pass (2489m)",
+      "Stay in authentic Berber guest houses",
+      "Cultural immersion in Azzaden Valley"
+    ],
+    "included": [
+      "Transportation from/to Marrakech",
+      "Berber guest house accommodation",
+      "All meals during trek",
+      "Guide"
+    ],
+    "location": "https://www.google.com/maps/place/Marrakesh"
+  },
+  {
+    "id": "f15f6823-262b-4cd5-9248-06b9ecb27d10",
+    "title": "Big Tour Around Toubkal (12 Days)",
+    "category": "multi-day",
+    "image": "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768320928910-vgy8s.JPG",
+    "images": [
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768320928910-vgy8s.JPG",
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768320929523-wyh4pe.jpg"
+    ],
+    "duration": "12 days",
+    "groupSize": "Max 20 travelers",
+    "price": "1500.00 USD",
+    "rating": 5,
+    "reviews": 0,
+    "description": "Comprehensive 12-day trekking adventure around Mount Toubkal.\nHighlights include:\nDay 1: Arrival Marrakech\nDay 2: Trek to Tacheddirt\nDay 3: Tizi n'Tamatert Pass & Amsouzart\nDay 4: Lac d'Ifni\nDay 5: Tizi n'Ouanoums Pass & Toubkal Base\nDay 6: Summit Mount Toubkal (4167m)\nDay 7: Rest day in Imlil\nDay 8: Trek to Aremd\nDay 9: Tizi n'Tzikert Pass & Tizi Oussem\nDay 10: Azib Tamsoult\nDay 11: Descend to Imlil\nDay 12: Return to Marrakech\nIncludes almost all meals and accommodation in camps/guest houses.",
+    "highlights": [
+      "Summit Mount Toubkal (4167m)",
+      "Lac d'Ifni & Tizi n'Ouanoums Pass",
+      "Deep Atlas valleys exploration",
+      "Comprehensive 12-day itinerary"
+    ],
+    "included": [
+      "Accommodation (Guest houses/Camps)",
+      "Meals (Breakfast, Lunch, Dinner mostly)",
+      "Professional Guide",
+      "Muleteers & Cook"
+    ],
+    "location": "https://www.google.com/maps/place/Marrakesh"
+  },
+  {
+    "id": "b1850a0e-e732-4000-b187-bfac56782a28",
+    "title": "Mount Toubkal Trek & Sahara Desert Trip (5 Days)",
+    "category": "multi-day",
+    "image": "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768321388365-vtkrdg.JPG",
+    "images": [
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768321388365-vtkrdg.JPG",
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768321388988-t4mcxi.JPG",
+      "https://pccjdwxoeutgwqhmekfe.supabase.co/storage/v1/object/public/agency-images/7a6af9a7-5949-4150-a269-05a8a323e0fc/1768321470786-ieeaml.JPG"
+    ],
+    "duration": "5 days",
+    "groupSize": "Max 13 travelers",
+    "price": "650.00 USD",
+    "rating": 5,
+    "reviews": 0,
+    "description": "Day 1: Ascend to the Atlas\nScenic drive from Marrakech to Imlil. Trek through lush valleys and villages. Overnight in mountain refuge. \nDay 2: Conquer Mount Toubkal\nSummit North Africa's highest peak (4167m). Return to Imlil. \nDay 3: From Peaks to Palms\nDrive to Sahara Desert via Ait Ben Haddou and Dades Gorge.\nDay 4: Journey Through Gorges and Dunes\nVisit Todra Gorge. Camel trek into Merzouga dunes. Night in desert camp.\nDay 5: Sunrise and Return\nDesert sunrise, camel ride back, and return drive to Marrakech.",
+    "highlights": [
+      "Summit Mount Toubkal",
+      "Sahara Desert Camel Trek",
+      "Ait Ben Haddou & Todra Gorge",
+      "Mountain Refuge & Desert Camp"
+    ],
+    "included": [
+      "Transport",
+      "Accommodation",
+      "Meals (Breakfast, Dinner + some lunches)",
+      "Guide",
+      "Camel ride"
+    ],
+    "location": "https://www.google.com/maps/place/Marrakesh"
+  },
 ];
 
 export const getToursByCategory = (category: Tour["category"]): Tour[] => {

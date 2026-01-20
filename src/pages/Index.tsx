@@ -21,6 +21,34 @@ const heroVideos = [
   "/videos/rabat.mp4"
 ];
 
+const HeroVideo = ({ src, onEnded }: { src: string; onEnded?: () => void }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <motion.div
+      key={src}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: isLoaded ? 0.9 : 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.5 }}
+      className="absolute inset-0 bg-black"
+    >
+      <video
+        src={src}
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+        onEnded={onEnded}
+        onLoadedData={() => setIsLoaded(true)}
+        onError={() => setIsLoaded(true)} // Show poster on error
+        poster="https://images.unsplash.com/photo-1549140600-78c9b8275e9d?w=1920&q=80"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+    </motion.div>
+  );
+};
+
 const Index = () => {
   const [currentVideo, setCurrentVideo] = useState(heroVideos[0]);
 
@@ -72,27 +100,17 @@ const Index = () => {
       {/* Hero Section - Atlas Voyages Style */}
       <section className="relative h-[100dvh] flex items-center justify-center overflow-hidden bg-black">
         {/* Background Video */}
-        {/* Background Video */}
         <div className="absolute inset-0 bg-black">
           <AnimatePresence mode="popLayout">
-            <motion.video
+            <HeroVideo
               key={currentVideo}
               src={currentVideo}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.9 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.5 }}
-              autoPlay
-              muted
-              playsInline
-              preload="auto"
               onEnded={() => {
                 // Play next video in sequence
                 const currentIndex = heroVideos.indexOf(currentVideo);
                 const nextIndex = (currentIndex + 1) % heroVideos.length;
                 setCurrentVideo(heroVideos[nextIndex]);
               }}
-              className="absolute inset-0 w-full h-full object-cover"
             />
           </AnimatePresence>
           <div className="absolute inset-0 bg-black/40" />
